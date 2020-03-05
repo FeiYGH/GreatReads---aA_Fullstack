@@ -23,22 +23,36 @@ class SessionForm extends React.Component{
     }
 
 
+    renderErrors() {
+        return(
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error ${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
+
     render(){
         const {errors,formType, processForm, navLink} = this.props;
-        const errorsLi = errors.map(error=> {
-            return(
-                <li>
-                    {error}
-                </li>
-            )
+        // const errorsLi = errors.map(error=> {
+        //     return(
+        //         <li>
+        //             {error}
+        //         </li>
+        //     )
             
-        })
+        // })
         const goToLink = (this.props.formType ==="login") ? <Link to="/signup">Sign Up</Link> : <Link to="/login"> Log In</Link>
         return(
             
             <div>   
                 <h2>{formType}</h2>
-                Please {goToLink} or {navLink} instead
+                Please {formType} or {navLink} instead
+                {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label>Username:
                         <input type="text" value={this.state.username} onChange={this.updateForm("username")}/>
@@ -52,9 +66,12 @@ class SessionForm extends React.Component{
                         <input type="password" value={this.state.password} onChange={this.updateForm("password")}/>
                     </label>
                     <input type="submit" value={formType}/>
-                    <div>
+                    {/* <div>
+                        <ul>
+                            {errorsLi}
+                        </ul>
                         
-                    </div>
+                    </div> */}
                     
                 </form>
 

@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // window.logout = logout;
     // window.signup = signup;
     let store;
+    // debugger;
     if(window.currentUser){
         const preloadedState = {
-            session: {id: window.currentUser.id},
+            sessions: {id: window.currentUser.id},
             entities: {
                 users: {[window.currentUser.id]: window.currentUser}
             }
