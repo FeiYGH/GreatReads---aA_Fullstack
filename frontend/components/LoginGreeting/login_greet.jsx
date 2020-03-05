@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class SessionForm extends React.Component{
+class SignupGreet extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -65,46 +65,46 @@ class SessionForm extends React.Component{
             
         // })
 
-        const splash = ()=>(
-            <div>
-                <nav>
-                    <h2>goodreads</h2>
-                    <form onSubmit={this.handleSubmit}>
-                    <label>Username:
-                        <input type="text" value={this.state.username} onChange={this.updateForm("username")}/>
-                    </label>
+        // const splash = ()=>(
+        //     <div>
+        //         <nav>
+        //             <h2>goodreads</h2>
+        //             <form onSubmit={this.handleSubmit}>
+        //             <label>Username:
+        //                 <input type="text" value={this.state.username} onChange={this.updateForm("username")}/>
+        //             </label>
 
-                    <label>Email:
-                        <input type="text" value={this.state.email} onChange={this.updateForm("email")}/>
-                    </label>
+        //             <label>Email:
+        //                 <input type="text" value={this.state.email} onChange={this.updateForm("email")}/>
+        //             </label>
 
-                    <label>Password:
-                        <input type="password" value={this.state.password} onChange={this.updateForm("password")}/>
-                    </label>
-                    <input type="submit" value={formType}/>
-                    {/* <div>
-                        <ul>
-                            {errorsLi}
-                        </ul>
-                    </div> */}
-                </form>
-                </nav>
+        //             <label>Password:
+        //                 <input type="password" value={this.state.password} onChange={this.updateForm("password")}/>
+        //             </label>
+        //             <input type="submit" value={formType}/>
+        //             {/* <div>
+        //                 <ul>
+        //                     {errorsLi}
+        //                 </ul>
+        //             </div> */}
+        //         </form>
+        //         </nav>
 
-            </div>
-        )
+        //     </div>
+        // )
 
         const goToLink = (this.props.formType ==="login") ? <Link to="/signup">Sign Up</Link> : <Link to="/login"> Log In</Link>
         return(
             
             <div>  
                  
-                <h2>{formType}</h2>
+                {/* <h2>{formType}</h2>
                 Please {formType} or {navLink} instead
-                {this.renderErrors()}
+                {this.renderErrors()} */}
                 <form onSubmit={this.handleSubmit}>
-                    <label>Username:
+                    {/* <label>
                         <input type="text" value={this.state.username} onChange={this.updateForm("username")}/>
-                    </label>
+                    </label> */}
 
                     <label>Email:
                         <input type="text" value={this.state.email} onChange={this.updateForm("email")}/>
@@ -120,10 +120,9 @@ class SessionForm extends React.Component{
                         </ul>
                     </div> */}
                 </form>
-
             </div>
         )
     }
 }
 
-export default SessionForm;
+export default LogInGreet;

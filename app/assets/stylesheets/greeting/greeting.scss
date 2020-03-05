@@ -1,0 +1,49 @@
+.splash{
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif
+}
+
+h1.splash{
+    font-size: 40px;
+    
+    
+}
+
+h1.splash a{
+  text-decoration: none;
+}
+
+/* for the navigation bar */
+/*flex box */
+nav.splash {
+    display: flex;
+    background-color: darkred;
+    padding: 20px;
+  }
+
+  .splashButtons{
+    margin-left:60%;  
+  }
+  
+
+  img.splash{
+    background-size:cover;
+    
+  }
+
+
+  /* for the navigation bar links */
+  .nav a {
+    color: white;
+    font-size: 20px;
+    padding: 14px 60px; /*14px padding on top and bottom, 60px in between */
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  
+  /* Change color on hover for navigation bar links */
+  .nav a:hover {
+    background-color: blue;
+    color: white;
+  }
+  
