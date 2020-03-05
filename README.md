@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# GreatReads---aA_Fullstack
+Full Stack Project at App Academy -- GreatReads, clone of GoodReads
