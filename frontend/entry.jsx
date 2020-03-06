@@ -11,7 +11,7 @@ import {signup,login,logout} from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     // //TESTING START
-    // window.getState = store.getState;
+   
     // window.dispatch = store.dispatch;
 
     // window.store = store;
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }else{
         store= configureStore();
     }   
+    window.getState = store.getState;
     
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}/>, root);

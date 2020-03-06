@@ -4,11 +4,12 @@ import {Link} from 'react-router-dom';
 class SessionForm extends React.Component{
     constructor(props){
         super(props);
+        debugger;
         this.state = {
             username: "",
             email: "",
-            password: "",
-            errors: {}
+            password: ""
+            // errors: {}
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateForm = this.updateForm.bind(this);
@@ -19,13 +20,14 @@ class SessionForm extends React.Component{
     //     this.setState({errors:nextProps.errors});
     // }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({errors:nextProps.errors});
-    };
+    // componentWillReceiveProps(nextProps){
+    //     this.setState({errors:nextProps.errors});
+    // };
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.processForm(this.state);
+        this.props.processForm(this.state)
+            .then(this.props.history.push("/"));
     }
 
     updateForm(field){
@@ -42,13 +44,16 @@ class SessionForm extends React.Component{
         //       </li>
         //     ))}
         //   </ul>
-          <ul>
-            {Object.keys(this.state.errors).map((error, i) => (
-              <li key={`error ${i}`}>
-                {this.state.errors[error]}
-              </li>
-            ))}
-          </ul>
+        //   <ul>
+        //     {Object.keys(this.state.errors).map((error, i) => (
+        //       <li key={`error ${i}`}>
+        //         {this.state.errors[error]}
+        //       </li>
+        //     ))}
+        //   </ul>
+        <ul>
+
+        </ul>
         );
       }
 
@@ -93,7 +98,7 @@ class SessionForm extends React.Component{
             </div>
         )
 
-        const goToLink = (this.props.formType ==="login") ? <Link to="/signup">Sign Up</Link> : <Link to="/login"> Log In</Link>
+        const goToLink = (this.props.formType ==="Log In") ? <Link to="/signup">Sign Up</Link> : <Link to="/login"> Log In</Link>
         return(
             
             <div>  

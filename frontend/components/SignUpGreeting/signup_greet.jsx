@@ -5,9 +5,9 @@ class SignupGreet extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            username: "",
-            email: "",
-            password: "",
+            username: "Name",
+            email: "Email address",
+            password: "*********",
             errors: {}
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,11 +26,14 @@ class SignupGreet extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.processForm(this.state);
+        this.props.setParentState();
     }
 
     updateForm(field){
         return (e) => this.setState({[field]: e.target.value});
     }
+
+    
 
 
     renderErrors() {
@@ -55,7 +58,7 @@ class SignupGreet extends React.Component{
 
 
     render(){
-        const {errors,formType, processForm, navLink} = this.props;
+        const {errors,formType, processForm, navLink, setParentState} = this.props;
         // const errorsLi = errors.map(error=> {
         //     return(
         //         <li>
