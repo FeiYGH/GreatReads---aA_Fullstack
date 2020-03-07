@@ -14,7 +14,10 @@ class Api::SessionsController < ApplicationController
     #login
     def create  
         # debugger;
-        @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+        # @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+        # updated so I could find by email instead of username
+        @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+        
         if @user 
             login(@user)
             render 'api/users/show' #not a route, just a path to a file'

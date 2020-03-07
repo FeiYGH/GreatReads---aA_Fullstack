@@ -1,15 +1,19 @@
 import {connect} from 'react-redux';
 import Greeting from './greeting';
-import {logout,login,signup} from '../../actions/session_actions';
+import {logout,login,signup, clearErrors} from '../../actions/session_actions';
 import usersReducer from '../../reducers/users_reducer';
 import React from 'react';
 
+
 const mSTP = (state, ownProps) => {
-    debugger;
+    // debugger;
     return({
         sessionId: state.sessions.id,
         currentUser: state.entities.users[state.sessions.id],
-        errors:state.errors.session_errors
+        errorsSignUp: state.errors.session_errors,
+        errorsLogIn: state.errors.session_errors
+
+        // errors:state.errors.session_errors
         
     });
 }
@@ -19,7 +23,9 @@ const mDTP = dispatch => {
        logout: () => dispatch(logout()), 
     //    processForm: (user) =>dispatch(login(user))
        login: (user) =>dispatch(login(user)),
-       signup: (user) => dispatch(signup(user))
+       signup: (user) => dispatch(signup(user)),
+       loginDemo: () => dispatch(login({email: 'user1@gmail.com', password: 'password'})),
+       clearErrors: () => dispatch(clearErrors())
     });
 };
 

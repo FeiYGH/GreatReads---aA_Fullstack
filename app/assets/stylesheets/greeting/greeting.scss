@@ -1,24 +1,111 @@
-.splash{
-    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif
+
+*{
+  font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+
+.splashHeaderContainer{
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    position: relative;
+    // text-align: center;
+    color: white;   
+    display:block;
+    display:grid;
+    // grid-template-columns:30% 20% 50%;
+    //to accommodate for the demo user button
+    grid-template-columns:30% 10% 60%;
+}
+
+
+//all the top part -- with the 
 h1.splash{
-    font-size: 40px;
-    
-    
+  font-size: 40px;  
+  color: #382110;
+  cursor:pointer;
+  text-align:left; 
+
 }
 
 h1.splash a{
   text-decoration: none;
+  
 }
 
-/* for the navigation bar */
-/*flex box */
-nav.splash {
-    display: flex;
-    background-color: darkred;
-    padding: 20px;
-  }
+#great{
+  color: #706b5f;
+  font-weight: lighter;
+}
+
+#Reads{
+  color: #382110;
+  font-weight:345;
+}
+
+nav.topLeftSplash {
+  display: flex;
+  // background-color: green;
+  padding: 10px;
+  // opacity: 50%;
+  // position: absolute;
+  top: 5px;
+  left: 10px;
+  margin-left:10%;
+  z-index:2;
+}
+
+nav.centerSplash{
+  display:flex;
+  
+}
+
+nav.topRightSplash {
+  display: flex;
+  // background-color: green;
+  padding: 5px;
+  // opacity: 50%;
+  // position: absolute;
+  top: 10px;
+  right: 16px;
+  margin-right:5%;
+  margin-top:2%;
+  z-index:2;
+}
+
+//input types styling
+input[type=text], input[type=number] input[type=email], input[type=password],input[type=search],textarea{
+  // padding: top/bottom left/right
+  padding: 3px 7px;
+  border-radius:3px;
+  border: 1px solid #DCD6CC;
+  text-align:start;
+  background-color: #e8f0fe;
+  resize: none;
+}
+
+
+//Sign in button
+.gr-button-dark{
+  background-color: #382110;
+  border: 1px solid #382110;
+  color:white;
+  font-weight: normal;
+}
+
+.gr-button{
+  border-radius: 3px;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+  font-size:14px;
+  cursor:pointer;
+  display:inline-block;
+  //line height, the amont of space above and below text on a line
+  line-height:1;
+  padding: 8px 12px;
+
+}
+
+
+
+
 
   .splashButtons{
     margin-left:60%;  
@@ -27,23 +114,135 @@ nav.splash {
 
   img.splash{
     background-size:cover;
+    position:absolute;
     
   }
 
 
-  /* for the navigation bar links */
-  .nav a {
-    color: white;
-    font-size: 20px;
-    padding: 14px 60px; /*14px padding on top and bottom, 60px in between */
-    text-decoration: none;
-    text-align: center;
+  // /* for the navigation bar links */
+  // .nav a {
+  //   color: white;
+  //   font-size: 20px;
+  //   padding: 14px 60px; /*14px padding on top and bottom, 60px in between */
+  //   text-decoration: none;
+  //   text-align: center;
+  // }
+  
+  // /* Change color on hover for navigation bar links */
+  // .nav a:hover {
+  //   background-color: blue;
+  //   color: white;
+  // }
+  
+  img.headerSignUp{
+     border: 3px solid black;
+    //  position: absolute;
+    z-index:2;
+    margin-top:20%;
+    margin-left:30%;
   }
-  
-  
-  /* Change color on hover for navigation bar links */
-  .nav a:hover {
-    background-color: blue;
-    color: white;
+
+
+  div.headerSignUp{
+    display:flex;
+    margin-left:40%;
+    margin-top: 5%;
+    margin-right:10%;
+    // padding:10px 10px;
+    min-width:300px;
+    // margin:10px;
+    border: 3px solid black;
+    z-index: 2;
   }
+
+  h2.headerSignUp{
+    font-size:20px;
+    margin-top: 0%;
+    z-index:2;
+    color:black;
+    width:100%;
+    border: 3px solid black;
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
+    line-height:2;
+  }
+
+  input{
+    margin-bottom: 5px;
+  }
+
+  .signedOutHome .newAccountBox{
+    padding: 8px;
+    border: 0px;
+    background-color: #fdd05f;
+    font-size:18px;
+    line-height:22px;
+    width:85px;
+    border-radius:4px;
+    cursor:pointer;
+    
+  } 
   
+  .newAccountBox {
+    padding: 8px;
+    border: 0px;
+    background-color: #fdd05f;
+    font-size:18px;
+    line-height:22px;
+    width:85px;
+    border-radius:4px;
+    cursor:pointer;
+    
+  }
+
+  //to hold the Sign Up Button and Terms of Service
+  #signUpButtonAndService{
+    display:flex;
+  }
+
+  //terms of service paragraph
+  #termsOfService{
+    
+    color: #382110;
+    font-size:11px;
+    border: 1px solid black;
+    line-height:1.1;
+    margin-top:0px;
+    padding-left:8px;
+  }
+
+  //just bolding the words "Terms of Service"
+  .boldTermsOfS{
+    font-weight:400;
+  }
+
+  #nameSignUpForm{
+    background-color:white;
+  }
+
+  .errorsDisplay{
+    color: #382110;
+    list-style-type:none;
+    font-size:13px;
+    margin-left:2%;
+    border: 3px solid red;
+    width:auto;
+  }
+
+  .errorsLoginDisplay{
+    color: #382110;
+    list-style-type:none;
+    font-size:13px;
+    margin-left:2%;
+    border: 3px solid red;
+    width:auto;
+  }
+
+  .errorsSignInDisplay{
+    color: #382110;
+    list-style-type:none;
+    font-size:13px;
+    margin-left:2%;
+    border: 3px solid red;
+    width:auto;
+  }
+ 

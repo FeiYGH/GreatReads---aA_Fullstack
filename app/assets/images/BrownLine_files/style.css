@@ -1,0 +1,491 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    font-family: sans-serif;
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/*------- Calling FT hosted Comcast Fonts --------*/
+/*/ XfinityBrownWeb-Bold /*/
+@font-face {
+  font-family: 'XfinityBrownWeb-Bold';
+  src: url('https://cdn.flashtalking.com/93411/fonts/57cfca5154c2481062a796915c0bdab3ed0f6fd6.eot'); /* IE9 Compat Modes */
+  src: url('https://cdn.flashtalking.com/93411/fonts/d4b3e162de98cb3f43636cde35fcc00e89f83fdf.woff2') format('woff2'),
+   url('https://cdn.flashtalking.com/93411/fonts/1ccbf188da2dd4565c47b990c13da23365f1251e.woff') format('woff'); /* Legacy iOS */
+}
+
+/*/ XfinityBrownWeb-Light /*/
+@font-face {
+  font-family: 'XfinityBrownWeb-Light';
+  src: url('https://cdn.flashtalking.com/93411/fonts/0cd2571b390e50c7237ba186315923424f49f8ad.eot'); /* IE9 Compat Modes */
+  src: url('https://cdn.flashtalking.com/93411/fonts/24941008179701317ed1b84ece7f42ed6a90c2d4.woff2') format('woff2'),
+   url('https://cdn.flashtalking.com/93411/fonts/74e41835de34c8deb73e1f979e66fe374ac4ccb9.woff') format('woff'); /* Legacy iOS */
+}
+
+/*/ XfinityBrownWeb-LightItalic /*/
+@font-face {
+  font-family: 'XfinityBrownWeb-LightItalic';
+  src: url('https://cdn.flashtalking.com/93411/fonts/289be44322768fce8ee7f2f396e63bb7bd4741eb.eot'); /* IE9 Compat Modes */
+  src: url('https://cdn.flashtalking.com/93411/fonts/ee87a989f489f04b7ce40ad162c93a2681c95db1.woff2') format('woff2'),
+   url('https://cdn.flashtalking.com/93411/fonts/196109e48488e6306e22a4d01083b2cf62f52247.woff') format('woff'); /* Legacy iOS */
+}
+
+
+/* XfinityBrownWeb-Regular */
+@font-face {
+  font-family: 'XfinityBrownWeb-Regular';
+  src: url('https://cdn.flashtalking.com/93411/fonts/7d1c67efe403cb3f72ae695a3b3a4e1809ec8710.eot'); /* IE9 Compat Modes */
+  src: url('https://cdn.flashtalking.com/93411/fonts/40915d5c7fac9eb0b4397623fac4cd6d0a48852d.woff2') format('woff2'),
+   url('https://cdn.flashtalking.com/93411/fonts/1bf1652af0afef4076dc2fd7e065fbe531cdf610.woff') format('woff'); /* Legacy iOS */
+}
+/* ---------------------------------- Font Style Classses ---------------------------------- */
+
+.xbr { font-family : 'XfinityBrownWeb-Regular', sans-serif; font-style:normal}
+.xsb { font-family : 'XfinityBrownWeb-Bold'; font-style:normal;}
+.xli { font-family : 'XfinityBrownWeb-Light'; font-style: normal;}
+.xsli { font-family : 'XfinityBrownWeb-LightItalic'; font-style: normal;}
+
+
+/* ---------------------------------- Styles ---------------------------------- */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+div, img, ft-dynamic {
+   position : absolute;
+}
+
+#container {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    /*border: solid #000 1px;*/
+}
+
+
+#border {
+    width: 298px;
+    height: 248px;
+    border: solid #000 1px;
+}
+#frame1BackgroundImage img{
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    background-size: 100% 100%;
+}
+
+#frame2BackgroundImage img{
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    background-size: 100% 100%;
+}
+
+.swapWord {
+    display: inline-block;
+/*    overflow: hidden;*/
+}
+
+#bottomBar {
+    top: 199px;
+    background-image: url(bottomBar.svg);
+    width: 300px;
+    height: 292px;
+}
+
+#logo {
+    width: 64px;
+    height: 22px;
+    bottom: 8px;
+    right: 9px;
+}
+
+#frame1CopyA,
+#frame1CopyB,
+#frame2CopyA
+ {
+    position: relative;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+    padding: 0px 19px;
+    font-size: 24px;
+    width: 262px;
+    text-align: right;
+}
+
+#frame2CopyC {
+
+    text-align: left;
+    left: 0px;
+    padding: 0px;
+    position: relative;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+    font-size: 24px;
+    overflow:hidden;
+}
+
+#frame2CopyB{
+    display: none;
+}
+
+#frame1CopyMask {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#frame1CopyA {
+    margin-top: 17px;
+}
+
+#endFrameHeaderHolder { /* for centering copy vertically */
+    top: 11px;
+    left: 134px;
+    height: 63px;
+    /* display: table; */
+}
+
+#endFrameHeader {
+    position: relative;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    line-height: 1.12;
+    letter-spacing: -0.2px;
+    font-size: 18px;
+    width: 167px;
+}
+
+#endFramePhone {
+    top: 7px;
+    left: 8px;
+    width: 118px;
+    height: 242px;
+    background: url(endFramePhone.png);
+    background-size: 100% 100%;
+}
+
+#endFramePhoneContent img {
+    top: 4px;
+    left: 6px;
+    width: 105px;
+    height: 230px;
+    background-size: 100% 100%;
+}
+
+#endFrameBg {
+    width: 100%;
+    height: 100%;
+    background-color: #ebedef;
+}
+
+#frame2handDeviceImage img{
+    position: absolute;
+    top: 16px;
+    width: 143px;
+    height: 234px;
+    background-size: 100% 100%;
+}
+
+#endOfferHolder {
+    top: 67px;
+    left: 152px;
+    height: 104px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.endOfferHolderDown{
+    top: 65px !important;
+}
+
+#endOffer {
+    width: 122px;
+    position: relative;
+}
+
+.offerTitle {
+    text-align: center;
+    font-size: 9px;
+    position: relative;
+    letter-spacing: 0px;
+    margin: 8px 0px 2px -5px;
+}
+
+.priceHolder {
+    position: relative;
+    width: 100%;
+    margin-left: -6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.offerPrice {
+    position: relative;
+    margin: 0 0 0 8px;
+    font-size: 41px;
+    letter-spacing: -1px;
+}
+
+.sup {
+    top: -18px;
+    font-size: 37%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    margin-right: 3px;
+}
+
+.rightContent {
+    position: relative;
+    width: 20%;
+    height: 39px;
+    margin-left: 3px;
+}
+
+.offerCents {
+    font-size: 17px;
+}
+
+.offerEach {
+    top: 4px;
+    margin-left: 2px;
+    font-size: 12px;
+    display: none;
+}
+
+.offerTerms {
+    position: absolute;
+    top: 16px;
+    width: 60px;
+    font-size: 8px;
+    padding-left: 0px;
+    line-height: 1;
+}
+
+.offerAgrmt {
+    position: relative;
+    margin: -5px 0 0 -3px;
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0px;
+}
+
+.offerAgrmtSmall{
+line-height: 1;
+}
+.offerLine {
+    border-top: solid #c8001d 1px;
+    width: 78%;
+    position: relative;
+    /*margin: 2px auto 4px;*/
+    margin: 2px 0px 3px 11px;
+}
+
+.offerBoltOn {
+    position: relative;
+    margin-left: -3px;
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+
+#phoneNumber {
+    position: absolute;
+    top: 190px;
+    right: 9px;
+    font-size: 11px;
+    color: black;
+    letter-spacing: -.8px;
+}
+
+#ctaBg {
+    top: 176px;
+    left: 107px;
+    width: 84px;
+    height: 24px;
+    overflow: hidden;
+    background-color: #3399cc;
+    border-radius: 45px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba(204, 204, 204, 0), rgba(255, 255, 255, 0.3), rgba(204, 204, 204, 0));
+    background-position: -100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cta {
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    line-height: 11px;
+    width: 100%;
+    color: white;
+    white-space: nowrap;
+    padding: 2px 0 0 1px;
+}
+
+#legalDisclaimer{
+    left: 11px;
+    bottom: 9px;
+    position: absolute;
+    letter-spacing: -.6px;
+    color: #a3a3a3;
+    font-size: 9px;
+    line-height: 11px;
+}
+
+#staticImage img {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #808080;
+}
+
+/*------------------ JS Switching Classes ------------------- */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inline-block;
+}
+
+#endFrameHeader.small {
+    font-size: 16px;
+}
+
+
+.word1{
+    position: relative;
+
+}
+.word2{
+    position: relative;
+
+}
+
+.word3{
+    position: relative;
+
+}
+
+

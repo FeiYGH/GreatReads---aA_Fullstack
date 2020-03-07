@@ -11,7 +11,7 @@ const sessionReducer = (state = _nullSession, action) => {
 
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            debugger;
+            // debugger;
             //only one user pojo for session component
             // nextState.currentUser = action.currentUser.id;
             // return nextState; 
