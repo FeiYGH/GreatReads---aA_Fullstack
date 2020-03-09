@@ -7,6 +7,7 @@ import SignUpContainer from '../SessionForm/login_form_container';
 import SignUpGreetContainer from '../SignUpGreeting/signup_greet_container';
 import FrontPageSplash from '../FrontPageSplash/front_page_splash';
 
+//REMINDER THAT CAN'T USE JQUERY 
 class Greeting extends React.Component{
     constructor(props){
         super(props);
@@ -24,21 +25,21 @@ class Greeting extends React.Component{
         this.handleSignUp = this.handleSignUp.bind(this);
         this.updateForm = this.updateForm.bind(this);
         this.handleLogIn = this.handleLogIn.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        // this.renderErrors = this.renderErrors.bind(this);
         // this.clearPageErrors = this.clearPageErrors.bind(this);
-        // this.renderErrorsLogin = this.renderErrorsLogin.bind(this);
-        // this.renderErrorsSignUp = this.renderErrorsSignUp.bind(this);
+        this.renderErrorsLogin = this.renderErrorsLogin.bind(this);
+        this.renderErrorsSignUp = this.renderErrorsSignUp.bind(this);
     }
 
     // componentWillReceiveProps(nextProps){
     //     this.setState({errors:nextProps.errors});
     // }
 
-    clearPageErrors(){
-        // this.props.clearErrors();
-        // document.getElementByClass("errorsDisplay").style.height="0px";
-        $('errorLis').remove();
-    }
+    // clearPageErrors(){
+    //     // this.props.clearErrors();
+    //     // document.getElementByClass("errorsDisplay").style.height="0px";
+    //     $('errorLis').remove(); //can't use jQUERY
+    // }
 
 
     handleLogIn(e){
@@ -46,6 +47,7 @@ class Greeting extends React.Component{
         e.stopPropagation();
         // this.renderErrorsLogin();
         this.props.login(this.state);
+        // this.renderErrors();
         
     }
 
@@ -54,8 +56,13 @@ class Greeting extends React.Component{
         e.stopPropagation(); //it prevents the bubbling up. 
 
         // this.renderErrorsSignUp();
-        this.props.signup(this.state);
+        this.props.signup({
+            username: this.state.username2,
+            email: this.state.email2,
+            password:this.state.password2
+        });
         // .then(this.setState({username: "hi"}));
+        // this.renderErrors();
     }
 
     updateForm(field){
@@ -98,17 +105,35 @@ class Greeting extends React.Component{
     
 
 
-    renderErrors(){
-        const errorsLi = this.props.errorsLogIn.map(error => 
-            (
-                <li class="errorLis">
-                    {error}
-                </li>
-            )
-        );
-        return errorsLi;
+    renderErrorsSignUp(){
+        if(this.props.errorsLogIn){
+            // debugger;
+            const errorsLi = this.props.errorsLogIn.map(error => 
+                (
+                    <li class="errorLis">
+                        {error}
+                    </li>
+                )
+            );
+            // debugger;
+            return errorsLi;
+        }
     };
 
+
+    renderErrorsLogin(){
+        if(this.props.errorsSignUp){
+            const errorsLi = this.props.errorsSignUp.map(error => 
+                (
+                    <li class="errorLis">
+                        {error}
+                    </li>
+                )
+            );
+            debugger;
+            return errorsLi;
+        }  
+    }
     // renderErrorsLogin(){
         
     //     const errorsLi = this.props.errorsLogIn.map(error => 
@@ -174,6 +199,7 @@ class Greeting extends React.Component{
 
                 //1ST TIME, LOG IN WORKS
                 //CONTAINER DIV
+
             <div id="test"> 
                 <div className ="splashHeaderContainer">  
                     <nav className = "topLeftSplash">   
@@ -192,8 +218,8 @@ class Greeting extends React.Component{
                             <input type="submit" className="gr-button gr-button-dark" value="Sign in"/>
                             &emsp;
                             <input type ="button" className="gr-button gr-button-dark" value="DEMO USER" onClick={()=>this.props.loginDemo()}></input>
-                            <span className="errorsLoginDisplay"></span>
-                            <span className="errorsDisplay">{this.renderErrors()}</span>
+                            {/* <span className="errorsLoginDisplay"></span> */}
+                            <span className="errorsDisplay">{this.renderErrorsLogin()}</span>
                             {/* {setTimeout(this.props.clearErrors, 5000)} */}
                         </form>
                     </nav>
@@ -202,7 +228,8 @@ class Greeting extends React.Component{
                     <img className="headerSignUp" src='assets/headline.png'  alt="headline pic"/>
                     width="100%"/>
 
-                    {/* <div className="errorsDisplay">{this.renderErrors()}</div> */}
+                    {/* <div className="errorsDisplay">{this.renderErrorsLogin()}</div> */}
+
                     <div className ="headerSignUp">
                       
                             {/* Sign Up Form */}
@@ -222,7 +249,8 @@ class Greeting extends React.Component{
                                     By clicking "Signup" I agree to the greatReads <span className="boldTermsOfS">Terms of Service</span> and confirm that I am at least 13 years old.
                                     </div>
                                 </div>
-                                <div className="errorsDisplay">{this.renderErrors()}</div>
+                                
+                                <div className="errorsDisplay">{this.renderErrorsSignUp()}</div>
                                 {/* <div className="errorsSignInDisplay"></div> */}
                                 {/* <script>setTimeout(this.clearPageErrors, 2000)</script> */}
                                 

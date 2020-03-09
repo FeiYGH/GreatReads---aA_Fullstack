@@ -11,11 +11,15 @@ class FrontPageSplash extends React.Component{
         return(
             <div className="mainSplash">frontPageSplash
                 <div className ="row">
-                    <div className ="brown col-12">
-                    </div>
+                    <div className ="brown col-12"></div>
                 </div>
                 <div className="row">
+                    <div className ="brown col-12"></div>
+                    <div className ="brown col-12"></div>
+                    {/* <div className ="brown col-12"></div> */}
+
                     <div className="col-6">
+                        
                         <h2 className="mainSplash">
                             Deciding what to read next?
                         </h2>
@@ -33,90 +37,100 @@ class FrontPageSplash extends React.Component{
 
                 </div>
                 <div className="row" id="discoveryBox">
-                    <h2 className="mainSplash">What will<em>you</em>discover?</h2>
-                
+                    <h2 className="mainSplash">What will you discover?</h2>
                     <div className = "discoverySourceBooks col-8">
                         <p>Because Deborah liked...</p>
-                        <div className="col-book">
-                            <a href="">
-                                <img src="assets/Deborah/Memoirs.jpg" alt="Memoirs of a Geisha"/>
-                            </a>
+                        <div className="flex-books">
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Deborah/Memoirs.jpg" alt="Memoirs of a Geisha"/>
+                                </a>
+                            </div>
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Deborah/Guernsey.jpg" alt="Guernsey"/>
+                                </a>
+                            </div>
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Deborah/WaterForElephants.jpg" alt="Water For Elephants"/>
+                                </a>
+                            </div>
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Deborah/TheHelp.jpg" alt="The Help"/>
+                                </a>
+                            </div>
+                            <div className="col-arrow">
+                                <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/>
+                            </div>
+                            
                         </div>
-                        <div className="col-book">
-                            <a href="">
-                                <img src="assets/Deborah/Guernsey.jpg" alt="Guernsey"/>
-                            </a>
-                        </div>
-                        <div className="col-book">
-                            <a href="">
-                                <img src="assets/Deborah/WaterForElephants.jpg" alt="Water For Elephants"/>
-                            </a>
-                        </div>
-                        <div className="col-book">
-                             <a href="">
-                                <img src="assets/Deborah/TheHelp.jpg" alt="The Help"/>
-                            </a>
-                        </div>
-                        <div className="col-arrow">
-                            <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/>
-                        </div>
-
                     </div>
                     <div className="col-4">
                         <p>She discovered:</p>
-                        <div className="col-book2">
-                             <a href="">
-                                <img src="assets/Deborah/Moloka.jpg" alt="Moloka"/>
-                            </a>
-                        </div>
-                        <div>
-                            <p>Historical Fiction, Book Club</p>
+                        <div className="flex-book2">
+                            <div className="col-book2">
+                                <a href="">
+                                    <img src="assets/Deborah/Moloka.jpg" alt="Moloka"/>
+                                </a>
+                            </div>
+                            <div className="bookCategories">
+                                <br/>
+                                <p>Historical Fiction, Book Club</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="row grid1"></div>
                 </div>
 
                 <div className="row" id="discoveryBox">
                     
                     <div className = "discoverySourceBooks col-8">
                         <p>Because Brian liked...</p>
-                        <div className="col-book">
-                            <a href="">
-                                <img src="assets/Brian/Nudge.jpg" alt="Nudge"/>
-                            </a>
-                        </div>
-                        <div className="col-book">
-                            <a href="">
-                                <img src="assets/Brian/Traffic.jpg" alt="Traffic"/>
-                            </a>
-                        </div>
-                        <div className="col-book">
-                            <a href="">
-                                <img src="assets/Brian/Predictable.jpg" alt="Predictably Irrational"/>
-                            </a>
-                        </div>
-                        <div className="col-book">
-                             <a href="">
-                                <img src="assets/Brian/Curious.jpg" alt="Curious"/>
-                            </a>
-                        </div>
-                        <div className="col-arrow">
-                            <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/>
-                        </div>
+                        <div className="flex-books">
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Brian/Nudge.jpg" alt="Nudge"/>
+                                </a>
+                            </div>
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Brian/Traffic.jpg" alt="Traffic"/>
+                                </a>
+                            </div>
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Brian/Predictable.jpg" alt="Predictably Irrational"/>
+                                </a>
+                            </div>
+                            <div className="col-book">
+                                <a href="">
+                                    <img src="assets/Brian/Curious.jpg" alt="Curious"/>
+                                </a>
+                            </div>
+                            <div className="col-arrow">
+                                <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/>
+                            </div>
 
+                        </div>
                     </div>
                     <div className="col-4">
-                        <p>She discovered:</p>
-                        <div className="col-book2">
-                             <a href="">
-                                <img src="assets/Brian/ThinkingFast.jpg" alt="Thinking Fast and Slow"/>
-                            </a>
+                        <p>He discovered:</p>
+                        <div className="flex-book2">
+                            <div className="col-book2">
+                                <a href="">
+                                    <img src="assets/Brian/ThinkingFast.jpg" alt="Thinking Fast and Slow"/>
+                                </a>
+                            </div>
+                            <div className="bookCategories">
+                                <br/>
+                                <p>Decision-making, Sociology, Marketing</p>
+                            </div>
                         </div>
-                        <div>
-                            <p>Decision-making, Sociology, Marketing</p>
-                        </div>
-
+            
                     </div>
-
+                    <div class="row grid1"></div>
                 </div>
 
 

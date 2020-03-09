@@ -14,22 +14,22 @@ const receiveCurrentUser = currentUser => {
     })
 }
 
-//errors will be an array
-const receiveErrors = errors => {
-    // debugger;
-    return({
-        type: RECEIVE_ERRORS,
-        errors
-    });
-};
-
-// const receiveErrors = (errors,key) => {
+// //errors will be an array
+// const receiveErrors = errors => {
+//     // debugger;
 //     return({
 //         type: RECEIVE_ERRORS,
-//         key: key,
 //         errors
-//     }); 
+//     });
 // };
+
+const receiveErrors = (errors,errorType) => {
+    return({
+        type: RECEIVE_ERRORS,
+        errorType: errorType,
+        errors
+    }); 
+};
 
 const logoutCurrentUser = () => {
     return({
@@ -44,12 +44,12 @@ export const clearErrors = () => {
 };
 
 
-export const login = (user) => dispatch => {
+export const login = (user, errorType) => dispatch => {
     // debugger;
     return SessionAPIUtil.login(user) 
     .then((user) => dispatch(receiveCurrentUser(user)),
     // (errors)=> console.log(errors));
-    (errors)=> dispatch(receiveErrors(errors.responseJSON)));
+    (errors)=> dispatch(receiveErrors(errors.responseJSON, errorType)));
     
 };
 
@@ -58,10 +58,9 @@ export const logout = () => dispatch => SessionAPIUtil.logout()
     (errors)=> dispatch(receiveErrors(errors.responseJSON)));
 
 
-export const signup = (user) => dispatch => {
+export const signup = (user, errorType) => dispatch => {
     // debugger;
     SessionAPIUtil.signup(user) 
     .then((user) => dispatch(receiveCurrentUser(user)),
-    (errors)=> dispatch(receiveErrors(errors.responseJSON)));
-}    
-;
+    (errors)=> dispatch(receiveErrors(errors.responseJSON,errorType)));
+};

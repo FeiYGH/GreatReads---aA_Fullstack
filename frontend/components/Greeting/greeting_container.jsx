@@ -6,12 +6,12 @@ import React from 'react';
 
 
 const mSTP = (state, ownProps) => {
-    // debugger;
+    debugger;
     return({
         sessionId: state.sessions.id,
         currentUser: state.entities.users[state.sessions.id],
-        errorsSignUp: state.errors.session_errors,
-        errorsLogIn: state.errors.session_errors
+        errorsSignUp: state.errors.session_errors.loginErrors,
+        errorsLogIn: state.errors.session_errors.signupErrors
 
         // errors:state.errors.session_errors
         
@@ -22,8 +22,8 @@ const mDTP = dispatch => {
     return({
        logout: () => dispatch(logout()), 
     //    processForm: (user) =>dispatch(login(user))
-       login: (user) =>dispatch(login(user)),
-       signup: (user) => dispatch(signup(user)),
+       login: (user) =>dispatch(login(user, "loginErrors")),
+       signup: (user) => dispatch(signup(user, "signupErrors")),
        loginDemo: () => dispatch(login({email: 'user1@gmail.com', password: 'password'})),
        clearErrors: () => dispatch(clearErrors())
     });

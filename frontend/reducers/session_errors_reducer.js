@@ -9,7 +9,9 @@ const SessionErrorsReducer = (state=[], action) => {
             return [];
         case RECEIVE_ERRORS: 
             // debugger;
-            return action.errors;
+            // return action.errors;
+            nextState[action.errorType] = action.errors; 
+            return nextState;
 
         case CLEAR_SESSION_ERRORS:
             return [];

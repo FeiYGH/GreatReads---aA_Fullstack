@@ -105,8 +105,6 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
 
 
 
-
-
   .splashButtons{
     margin-left:60%;  
   }
@@ -135,7 +133,7 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
   // }
   
   img.headerSignUp{
-     border: 3px solid black;
+    //  border: 3px solid black;
     //  position: absolute;
     z-index:2;
     margin-top:20%;
@@ -144,6 +142,7 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
 
 
   div.headerSignUp{
+    // border: 3px solid black;
     display:flex;
     margin-left:40%;
     margin-top: 5%;
@@ -151,7 +150,7 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
     // padding:10px 10px;
     min-width:300px;
     // margin:10px;
-    border: 3px solid black;
+    
     z-index: 2;
   }
 
@@ -161,7 +160,7 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
     z-index:2;
     color:black;
     width:100%;
-    border: 3px solid black;
+    // border: 3px solid black;
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
     line-height:2;
   }
@@ -201,10 +200,9 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
 
   //terms of service paragraph
   #termsOfService{
-    
     color: #382110;
     font-size:11px;
-    border: 1px solid black;
+    // border: 1px solid black;
     line-height:1.1;
     margin-top:0px;
     padding-left:8px;
@@ -220,12 +218,11 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
   }
 
   .errorsDisplay{
+    // border: 3px solid red;
     color: #382110;
     list-style-type:none;
     font-size:13px;
     margin-left:2%;
-    border: 3px solid red;
-    width:auto;
   }
 
   .errorsLoginDisplay{
@@ -234,7 +231,6 @@ input[type=text], input[type=number] input[type=email], input[type=password],inp
     font-size:13px;
     margin-left:2%;
     border: 3px solid red;
-    width:auto;
   }
 
   .errorsSignInDisplay{

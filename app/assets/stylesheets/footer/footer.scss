@@ -1,8 +1,9 @@
 .footer * {
+    // border: 1px black solid;
     box-sizing:border-box;
     position:relative;
     z-index:-1;
-    border: 1px black solid;
+    
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
     
 }
@@ -32,5 +33,127 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-.col-footerLinks{width:20%}
-.col-footerIconLinks{width:40%}
+.col-footerLinks{
+    // border: 1px solid black;
+    width:15%;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    font-size:16px;
+}
+
+.col-footerLinks li{
+    font-size:13px;
+    color: #382110;
+}
+
+.col-footerLinks li:hover{
+    text-decoration: underline;
+}
+
+.col-footerIconLinks{
+    // border:1px solid black;
+    width:40%;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.col-footerStore li{
+    display:inline;
+    list-style:none;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    color: #382110;
+}
+
+.footerStoreLink{
+    width:20%;
+}
+
+
+#iconMenu ul{
+    list-style:none;
+    color: #382110;
+}
+
+#iconMenu li{
+    display: inline;
+    color: #382110;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+footer a:link{
+    color: #382110;
+}
+
+footer a:visited{
+    color: #382110;
+}
+footer a:hover {
+    background-color: lightgreen;
+    color: #382110;
+    text-decoration:underline;
+}
+  
+
+a:active {
+    background-color: hotpink;
+    text-decoration:underline;
+    color: #382110;
+  } 
+
+#footer{
+    margin:0px;
+    margin-top:2%;
+    margin-left:20px;
+    line-height:1.3;
+    box-sizing:border-box;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+#footer h3{
+    color:#767676;
+}
+
+#footer a{
+    text-decoration: none;
+    color: #382110;
+}
+
+.socialMedia a:link{
+    padding:10px 10px 0px 0px;
+}
+
+.footerStoreLinks p{
+    font-size:13px;
+    color: #382110;
+}
+
+#copyright{
+    
+    color:#181818;
+}
+
+
+
+.footerStoreLink{
+    width:10%;
+    // border: 1px solid blue;
+    padding:0px;
+    float:left;
+    background-size:50%;
+    margin-top:1.7%;
+    margin-bottom: .7%;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif; 
+     
+     
+}
+.footerStoreLink img{
+    max-width:100px;
+    max-height:50px;
+}
+
+//Links that 
+.emptySpace{
+    width:3%;
+}
+
+#mobileVs:hover{
+    text-decoration:underline;
+}
