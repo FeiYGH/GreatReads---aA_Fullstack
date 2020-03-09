@@ -52,7 +52,7 @@ class Footer extends React.Component{
                         <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="assets/footerIcons/GooglePlay.png" alt="Apple Store Icon"></img></a>
                     </div>
                     <p></p>
-                    <p id="copyright">© 2020 Goodreads, Inc.</p>
+                    <p id="copyright">2020 greatReads, Inc.</p>
                     <p id="mobileVs"><Link to="/">Mobile version</Link></p>
                 </div>
             </div>
