@@ -97,7 +97,7 @@ class Greeting extends React.Component{
                     </div>*/}
 
                 </nav>
-                <img className="splash" src='assets/masthead_background.jpg'  alt="books background"
+                <img className="splash" src={window.images.mastHead}  alt="books background"
                 width="100%"/>
             </div>
         )
@@ -224,8 +224,8 @@ class Greeting extends React.Component{
                         </form>
                     </nav>
 
-                    <img className="splash" src='assets/masthead_background.jpg'  alt="books background"/>
-                    <img className="headerSignUp" src='assets/headline.png'  alt="headline pic"/>
+                    <img className="splash" src="masthead_background.jpg"  alt="books background"/>
+                    <img className="headerSignUp" src="headline.png"  alt="headline pic"/>
                     width="100%"/>
 
                     {/* <div className="errorsDisplay">{this.renderErrorsLogin()}</div> */}

@@ -1,32 +1,0 @@
-
-var ftGUID_4264199="440072CCBA6278";
-var ftConfID_4264199="19740413";
-var ftParams_4264199="ftx=&fty=&ftadz=&ftscw=ebuy=23570285;esid=4094539;epid=261865748;ecid=125279398;eadv=4053494;eaid=457967361;erid=125318553;eexpid=;eexcid=;erv=1;eiid=CMmq47K-h-gCFUwCrQYdS7gA4A;&ft_custom=4053494__23570285__4094539__125279398&ftOBA=1&ft_ifb=1&ft_domain=www.goodreads.com&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.goodreads.com%2F&ft_keyword=261865748&ft_section=16211777246787856473290756652062934271%7C%7C261865748&cachebuster=395388.0196023085";
-var ftKeyword_4264199="261865748,261865748";
-var ftCustom_4264199="4053494__23570285__4094539__125279398";
-var ftSection_4264199="16211777246787856473290756652062934271||261865748";
-var ftSegment_4264199="xtx,w2c,wlk";
-var ftSegmentList_4264199=[{s:'xtx'},{s:'w2c'},{s:'wlk',t:44240000}];
-var ftRuleMatch_4264199="00011000";
-var ftTimestamp_4264199="1583554057";
-var ftGeoC2_4264199="us";
-var ftGeoState_4264199="ca";
-var ftGeoCity_4264199="san francisco";
-var ftISP_4264199="att services inc.";
-var ftSpeed_4264199="broadband";
-var ftDMA_4264199="807";
-var ftLong_4264199="-122.397";
-var ftLat_4264199="37.798";
-var ftPostal_4264199="94111";
-var ftTimeZone_4264199="-800";
-var ftMobileCarrier_4264199="";
-var ftImp4264199 = {};
-ftImp4264199.privacy = "x";
-ftImp4264199.guidAge = "49";
-ftImp4264199.impID = "2D70B37A-7D43-8192-3631-31D70DE26465";
-ftImp4264199.duid = "FT:440072CCBA6278";
-
-ftImp4264199.ft_tpplid = "";
-ftImp4264199.ft_c = {};
-
-document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/426/4264199/2643842/js/j-4264199-2643842.js" id="ftscript_m4264199" name="ftscript_m4264199"></scr'+'ipt>');
