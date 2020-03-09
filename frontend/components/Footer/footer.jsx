@@ -48,17 +48,22 @@ class Footer extends React.Component{
                 
 
                 <div className="footerStoreLinks">
-                    <div className="emptySpace">    
-                    </div>
-                    <div className="footerStoreLink">
-                        <a href="https://www.facebook.com/https://apps.apple.com/app/apple-store/id355833469/"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
-                    </div>
-                    <div className="footerStoreLink">
-                        <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="GooglePlay.png" alt="Apple Store Icon"></img></a>
-                    </div>
-                    <p></p>
-                    <p id="copyright">2020 greatReads, Inc.</p>
-                    <p id="mobileVs"><Link to="/">Mobile version</Link></p>
+                    {/* <div className="emptySpace">    
+                    </div> */}
+                    {/* <div className="width40"> */}
+                        <div className="footerStoreLink">
+                            <a href="https://www.facebook.com/https://apps.apple.com/app/apple-store/id355833469/"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
+                        </div>
+                        <div className="footerStoreLink">
+                            <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="GooglePlay.png" alt="Apple Store Icon"></img></a>
+                        </div>
+                    {/* </div> */}
+                    
+                    <h2></h2>
+                    {/* <div className="width40"> */}
+                        <p id="copyright">&copy; 2020 greatReads, Inc.</p>
+                        <p id="mobileVs"><Link to="/">Mobile version</Link></p>
+                    {/* </div> */}
                 </div>
             </div>
         )
