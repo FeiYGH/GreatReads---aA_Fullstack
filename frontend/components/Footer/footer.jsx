@@ -33,10 +33,15 @@ class Footer extends React.Component{
                 <div className="col-footerIconLinks socialMedia">
                   <h3>CONNECT</h3>
                     <ul id="iconMenu">
-                        <li><a href="https://www.facebook.com/Goodreads/"><img src="assets/footerIcons/facebook.svg" alt="facebook icon"></img></a></li>
+                        {/* <li><a href="https://www.facebook.com/Goodreads/"><img src="assets/footerIcons/facebook.svg" alt="facebook icon"></img></a></li>
                         <li><a href="https://twitter.com/goodreads"><img src="assets/footerIcons/twitter.svg" alt="twitter icon"></img></a></li>
                         <li><a href="https://www.instagram.com/goodreads/"><img src="assets/footerIcons/instagram.svg" alt="instagram icon"></img></a></li>
-                        <li><a href="https://www.linkedin.com/company/goodreads-com/"><img src="assets/footerIcons/linkedIn.svg" alt="linkedIn icon"></img></a></li>
+                        <li><a href="https://www.linkedin.com/company/goodreads-com/"><img src="assets/footerIcons/linkedIn.svg" alt="linkedIn icon"></img></a></li> */}
+
+                        <li><a href="https://www.facebook.com/Goodreads/"><img src="facebook.svg" alt="facebook icon"></img></a></li>
+                        <li><a href="https://twitter.com/goodreads"><img src="twitter.svg" alt="twitter icon"></img></a></li>
+                        <li><a href="https://www.instagram.com/goodreads/"><img src="instagram.svg" alt="instagram icon"></img></a></li>
+                        <li><a href="https://www.linkedin.com/company/goodreads-com/"><img src="linkedIn.svg" alt="linkedIn icon"></img></a></li>
                         
                     </ul>           
                 </div>
@@ -46,10 +51,10 @@ class Footer extends React.Component{
                     <div className="emptySpace">    
                     </div>
                     <div className="footerStoreLink">
-                        <a href="https://www.facebook.com/https://apps.apple.com/app/apple-store/id355833469/"><img src="assets/footerIcons/appleStore.svg" alt="Apple Store Icon"></img></a>    
+                        <a href="https://www.facebook.com/https://apps.apple.com/app/apple-store/id355833469/"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
                     </div>
                     <div className="footerStoreLink">
-                        <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="assets/footerIcons/GooglePlay.png" alt="Apple Store Icon"></img></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="GooglePlay.png" alt="Apple Store Icon"></img></a>
                     </div>
                     <p></p>
                     <p id="copyright">2020 greatReads, Inc.</p>
