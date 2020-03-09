@@ -43,26 +43,30 @@ class FrontPageSplash extends React.Component{
                         <div className="flex-books">
                             <div className="col-book">
                                 <a href="">
-                                    <img src="assets/Deborah/Memoirs.jpg" alt="Memoirs of a Geisha"/>
+                                    <img src={window.images.memoirs} alt="Memoirs of a Geisha"/>
                                 </a>
                             </div>
                             <div className="col-book">
                                 <a href="">
-                                    <img src="assets/Deborah/Guernsey.jpg" alt="Guernsey"/>
+                                    <img src="Guernsey.jpg" alt="Guernsey"/>
                                 </a>
                             </div>
                             <div className="col-book">
                                 <a href="">
-                                    <img src="assets/Deborah/WaterForElephants.jpg" alt="Water For Elephants"/>
+                                    {/* <img src="assets/Deborah/WaterForElephants.jpg" alt="Water For Elephants"/> */}
+                                    <img src="Deborah/WaterForElephants.jpg" alt="Water For Elephants"/>
                                 </a>
                             </div>
                             <div className="col-book">
                                 <a href="">
-                                    <img src="assets/Deborah/TheHelp.jpg" alt="The Help"/>
+                                    {/* <img src="assets/Deborah/TheHelp.jpg" alt="The Help"/> */}
+                                    <img src="TheHelp.jpg" alt="The Help"/>
                                 </a>
                             </div>
                             <div className="col-arrow">
-                                <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/>
+                                {/* <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/> */}
+                                <img src="discovery_arrow.png" alt="Discovery Arrow"/>
+
                             </div>
                             
                         </div>
