@@ -6,7 +6,7 @@ import React from 'react';
 
 
 const mSTP = (state, ownProps) => {
-    debugger;
+    // debugger;
     return({
         sessionId: state.sessions.id,
         currentUser: state.entities.users[state.sessions.id],

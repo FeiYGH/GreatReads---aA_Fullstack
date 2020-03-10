@@ -224,47 +224,50 @@ class Greeting extends React.Component{
                             {/* {setTimeout(this.props.clearErrors, 5000)} */}
                         </form>
                     </nav>
-
+                </div>
                     {/* <img className="splash" src="masthead_background.jpg"  alt="books background"/> */}
-                    <img className="headerSignUp" src="headline.png"  alt="headline pic"/>
-                    <p></p>
+                    {/* <img className="headerSignUp" src="headline.png"  alt="headline pic"/>
+                    <p></p> */}
                     
 
                     {/* <div className="errorsDisplay">{this.renderErrorsLogin()}</div> */}
+                <div className="rowInlineBlock">
+                    <div className="header30">
+                        <img className="headerSignUp" src="headline.png"  alt="headline pic"/>
 
-                    <div className ="headerSignUp">
-                      
-                            {/* Sign Up Form */}
-                            <form className="formSignUp" onSubmit={this.handleSignUp}>
-                                
-                                <h2 className="headerSignUp">New here? Create a free account!</h2>
-                                
-                                <input type="text" id="nameSignUpForm" size="35" placeholder="Name" value={this.state.username2} onChange={this.updateForm("username2")}/>
-
-                                <input type="text"  size="35" placeholder="Email Address" value={this.state.email2} onChange={this.updateForm("email2")}/>
-
-                                <input type="password" size="35" placeholder="********" value={this.state.password2} onChange={this.updateForm("password2")}/>
-                                <br/>
-                                <div id="signUpButtonAndService">
-                                    <input type="submit" className="signedOutHome newAccountBox" value="Sign Up"/>
-                                    <div id="termsOfService">
-                                    By clicking "Signup" I agree to the greatReads <span className="boldTermsOfS">Terms of Service</span> and confirm that I am at least 13 years old.
-                                    </div>
-                                </div>
-                                
-                                <div className="errorsDisplay">{this.renderErrorsSignUp()}</div>
-                                {/* <div className="errorsSignInDisplay"></div> */}
-                                {/* <script>setTimeout(this.clearPageErrors, 2000)</script> */}
-                                
-                            </form>
                     </div>
-                </div>  
                 
-                
-        
+                    <div className ="headerSignUp">
+
+                        {/* Sign Up Form */}
+                        <form className="formSignUp" onSubmit={this.handleSignUp}>
+                            
+                            <h2 className="headerSignUp">New here? Create a free account!</h2>
+                            
+                            <input type="text" id="nameSignUpForm" size="35" placeholder="Name" value={this.state.username2} onChange={this.updateForm("username2")}/>
+
+                            <input type="text"  size="35" placeholder="Email Address" value={this.state.email2} onChange={this.updateForm("email2")}/>
+
+                            <input type="password" size="35" placeholder="********" value={this.state.password2} onChange={this.updateForm("password2")}/>
+                            <br/>
+                            <div id="signUpButtonAndService">
+                                <input type="submit" className="signedOutHome newAccountBox" value="Sign Up"/>
+                                <div id="termsOfService">
+                                By clicking "Signup" I agree to the greatReads <span className="boldTermsOfS">Terms of Service</span> and confirm that I am at least 13 years old.
+                                </div>
+                            </div>
+                            
+                            <div className="errorsDisplay">{this.renderErrorsSignUp()}</div>
+                            {/* <div className="errorsSignInDisplay"></div> */}
+                            {/* <script>setTimeout(this.clearPageErrors, 2000)</script> */}
+                            
+                        </form>
+                </div>
 
             </div>
-                );
+                    
+        </div>  
+            );
             }else{
             // debugger;
             return(

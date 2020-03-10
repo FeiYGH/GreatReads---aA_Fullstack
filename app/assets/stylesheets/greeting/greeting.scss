@@ -17,6 +17,7 @@
 }
 
 
+
 //all the top part -- with the 
 h1.splash{
   font-size: 40px;  
@@ -116,13 +117,12 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
   background-color:#694c21;
 }
 
-
-
   .splashButtons{
     margin-left:60%;  
   }
   
  #headerDiv{
+  // border:2px solid black;
   background-image: asset-url('masthead_background.jpg');
   position:static;
   height:370px;
@@ -134,13 +134,11 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
   img.splash{
     // background-size:contain;
     position:absolute;
-    // position:static;
     height:370px;
     background-position:center;
     background-repeat:repeat-x;
     
   }
-
 
   // /* for the navigation bar links */
   // .nav a {
@@ -157,37 +155,46 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
   //   color: white;
   // }
   
-  img.headerSignUp{
-    //  border: 3px solid black;
-    //  position: absolute;
-    z-index:2;
-    margin-top:20%;
-    margin-left:30%;
+ 
+//Meet your next fav book and sign up form
+  .rowInlineBlock{
+    // border:3px solid blue;
+    display:inline-block;
+    width:100%;
+    box-sizing: border-box;
   }
 
+  div.header30{
+    width:60%;
+    // border:3px solid red;
+    float:left;
+  }
+
+  img.headerSignUp{
+    // border: 3px solid black;
+    z-index:2;
+    margin-top:10%;
+    margin-left:5%;
+    // width:75%;
+  }  
 
   div.headerSignUp{
-    // border: 3px solid black;
+    // border: 3px solid purple;
     display:flex;
-    margin-left:40%;
-    margin-top: 5%;
-    margin-right:10%;
+    margin-top: 3.5%;
     // padding:10px 10px;
-    min-width:300px;
-    // margin:10px;
-    
+    width:35%;
     z-index: 2;
+    float:left;
   }
 
   h2.headerSignUp{
+    // border: 3px solid black;
     font-size:20px;
-    margin-top: 0%;
     z-index:2;
     color:black;
-    width:100%;
-    // border: 3px solid black;
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
-    line-height:2;
+    line-height: 2;
   }
 
   input{
@@ -238,6 +245,7 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
     line-height:1.1;
     margin-top:0px;
     padding-left:8px;
+    margin-right:17%;
   }
 
   //just bolding the words "Terms of Service"
@@ -282,3 +290,5 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
 
   }
+
+  

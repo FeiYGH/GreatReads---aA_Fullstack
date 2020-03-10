@@ -99,7 +99,7 @@ p.mainSplash{
 }
 
 .grid1{
-    height:10%;
+    height:100%;
     z-index:-100;
     background-color: tan;
     background-image: linear-gradient(rgb(44,42,37),tan);
@@ -109,5 +109,65 @@ p.mainSplash{
     padding:0px;
     margin:0px;
     margin-top:16%;
+    // position:absolute;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:30%;
+    }
+
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:26%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:22%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:15%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:12%;
+    }
+}
+
 
