@@ -42,21 +42,30 @@
 .col-relateds{width:20%}
 
 .brown{
-    height:4%;
+    height:7%;
     background-color: #f4f2e9;
     margin-top:0px;
+    position:absolute;
+    padding:0px;
 }
 
 h2.mainSplash{
     font-size:20px;
     padding-bottom: 15px;
-    padding:10px;
+    padding:10px 20px 10px 20px;
+    margin-top:2%;
+    // border-bottom: 10px solid tan;
 }
 
 p.mainSplash{
-    padding:10px;
+    padding:10px 20px 10px 20px;
     margin-bottom:5%;
 }
+
+// .mainSplashPromptings{
+//     padding-left: 15px;
+//     padding-right: 15px;
+// }
 
 #discoveryBox{
     clear: both;

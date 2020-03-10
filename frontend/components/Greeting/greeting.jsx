@@ -200,7 +200,8 @@ class Greeting extends React.Component{
                 //1ST TIME, LOG IN WORKS
                 //CONTAINER DIV
 
-            <div id="test"> 
+            <div id="headerDiv"> 
+                {/* <div class="testMastHead"></div> */}
                 <div className ="splashHeaderContainer">  
                     <nav className = "topLeftSplash">   
                         <h1 className="splash"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
@@ -216,7 +217,7 @@ class Greeting extends React.Component{
                             <input type="password" placeholder="********" value={this.state.password} onChange={this.updateForm("password")}/>
                             &ensp;&nbsp;
                             <input type="submit" className="gr-button gr-button-dark" value="Sign in"/>
-                            &emsp;
+                            &ensp;&nbsp;
                             <input type ="button" className="gr-button gr-button-dark" value="DEMO USER" onClick={()=>this.props.loginDemo()}></input>
                             {/* <span className="errorsLoginDisplay"></span> */}
                             <span className="errorsDisplay">{this.renderErrorsLogin()}</span>
@@ -224,9 +225,10 @@ class Greeting extends React.Component{
                         </form>
                     </nav>
 
-                    <img className="splash" src="masthead_background.jpg"  alt="books background"/>
+                    {/* <img className="splash" src="masthead_background.jpg"  alt="books background"/> */}
                     <img className="headerSignUp" src="headline.png"  alt="headline pic"/>
-                    width="100%"/>
+                    <p></p>
+                    
 
                     {/* <div className="errorsDisplay">{this.renderErrorsLogin()}</div> */}
 
@@ -266,9 +268,9 @@ class Greeting extends React.Component{
             }else{
             // debugger;
             return(
-                <div>
+                <div class="welcomeNlogout">
                     <h2>Welcome {currentUser.username}</h2>
-                    <button onClick={logout}>Logout</button>
+                    <button class="gr-button-dark gr-button logoutButton" onClick={logout}>Logout</button>
                 </div>
             )
         }

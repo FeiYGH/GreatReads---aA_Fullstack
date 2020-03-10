@@ -52,7 +52,7 @@ class Footer extends React.Component{
                     </div> */}
                     {/* <div className="width40"> */}
                         <div className="footerStoreLink">
-                            <a href="https://www.facebook.com/https://apps.apple.com/app/apple-store/id355833469/"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
+                            <a href="https://apps.apple.com/app/apple-store/id355833469"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
                         </div>
                         <div className="footerStoreLink">
                             <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="GooglePlay.png" alt="Apple Store Icon"></img></a>

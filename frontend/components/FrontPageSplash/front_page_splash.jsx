@@ -9,17 +9,18 @@ class FrontPageSplash extends React.Component{
 
     render(){
         return(
-            <div className="mainSplash">frontPageSplash
+            <div className="mainSplash">
                 <div className ="row">
                     <div className ="brown col-12"></div>
                 </div>
                 <div className="row">
-                    <div className ="brown col-12"></div>
+                    {/* <div className ="brown col-12"></div> */}
                     <div className ="brown col-12"></div>
                     {/* <div className ="brown col-12"></div> */}
 
-                    <div className="col-6">
-                        
+                    <div className="col-6 mainSplashPromptings">
+                        <br/>
+                        <br/>
                         <h2 className="mainSplash">
                             Deciding what to read next?
                         </h2>
@@ -27,8 +28,11 @@ class FrontPageSplash extends React.Component{
                             You're in the right place. Tell us what titles or genres you've enjoyed in the past, and we'll give you surprisingly insightful recommendations.
                         </p>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 mainSplashPromptings">
+                        <br/>
+                        <br/>
                         <h2 className="mainSplash">What are your friends reading?</h2>
+                        
                         <p className="mainSplash">
                             Chances are your friends are discussing their favorite (and least favorite) books on greatReads.
                         </p>
@@ -147,10 +151,6 @@ class FrontPageSplash extends React.Component{
                     </div>
                     <div class="row grid1"></div>
                 </div>
-
-
-                
-               
             </div>
         )
     }

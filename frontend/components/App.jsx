@@ -17,6 +17,7 @@ const App = () => (
             <AuthRoute exact path ="/signup" component={SessionFormContainer} />
             <Route exact path="/" component={FrontPageSplash}/>
             {/* <Route path = "*" component={componentNotFound}/> */}
+            <AuthRoute path ="*" component={FrontPageSplash} />
         </Switch>  
         <Footer/>
     </div>
