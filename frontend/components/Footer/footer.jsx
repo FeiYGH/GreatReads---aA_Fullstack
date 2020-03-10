@@ -47,23 +47,29 @@ class Footer extends React.Component{
                 </div>
                 
 
-                <div className="footerStoreLinks">
+                <div className="col-footerStoreLinks">
                     {/* <div className="emptySpace">    
                     </div> */}
                     {/* <div className="width40"> */}
-                        <div className="footerStoreLink">
-                            <a href="https://apps.apple.com/app/apple-store/id355833469"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
-                        </div>
-                        <div className="footerStoreLink">
-                            <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="GooglePlay.png" alt="Apple Store Icon"></img></a>
-                        </div>
-                    {/* </div> */}
-                    
-                    <h2></h2>
-                    {/* <div className="width40"> */}
-                        <p id="copyright">&copy; 2020 greatReads, Inc.</p>
-                        <p id="mobileVs"><Link to="/">Mobile version</Link></p>
-                    {/* </div> */}
+
+                    <ul>
+                        <li>
+                            {/* <div className="footerStoreLink"> */}
+                                <a className="footerStoreLink" href="https://apps.apple.com/app/apple-store/id355833469"><img src="appleStore.svg" alt="Apple Store Icon"></img></a>    
+                            {/* </div> */}
+                            {/* <div className="footerStoreLink"> */}
+                                <a className="footerStoreLink" href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="GooglePlay.png" alt="Apple Store Icon"></img></a>
+                            {/* </div> */}
+                        </li>
+                        <li>
+                            <span id="copyright">&copy; 2020 greatReads, Inc.</span>
+                        </li>
+                        <li>
+                            <span id="mobileVs"><Link to="/">Mobile version</Link></span>
+                        </li>
+
+                    </ul>
+                       
                 </div>
             </div>
         )

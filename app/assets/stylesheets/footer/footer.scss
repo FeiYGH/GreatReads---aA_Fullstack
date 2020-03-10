@@ -52,8 +52,10 @@
 .col-footerIconLinks{
     // border:1px solid black;
     width:40%;
+    width:30%;
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
+
 
 .col-footerStore li{
     display:inline;
@@ -120,6 +122,10 @@ a:active {
     padding:10px 10px 0px 0px;
 }
 
+.footerStoreLinks{
+    width:40%;
+}
+
 .footerStoreLinks p{
     font-size:13px;
     color: #382110;
@@ -128,6 +134,7 @@ a:active {
 #copyright{
     
     color:#181818;
+    font-size:13px;
     // display:block;
     // clear: both;
 }
@@ -135,14 +142,15 @@ a:active {
 
 
 .footerStoreLink{
-    width:10%;
+    // max-width:10%;
     // border: 1px solid blue;
-    padding:0px;
-    float:left;
-    background-size:50%;
-    margin-top:1.7%;
-    margin-bottom: .7%;
+    // padding:0px;
+    // float:left;
+    // background-size:50%;
+    // margin-top:1.7%;
+    // margin-bottom: .7%;
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif; 
+    
     // display:block;
     // clear:both;
      
@@ -157,6 +165,10 @@ a:active {
     width:3%;
 }
 
+#mobileVs{
+    font-size:13px;
+    color: #382110;
+}
 #mobileVs:hover{
     text-decoration:underline;
 }
