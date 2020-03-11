@@ -1,0 +1,85 @@
+.bookShow * {
+    // border: 1px black solid;
+    box-sizing:border-box;
+    margin:1%;
+    position:relative;
+    z-index:-1;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    // border:1px solid black;
+}
+
+
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"]{
+    float:left;
+    padding:15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.col-book{
+    width:20%;
+}
+.bookCov img{
+    width:100%;
+    font-family: "Merriweather", "Georgia", serif;
+    
+}
+
+.bookDesc{
+    text-align:left;
+    font-family: "Merriweather", "Georgia", serif;
+}
+.bookDesc h1{
+    font-size: 26px;
+    // line-height:1.25;
+    font-family: "Merriweather", "Georgia", serif;
+    font-weight:bold;
+    color: #382110;
+    margin:4px 0px 4px 0px;
+    margin-bottom:8px;
+    
+    //from website
+//     display:block;
+//     margin-block-start: .67em;
+//     margin-block-end:.67em;
+//     margin-inline-start:0px;
+//     margin-inline-end:0px
+}
+
+.bookDesc h2{
+    font-size:19px;
+    line-height:150%;
+    font-family: "Merriweather", "Georgia", serif;
+    color:#181818;
+    margin-bottom:8px;
+}
+.ratingsInfo, .statusDropDown, .rating{
+    font-family: "Merriweather", "Georgia", serif;
+    border:1px solid black;
+    margin:10px;
+}
+
+.bookDesc h3{
+    font-family: "Merriweather", "Georgia", serif;
+    font-size:17px;
+    line-height:21px;
+    color:#181818;
+
+}

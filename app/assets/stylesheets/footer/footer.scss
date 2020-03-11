@@ -3,13 +3,12 @@
     box-sizing:border-box;
     position:relative;
     z-index:-1;
-    
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
     
 }
 
 
-.row::after{
+.row::after{ 
     content: "";
     clear: both;
     display: table;

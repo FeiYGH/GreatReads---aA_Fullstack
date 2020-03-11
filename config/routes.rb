@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create]
     resource :session, only: [:destroy, :create]
+    resources :books, only: [:show, :index]
   end
 
-  
-
+  # resources :books, only: :show
 
   root to: 'static_pages#root'
 end
+

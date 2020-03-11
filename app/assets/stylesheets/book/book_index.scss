@@ -1,0 +1,30 @@
+.booksIndexH1{
+    font-size:40px;
+    font-family: "Merriweather", "Georgia", serif;
+    color: #382110;
+    margin: 2%;
+    
+
+}
+
+.flexBooks{
+    display:flex;
+    flex-wrap:wrap;
+    background-color: #f4f1ea;
+    align-items:flex-end;
+}
+
+.flexBooks div{
+    width:20%;
+    margin:1.5%;
+    padding:10px;
+    
+    line-height:75px;
+    font-size:20px;
+    border:1px solid black;
+}
+
+.bookIndexImg{
+    width:100%;
+}
+   
