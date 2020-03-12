@@ -6,9 +6,9 @@ class Api::BooksController < ApplicationController
     end 
 
     def index
-        # debugger;
+        
         @books = Book.all
-        # debugger;
+      
         render :index
     end 
 

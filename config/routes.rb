@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :books, only: [:show, :index]
   end
 
-  # resources :books, only: :show
+ 
 
   root to: 'static_pages#root'
 end

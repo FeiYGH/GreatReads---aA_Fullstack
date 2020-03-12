@@ -11,14 +11,14 @@ class BookIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchBooks();
-        debugger;
+        // debugger;
     }
 
     render(){
-        debugger;
+        // debugger;
         const {books} = this.props;
         const booksArr = Object.values(books);
-        debugger;
+        // debugger;
 
         const bookItems = booksArr.map(book => {
             return(
