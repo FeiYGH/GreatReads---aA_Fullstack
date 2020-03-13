@@ -133,7 +133,7 @@ class Greeting extends React.Component{
                     </li>
                 )
             );
-            debugger;
+            // debugger;
             return errorsLi;
         }  
     }
