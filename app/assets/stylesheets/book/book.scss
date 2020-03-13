@@ -36,10 +36,51 @@
 .col-book{
     width:20%;
 }
+
+.col-leftOfReviews{
+    width:19%;
+}
+
+.reviewsHeadline{
+    font-size:15px;
+    font-weight:bold;
+    color: #382110;
+    margin-left:5%;
+    margin-right:5%;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    // border: 1px solid black;
+    border-bottom: 1px solid #D6D0C4
+}
+#reviewsWelcomeH2{
+    line-height:1.3;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+#reviewsUsername{
+    font-size:16px;
+    color:#00635D;
+    font-weight:bold;
+    margin:0%;
+    line-height:1;
+
+}
+
+#tellUserReview{
+    font-size:16px;
+    color:#181818;
+    margin:0%;
+    font-weight:bold;
+    margin-bottom:5px;
+    line-height:1;
+
+}
+
+
 .bookCov img{
     width:100%;
     font-family: "Merriweather", "Georgia", serif;
-    
+    box-shadow: 2px 2px 4px #1d1c1c;      
 }
 
 .bookDesc{
@@ -74,6 +115,7 @@
     font-family: "Merriweather", "Georgia", serif;
     border:1px solid black;
     margin:10px;
+    padding:10px;
 }
 
 .bookDesc h3{
@@ -83,3 +125,8 @@
     color:#181818;
 
 }
+
+.reviews{
+    margin-top:0%;
+}
+

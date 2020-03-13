@@ -1,0 +1,30 @@
+.allReviews *{
+    // border:1px solid black;
+}
+
+.reviewItem{
+    font-size:16px;
+    color:#181818;
+    margin:0px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+    // border:1px solid black;
+    padding:3%;
+    background-color: #f4f1ea;
+}
+
+.reviewItemAuthor{
+    color:#00635D;
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight:bold;  
+}
+
+.reviewItemTitle{
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
+    padding-bottom:5px;
+}
+
+.reviewItemContent{
+    font-family: "Merriweather", "Georgia", serif;
+}
+

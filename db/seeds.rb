@@ -9,8 +9,11 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
     User.delete_all;
     Book.delete_all;
+    Review.delete_all;
 
     u1 = User.create(username: "user1", email: "user1@gmail.com", password: "password");
+
+    u2 = User.create(username: "user2", email: "user2@gmail.com", password: "password");
 
     memoirs = Book.create(title: "Memoirs of a Geisha", author: "Arthur Golden", description: "A literary sensation and runaway bestseller, this brilliant debut novel presents with seamless authenticity and exquisite lyricism the true confessions of one of Japan's most celebrated geisha.
 
@@ -36,3 +39,12 @@ require 'open-uri'
 
     guernsey.photo.attach(io: guernsey_photo, filename: 'Guernsey.jpg')
     
+
+    guernseyR1 = Review.create(title: "guernsey review 1", body:"This is review 1 for Guernsey Book. Liked this book! Giving it 4 stars", rating:4, user_id: u1.id, spoiler: false, book_id: guernsey.id);
+
+    guernseyR2 = Review.create(title: "guernsey review 2", body:"This is review 2 for Guernsey Book. Hated this book! Giving it 2 stars", rating:2, user_id: u2.id, spoiler: true, book_id: guernsey.id);
+
+
+    memoirsR1 = Review.create(title: "Memoirs of a Geisha review 1", body:"This is review 1 for Memoirs of a Geisha Book. Liked this book! Giving it 4 stars", rating:4, user_id: u1.id, spoiler: false, book_id: memoirs.id);
+
+    memoirsR2 = Review.create(title: "Memoirs of a Geisha review 2", body:"This is review 2 for Memoirs of a Geisha Book. Hated this book! Giving it 2 stars", rating:2, user_id: u2.id, spoiler: true, book_id: memoirs.id);

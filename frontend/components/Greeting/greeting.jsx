@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'; 
-import configureStore from '../../store/store';
+import {Route, Redirect} from 'react-router-dom';
+import NavBarContainer from '../Navbar/navbar_container';
+
+import NavBarLoggedIn from '../Navbar/navbar_home';
 import {login, signup} from '../../actions/session_actions';
 // import {} from '../../../app/assets/images/masthead_background.jpg';
 import SignUpContainer from '../SessionForm/login_form_container';
@@ -271,9 +274,11 @@ class Greeting extends React.Component{
             }else{
             // debugger;
             return(
-                <div class="welcomeNlogout">
+                <div className="welcomeNlogout">
+                    {/* <NavBarLoggedIn/> */}
                     <h2>Welcome {currentUser.username}</h2>
-                    <button class="gr-button-dark gr-button logoutButton" onClick={logout}>Logout</button>
+                    <button className="gr-button-dark gr-button logoutButton" onClick={logout}>Logout</button>
+                    
                 </div>
             )
         }

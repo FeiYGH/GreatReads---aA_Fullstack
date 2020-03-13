@@ -2,12 +2,15 @@ import {connect} from 'react-redux';
 import frontPageSplash from './front_page_splash';
 
 const mSTP = (state,ownProps) => {
+    return({
+        sessionId: state.sessions.id
+    })
     
 };
 
-const mDTP = dispatch => {
+// const mDTP = dispatch => {
     
-};
+// };
 
 
-export default connect(mSTP,mDTP)(frontPageSplash);
+export default connect(mSTP,null)(frontPageSplash);

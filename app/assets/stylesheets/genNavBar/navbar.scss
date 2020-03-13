@@ -1,0 +1,132 @@
+
+/* for the navigation bar */
+/*flex box */
+.genNavBar {
+    // position:fixed;
+    display: flex;
+    background-color: #F4F1EA;
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
+    padding-right:3%;
+ 
+  }
+  
+  /* for the navigation bar links */
+  .genNavBar a {
+    color: #382110;
+    font-size: 16px;
+    padding: 13px 40px; /*14px padding on top and bottom, 60px in between */
+    text-decoration: none;
+    text-align: center;
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif; 
+  }
+  
+  
+  /* Change color on hover for navigation bar links */
+  .genNavBar a:hover {
+    background-color: #382110;
+    color: #F4F1EA;
+  }
+
+.searchBookInput{
+    margin: 4px 0px 5px 0px;
+}
+
+
+h1.navLogo{
+    padding-top:7px;
+    color: #382110;
+    cursor:pointer;
+    text-align:left; 
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;   
+    margin-right:10px;
+}
+
+.navLogo a:hover {
+    background-color:transparent;
+  }
+
+#great{
+    color: #706b5f;
+    font-weight: lighter;
+    font-size:30px;
+  }
+  
+  #Reads{
+    color: #382110;
+    font-weight:345;
+    font-size:30px;
+  }
+
+// div.navLinks:hover{
+//     background-color: #382110;
+//     color:#F4F1EA;
+//     height:inherit;
+// }
+
+
+// .row::after{
+//     content: "";
+//     clear: both;
+//     display: table;
+// }
+
+// [class*="col-"]{
+//     float:left;
+//     padding:10px 10px;
+// }
+
+
+// .col-1 {width: 8.33%;}
+// .col-2 {width: 16.66%;}
+// .col-3 {width: 25%;}
+// .col-4 {width: 33.33%;}
+// .col-5 {width: 41.66%;}
+// .col-6 {width: 50%;}
+// .col-7 {width: 58.33%;}
+// .col-8 {width: 66.66%;}
+// .col-9 {width: 75%;}
+// .col-10 {width: 83.33%;}
+// .col-11 {width: 91.66%;}
+// .col-12 {width: 100%;}
+
+
+// // .genNavUl ul{
+// //     list-style-type:none;
+// //     margin:0px;
+// //     padding:0px;
+// //     overflow:hidden;
+// //     background-color:#F4F1EA;
+// // }
+
+// // li{
+// //     float: left;
+// // }
+
+// .genNavBar a{
+//     display: block;
+//     color: #382110;
+//     // text-align:center;
+//     // padding: 14px 16px;
+//     // background-color:blue;
+//     text-decoration: none;
+    
+
+// }
+
+
+// .col-1{
+//     height:100%;
+//     // margin:0px;
+// }
+
+// .navLinks{
+//     height:100%;
+// }
+
+// .navLinks:hover{
+//     background-color:#382110;
+//     color:#F4F1EA;
+//     height:100%;
+// }
+
+

@@ -22,10 +22,14 @@ class BookIndex extends React.Component{
 
         const bookItems = booksArr.map(book => {
             return(
-                <div>
+                <div className="bookCovDiv">
                     {/* <h2>{book.title}</h2> */}
                     <Link to={`/books/${book.id}`}>
                         <img className="bookIndexImg" src={book.photoUrl} alt ="book cover photo"/>
+                    </Link>
+                    <p className="spaceBetween"></p>
+                    <Link to={`/books/${book.id}`}>
+                        {book.title}
                     </Link>
                 </div>
             );
@@ -35,7 +39,7 @@ class BookIndex extends React.Component{
             return null;
         }else{
             return(
-                <div>
+                <div className="allTheBooks">
                     <h1 className="booksIndexH1">
                         All Books
                     </h1>

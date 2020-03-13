@@ -19,6 +19,7 @@ class Book < ApplicationRecord
     validates :title, uniqueness: {scope: :author, message: "one author can not have two books with same title"}
 
 
+    has_many :reviews
     has_one_attached :photo
 
 

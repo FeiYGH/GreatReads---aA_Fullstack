@@ -8,14 +8,25 @@ class FrontPageSplash extends React.Component{
     }
 
     render(){
+        let divItem;
+        
+        if(!this.props.sessionId){
+            divItem = (
+                <div className ="brown col-12"></div>
+            )
+        }
+        // debugger;
+
         return(
             <div className="mainSplash">
-                <div className ="row">
+                {/* <div className ="row">
                     <div className ="brown col-12"></div>
-                </div>
+                </div> */}
+
                 <div className="row">
                     {/* <div className ="brown col-12"></div> */}
-                    <div className ="brown col-12"></div>
+                    {/* <div className ="brown col-12"></div> */}
+                    {divItem}
                     {/* <div className ="brown col-12"></div> */}
 
                     <div className="col-6 mainSplashPromptings">
