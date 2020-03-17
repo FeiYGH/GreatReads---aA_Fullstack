@@ -5,8 +5,7 @@
 GreatReads is a clone of GoodReads, where users can view different books and read reviews on the books. 
 When signed up and logged in, users can also review the books and comment on the reviews. It is not finished yet. 
 
-![GreatReads Home Page](greatReads_home.png)
-picture of home page: (https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/Screen%20Shot%202020-03-16%20at%2010.49.00%20PM.png)
+![GreatReads Home Page](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/Screen%20Shot%202020-03-16%20at%2010.49.00%20PM.png)
 
 ### Background info:
 * Ruby version: ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18], this project uses React/Redux for frontend
