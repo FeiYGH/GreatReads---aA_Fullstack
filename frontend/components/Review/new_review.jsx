@@ -9,10 +9,13 @@ class NewReview extends React.Component{
     }
 
     render(){
-        const {bookId} = this.props;
-        
+        const {bookId, book} = this.props;
+
         return(
             <div>
+                <div className="row">
+                    <h2>{book.title}</h2>
+                </div>
                 <div className="row">
                     
                     <div className="col-2 bookCovThumb">

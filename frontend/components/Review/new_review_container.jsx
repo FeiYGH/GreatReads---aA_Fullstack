@@ -4,7 +4,8 @@ import {createReview} from '../../actions/review_actions';
 
 const mSTP = (state,ownProps){
     return({
-        bookId: ownProps.match.params.bookId
+        bookId: ownProps.match.params.bookId,
+        book: state.entities.books[ownProps.match.params.bookId]
     })
 }
 
