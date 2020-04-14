@@ -38,7 +38,7 @@ class Book extends React.Component{
                             <h3>{book.description}</h3>
                             <h3>Number of Pages: {book.num_pages}</h3>
                             <h3>Published {book.pub_date} by {book.publisher}</h3>
-                        </div>  
+                    </div>  
                     </div>
                     <div className="row">
                         <div className="row reviewsHeadline"> 

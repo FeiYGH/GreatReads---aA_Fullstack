@@ -266,7 +266,6 @@ class Greeting extends React.Component{
                             
                         </form>
                 </div>
-
             </div>
                     
         </div>  

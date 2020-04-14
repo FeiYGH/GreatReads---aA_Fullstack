@@ -5,7 +5,8 @@ const mSTP = (state,ownProps) => {
     // debugger;
     return({
         reviews: state.entities.reviews,
-        user: state.entities.users[state.sessions.id]
+        user: state.entities.users[state.sessions.id],
+        user_reviewed:false
     });
 };
 

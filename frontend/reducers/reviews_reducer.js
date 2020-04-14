@@ -8,8 +8,8 @@ const reviewsReducer = (state = {}, action)=> {
             console.log(action.reviews);
             // debugger;
             return action.reviews;
-        case RECEIVE_REVIEW:    
-            
+        case RECEIVE_REVIEW:          
+            debugger;
             return Object.assign({},state,{[action.review.id]:action.review});
         case DELETE_BOOK_REVIEW:
             delete nextState[action.reviewId];

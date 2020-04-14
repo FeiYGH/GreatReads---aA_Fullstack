@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+//I'm currently not using this form, I've been using form inside
+//greeting.jsx
+
 class SessionForm extends React.Component{
     constructor(props){
         super(props);

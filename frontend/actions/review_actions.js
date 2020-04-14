@@ -6,6 +6,7 @@ export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const DELETE_BOOK_REVIEW = 'DELETE_BOOK_REVIEW';
 
 const receiveReview = review => {
+    debugger;
     return({
         type: RECEIVE_REVIEW,
         review

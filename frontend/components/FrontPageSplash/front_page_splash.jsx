@@ -100,7 +100,7 @@ class FrontPageSplash extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div class="row grid1"></div>
+                    <div className="row grid1"></div>
                 </div>
 
                 <div className="row" id="discoveryBox">
@@ -160,7 +160,7 @@ class FrontPageSplash extends React.Component{
                         </div>
             
                     </div>
-                    <div class="row grid1"></div>
+                    <div className="row grid1"></div>
                 </div>
             </div>
         )
