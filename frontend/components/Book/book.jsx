@@ -6,6 +6,9 @@ import ReviewsIndexContainer from '../ReviewIndex/review_index_container';
 class Book extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            user_id: props.sessionId
+        }
         // this.state= this.props.book;
     }
   
@@ -16,6 +19,12 @@ class Book extends React.Component{
 
     render(){
         // debugger;
+        let myActivity;
+        if(this.state.user_id){
+            
+        }
+
+
         const {book} = this.props;
         if(!book){
             return null;
@@ -41,11 +50,21 @@ class Book extends React.Component{
                         </div>  
                     </div>
                     <div className="row">
+                        {/* Logged in user's own reviews */}
+                        <div className="row reviewsHeadline"> 
+                            <h2>PLACEHOLDER FOR MY ACTIVITY</h2>
+
+
+                        </div>
                         <div className="row reviewsHeadline"> 
                             <h2>COMMUNITY REVIEWS</h2> 
                         </div>
+                        
+                        
                         <div className="col-leftOfReviews">
                             
+                        </div>
+                        <div>
                         </div>
                         
                         <div className="col-6 reviews">

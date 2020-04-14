@@ -6,7 +6,8 @@ const mSTP = (state,ownProps) => {
     // debugger;
     return({
         bookId: ownProps.match.params.bookId,
-        book: state.entities.books[ownProps.match.params.bookId]
+        book: state.entities.books[ownProps.match.params.bookId],
+        sessionId: state.sessions.id
         
     });
 };
