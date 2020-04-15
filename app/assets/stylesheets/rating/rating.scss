@@ -1,0 +1,49 @@
+.rateStar{
+    border:1px solid black;
+    float:left;
+    height:25px;
+    padding: 10px 10px;
+    width:120px;
+    
+  }
+  
+  /* for purpose so radio buttons won't show*/
+  .rateStar:not(:checked) > label{
+     float:right;
+     width:1.1em;
+     overflow:hidden;
+     white-space:nowrap;
+     cursor:pointer;
+     color: #aaa;
+  }
+  .rateStar:not(:checked) > label:before{
+    content:'★ ';
+  }
+  
+  .rateStar:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    border: 1px solid black;
+  }
+  
+  .rateStar > input:checked ~ label{
+    color:#FFAD08;
+    
+  }
+  
+  .rateStar:not(:checked) > label:hover,
+  .rateStar:not(:checked) > label:hover ~ label{
+    /* color slightly lighter */
+    color:#FFC908;
+    color:#00635d;
+    
+  }
+  
+  .rateStar > input:checked + label:hover,
+  .rateStar > input:checked + label:hover ~ label,
+  .rateStar > label:hover ~ input:checked ~ label{ 
+      color:#FFC908;
+      color:#00635d;
+  }
+  
+  

@@ -11,13 +11,19 @@ class Api::ReviewsController < ApplicationController
         if params[:book_id]
             @book = Book.find_by(id: params[:book_id])
             @reviews = @book.reviews
-        else
+        elsif params[:user_id]
+            @user = User.find_by(id:params[:user_id])
+            @reviews = @user.reviews
+        else 
             @reviews = Review.all
         end
         # debugger 
         render :index
        
     end 
+
+    
+
 
     def create
         # @review = current_user.reviews.new(review_params)

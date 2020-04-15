@@ -9,11 +9,12 @@ class ReviewIndex extends React.Component{
         this.state ={
             book:props.book,
             bookId: props.bookId,
-            session_user_reviewed: false
+            session_user_reviewed: false,
+            loggedIn: !!props.user,
         }
 
         this.writeReview = this.writeReview.bind(this);
-
+        this.findUserReview = this.findUserReview.bind(this);
     }
 
     writeReview(){
@@ -22,25 +23,32 @@ class ReviewIndex extends React.Component{
         // this.props.history.push('/books')
     }
 
-    componentDidUpdate(prevProps){
-        // debugger;
-        if(prevProps.reviews!==this.props.reviews){
-            const reviewItems1 = Object.values(this.props.reviews);
-            for(let i = 0; i < reviewItems1.length; i++){
-                // debugger;
-                if(this.props.user.id === reviewItems1[i].user_id){
-                    // debugger;
-                    this.setState({session_user_reviewed:true})
-                    break;
-                }
-            }
-        }
-        debugger;
+    // componentDidUpdate(prevProps){
+    //     // debugger;
+    //     if(prevProps.reviews!==this.props.reviews){
+    //         const reviewItems1 = Object.values(this.props.reviews);
+    //         for(let i = 0; i < reviewItems1.length; i++){
+    //             // debugger;
+    //             if(this.props.user.id === reviewItems1[i].user_id){
+    //                 // debugger;
+    //                 this.setState({session_user_reviewed:true})
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     debugger;
+    // }
+
+    findUserReview(){
+        
     }
 
     componentDidMount(){
         debugger;
         this.props.fetchReviews(this.props.bookId);
+        // if(this.state.loggedIn){
+        //     this.findUserReview();
+        // }
         
 
     }
@@ -72,16 +80,18 @@ class ReviewIndex extends React.Component{
             );
         });
 
+        
+
         debugger;
 
         if(!user){
             return(
                 <div className="col-6">
-                <h2>Login to start your review of {this.props.book.title}</h2> 
-                {reviewItems}
+                    <h2>Login to start your review of {this.props.book.title}</h2> 
+                        {reviewItems}
                 
-                
-            </div>
+    
+                </div>
             )    
         }else if(this.state.session_user_reviewed===false){
             return(

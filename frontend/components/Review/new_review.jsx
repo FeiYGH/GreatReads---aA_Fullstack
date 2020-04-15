@@ -30,7 +30,6 @@ class NewReview extends React.Component{
     componentDidMount(){
         debugger;
         this.props.fetchBook(this.props.bookId);
-        
     }
 
     updateSpoiler(){

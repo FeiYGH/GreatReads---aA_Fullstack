@@ -17,6 +17,17 @@ export const fetchReviews = (bookId) => {
     );
 };
 
+export const fetchReviewsUser = (authorId) => {
+    return(
+        $.ajax({
+            method: 'GET',
+            url:`/api/users/${authorId}/reviews`
+        })
+    );
+}
+
+
+
 export const createReview = (bookId, review) => {
     debugger;
     return(
