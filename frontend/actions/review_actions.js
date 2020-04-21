@@ -8,7 +8,7 @@ export const RECEIVE_NEW_REVIEW = 'RECEIVE_NEW_REVIEW';
 export const RECEIVE_BOOK_REVIEWS_USER = 'RECEIVE_BOOK_REVIEWS_USER';
 
 const receiveReview = review => {
-    debugger;
+    // debugger;
     return({
         type: RECEIVE_REVIEW,
         review
@@ -16,7 +16,7 @@ const receiveReview = review => {
 };
 
 const receiveNewReview = review => {
-    debugger;
+    // debugger;
     return({
         type: RECEIVE_NEW_REVIEW,
         review
@@ -74,11 +74,21 @@ export const fetchReviewsUser = (userId) => dispatch => (
     )
 );
 
-export const createReview = (bookId, review) => dispatch => (
-    ReviewAPIUtil.createReview(bookId,review)
+//THIS ONE THE NORMAL ONE
+// export const createReview = (bookId, review) => dispatch => (
+//     ReviewAPIUtil.createReview(bookId,review)
+//     .then(review => dispatch(receiveReview(review)),
+//     (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
+// );
+
+export const createReview = (bookId, review) => dispatch => {
+    // debugger;
+    return(ReviewAPIUtil.createReview(bookId,review)
     .then(review => dispatch(receiveReview(review)),
     (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
 );
+};
+    
 
 // export const createReview = (bookId, review) => dispatch => (
 //     ReviewAPIUtil.createReview(bookId,review)

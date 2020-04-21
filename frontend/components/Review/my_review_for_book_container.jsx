@@ -1,17 +1,16 @@
 import {connect} from 'react-redux';
-import NewReview from './new_review';
+import MyReviewForBook from './my_review_for_book';
 import {createReview, fetchReviewsUser,updateReview} from '../../actions/review_actions';
 import {fetchBook} from '../../actions/book_actions';
 
 
 const mSTP = (state,ownProps)=> {
     return({
-        bookId: ownProps.match.params.bookId,
-        book: state.entities.books[ownProps.match.params.bookId],
         sessionId: state.sessions.id,
         currentUser: state.entities.users[state.sessions.id],
         userReviews: state.entities.userReviews,
-        errors: state.errors.review_errors
+        errors: state.errors.review_errors,
+        loggedIn: !!state.sessions.id
         
     })
 }
@@ -25,4 +24,4 @@ const mDTP = dispatch => {
     });
 };
 
-export default connect(mSTP, mDTP)(NewReview);
+export default connect(mSTP, mDTP)(MyReviewForBook);

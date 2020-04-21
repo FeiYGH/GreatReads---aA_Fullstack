@@ -3,8 +3,6 @@
 # Table name: reviews
 #
 #  id         :bigint           not null, primary key
-#  title      :string           not null
-#  body       :string           default(""), not null
 #  rating     :integer          not null
 #  user_id    :integer          not null
 #  spoiler    :boolean
@@ -14,7 +12,9 @@
 #
 class Review < ApplicationRecord
     validates :rating, inclusion: {in:(0..5)}
-    validates :title, :body, :rating, :user_id, :book_id, presence: true
+    validates :rating, :user_id, :book_id, presence: true
+    
+    # validates :title, :body, :rating, :user_id, :book_id, presence: true
 
     belongs_to :book
     

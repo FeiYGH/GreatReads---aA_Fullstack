@@ -1,4 +1,4 @@
-import {RECEIVE_BOOK_REVIEWS_USER} from '../actions/review_actions';
+import {RECEIVE_BOOK_REVIEWS_USER, RECEIVE_REVIEW} from '../actions/review_actions';
 
 const userReviewsReducer = (state = {}, action)=> {
     Object.freeze({},state);
@@ -8,6 +8,11 @@ const userReviewsReducer = (state = {}, action)=> {
             console.log(action.reviews);
             // debugger;
             return action.reviews;
+        case RECEIVE_REVIEW:
+          
+            return Object.assign({},state,{[action.review.id]:action.review});
+
+            // return state;
         default:
             return state;
     }

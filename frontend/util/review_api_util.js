@@ -29,7 +29,7 @@ export const fetchReviewsUser = (authorId) => {
 
 
 export const createReview = (bookId, review) => {
-    debugger;
+    // debugger;
     return(
         $.ajax({
         method: 'POST',
@@ -38,7 +38,6 @@ export const createReview = (bookId, review) => {
         })
     );
 };
-
 
 
 

@@ -10,7 +10,8 @@ const mSTP = (state,ownProps) => {
         bookId: ownProps.match.params.bookId,
         book: state.entities.books[ownProps.match.params.bookId],
         userReviews: state.entities.userReviews,
-        sessionId:state.sessions.id
+        sessionId:state.sessions.id,
+        reviews:state.entities.reviews
     });
 };
 
