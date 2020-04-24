@@ -87,6 +87,20 @@ class Book extends React.Component{
         const {book} = this.props;
 
         let myReview = this.pullUserReview();
+        let editOrWrite;
+        if(!this.state.sessionId){
+            editOrWrite=(
+                <Link to={'/'}>Log in or Sign up</Link>
+            )
+        }else if(myReview && (myReview.title===null || myReview.title==="") && (myReview.body ===null || myReview.body==="")){
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/edit`}>Write a Review</Link>)
+        }else if(!myReview){
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>)
+        }else{
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Edit Review</Link>)
+
+        }
+       
 
         //TESTING TAKING THIS OUT
         // let testReview = Object.values(this.props.reviews);
@@ -105,11 +119,14 @@ class Book extends React.Component{
             return(
                 <div className="bookShow">
                     <div className="row">
-                        <div className="bookCov col-book">
+                        {/* col-book is width 20% */}
+                        <div className="bookCov col-book"> 
                             <img src={this.props.book.photoUrl} alt="Memoirs of a Geisha"></img>
                             <div className="statusDropDown">Status Dropdown Coming</div>
-                            <div className="rating">
-                                {myReview===undefined ? "Rate this book" : "My rating:"}
+                         
+                            {/* RATING RIGHT UNDERNEATH BOOK     */}
+                            <span className="ratingText">{myReview===undefined ? "Rate this book" : "My rating:"}</span>
+                            <div className="col-side"></div>
                                 <RatingContainer 
                                     myReview={myReview===undefined ? {rating:0} : myReview}
                                     // myReview={myReview} 
@@ -117,17 +134,19 @@ class Book extends React.Component{
                                     // loggedIn={!!this.state.sessionId} 
                                     handleRatingUpdate ={this.handleRatingUpdate} 
                                 />
-                            </div>
+                            <div className="col-side"></div>
 
                         </div>
         
-                        <div className="bookDesc col-6">
+                        <div className="bookDesc col-7">
                             <h1>{book.title}</h1>
                             <h2>by {book.author}</h2>
-                            <div className="ratingsInfo">Ratings Info Coming</div>
-                            <ReviewStatsContainer
-                                bookId={this.props.bookId}
-                            />
+                            <div className="ratingsInfo">
+                                <ReviewStatsContainer
+                                    bookId={this.props.bookId}
+                                />
+                            </div>
+                            
                             <h3>{book.description}</h3>
                             <h3>Number of Pages: {book.num_pages}</h3>
                             <h3>Published {book.pub_date} by {book.publisher}</h3>
@@ -135,10 +154,12 @@ class Book extends React.Component{
                     </div>
                     <div className="row">
                         <div>
-                            <h2 className="row reviewsHeadline">MY ACTIVITY</h2>
+                            <h2 className="row reviewsHeadline myActHeadline">&emsp;MY ACTIVITY
+                                <span id="myActEditOrWrite">{editOrWrite}</span>
+                            </h2>
 
                             <MyReviewForBookContainer
-                                // myReview={myReview}
+                                book={this.props.book}
                                 // myReview={myReview===undefined ? {rating:0} : myReview} 
                                 bookId={this.props.bookId}
                                 // loggedIn={!!this.state.sessionId}
@@ -147,7 +168,7 @@ class Book extends React.Component{
                             />
 
                         </div>
-                        <div className="row reviewsHeadline"> 
+                        <div className="row reviewsHeadline myCommunity "> 
                             <h2>COMMUNITY REVIEWS</h2> 
                         </div>
                         <div className="col-leftOfReviews">

@@ -116,9 +116,9 @@ class Rating extends React.Component{
   
         // debugger;
         return(
-            <div className="rating">
+            <div className="ratingOuterDiv">
                 {/* {this.toggleStars()} */}
-                <form>
+                <form className="rateForm">
                     <div className="rateStar" id="rateStarz">
                         <input type="radio" checked={this.state.star===5 ? true : false} className="star5" name="rateStar" value="5" onClick={()=>this.updateRating(5)}/>
                             <label for="star5" onClick={()=>this.updateRating(5)} title="text">5</label>

@@ -43,63 +43,214 @@ class MyReviewForBook extends React.Component{
 
     render(){
         // debugger;
-        const {loggedIn} = this.props;
+        const {loggedIn, book} = this.props;
         let myReview = this.pullUserReview();
 
         // debugger;
         if(!loggedIn){
             return(
-                <div>
-                    <h2>Please login to see your activity</h2> 
+                <div className="myRevForBookOuterDiv"> 
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review of</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3 id="myRevBookTitle">{book.title}</h3>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Rating</h3>
+                        </div>  
+                        <div className="col-myRevCont ">
+                            <div className="smallHeight"></div>
+
+                            <Link to={'/'} className="writeReviewButton">Log in or Sign up</Link>
+                            
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <div className="smallHeight"></div>
+
+                            <Link to={'/'} className="writeReviewButton">Log in or Sign up</Link>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
                 </div>
             )
+            // return(
+            //     <div>
+            //         <h2>Please login to see your activity</h2> 
+            //     </div>
+            // )
         }else if(!myReview){
             return(
-                <div>
-                    <h2>You have not written a review for this book. </h2>
-                    <Link to={`/books/${this.props.bookId}/review/new`}>Write Review</Link>
+                <div className="myRevForBookOuterDiv"> 
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review of</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3 id="myRevBookTitle">{book.title}</h3>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
 
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Rating</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <RatingContainer 
+                                // myReview={myReview}
+                                myReview={myReview===undefined ? {rating:0} : myReview}
+
+                                bookId={this.props.bookId}
+                                // loggedIn={this.props.loggedIn} 
+                                // updateReview={this.props.updateReview}
+                                handleRatingUpdate ={this.props.handleRatingUpdate}   
+                            />
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3></h3>
+                            <Link to={`/books/${this.props.bookId}/review/new`} className="writeReviewButton">Write a Review</Link>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
                 </div>
             )
+            // return(
+            //     <div>
+            //         <h2>You have not written a review for this book. </h2>
+            //         <Link to={`/books/${this.props.bookId}/review/new`}>Write Review</Link>
+
+            //     </div>
+            // )
         }else if(myReview && (myReview.title===null || myReview.title==="") && (myReview.body ===null || myReview.body==="")){
             return(
-                <div>
-                    <RatingContainer 
-                        // myReview={myReview}
-                        myReview={myReview===undefined ? {rating:0} : myReview}
-                        handleRatingUpMyReview={this.handleRatingUpdateMyReview}
-                        bookId={this.props.bookId}
-                        // loggedIn={this.props.loggedIn} 
-                        // updateReview={this.props.updateReview}
-                        handleRatingUpdate ={this.props.handleRatingUpdate}   
-                    />
-                    THANK YOU FOR Rating
-                    PLEASE REVIEW
-                    <Link to={`/books/${this.props.bookId}/review/new`}>Write Review</Link>
+                <div className="myRevForBookOuterDiv"> 
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review of</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3 id="myRevBookTitle">{book.title}</h3>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Rating</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <RatingContainer 
+                                // myReview={myReview}
+                                myReview={myReview===undefined ? {rating:0} : myReview}
+
+                                bookId={this.props.bookId}
+                                // loggedIn={this.props.loggedIn} 
+                                // updateReview={this.props.updateReview}
+                                handleRatingUpdate ={this.props.handleRatingUpdate}   
+                            />
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <div className="smallHeight"></div>
+                            <Link to={`/books/${this.props.bookId}/review/new`} className="writeReviewButton">Write a Review</Link>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
                 </div>
             )
+            // return(
+            //     <div className="myRevForBookOuterDiv">
+            //         <RatingContainer 
+            //             // myReview={myReview}
+            //             myReview={myReview===undefined ? {rating:0} : myReview}
+            //             handleRatingUpMyReview={this.handleRatingUpdateMyReview}
+            //             bookId={this.props.bookId}
+            //             // loggedIn={this.props.loggedIn} 
+            //             // updateReview={this.props.updateReview}
+            //             handleRatingUpdate ={this.props.handleRatingUpdate}   
+            //         />
+            //         THANK YOU FOR Rating
+            //         PLEASE REVIEW
+            //         <Link to={`/books/${this.props.bookId}/review/new`}>Write Review</Link>
+            //     </div>
+            // )
         }else if(myReview){
             console.log("INSIDE MY ACCOUNT INFO")
             return(
-                <div>   
-                    <h2>{myReview.title}</h2>
-                  
-                    <RatingContainer 
-                        // myReview={myReview}
-                        myReview={myReview===undefined ? {rating:0} : myReview}
+                <div className="myRevForBookOuterDiv"> 
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review of</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3 id="myRevBookTitle">{book.title}</h3>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
 
-                        bookId={this.props.bookId}
-                        // loggedIn={this.props.loggedIn} 
-                        // updateReview={this.props.updateReview}
-                        handleRatingUpdate ={this.props.handleRatingUpdate}   
-                    />
-                    <h2>{myReview.body}</h2>
-                    <Link to={`/books/${this.props.bookId}/review/edit`}>Edit Review</Link>
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Rating</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <RatingContainer 
+                                // myReview={myReview}
+                                myReview={myReview===undefined ? {rating:0} : myReview}
+
+                                bookId={this.props.bookId}
+                                // loggedIn={this.props.loggedIn} 
+                                // updateReview={this.props.updateReview}
+                                handleRatingUpdate ={this.props.handleRatingUpdate}   
+                            />
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review Title</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3 className="reviewMerry">{myReview.title}</h3>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
+                    <div className="row myActRow">
+                        <div className="col-myRevLabels">
+                            <h3>Review Content</h3>
+                        </div>  
+                        <div className="col-myRevCont">
+                            <h3 className="reviewMerry">{myReview.body}</h3>
+                        </div>
+                        <div className="col-myRevRight"></div>
+                    </div>
                 </div>
             )
         }else{
             return(
-                <div>
+                <div className="myRevForBookOuterDiv">
                     <h2>You have not written a review for this book. </h2>
                 </div>
             )

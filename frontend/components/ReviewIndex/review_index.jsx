@@ -45,8 +45,8 @@ class ReviewIndex extends React.Component{
     componentDidMount(){
         // debugger;
         this.props.fetchReviews(this.props.bookId);
-        if(this.props.user.id){
-            this.props.fetchReviewsUser(this.props.user.id) 
+        if(this.props.user){
+            this.props.fetchReviewsUser(this.props.user.id); 
         }
         // if(this.state.loggedIn){
         //     this.findUserReview();
@@ -55,7 +55,8 @@ class ReviewIndex extends React.Component{
 
     pullUserReview(){
         let myReview;
-        if(this.props.user.id){
+        
+        if(this.props.user){
             myReview = Object.values(this.props.userReviews).find(review=>
                 (review.book_id === parseInt(this.props.bookId,10) && review.user_id === this.props.user.id))
 

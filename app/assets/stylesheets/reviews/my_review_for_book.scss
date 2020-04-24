@@ -1,0 +1,128 @@
+//ON BOOK SHOW PAGE, THIS IS FOR THE MY REVIEW FOR 
+//BOOK SECTION
+//RATINGS CSS is still in ratings.scss
+
+
+.myRevForBookOuterDiv{
+    margin-left:5%;
+    margin-right:5%;
+    box-sizing:border-box;
+    padding-top:3px;
+    margin-top:0px;
+}
+
+.myActRow{
+    min-height: 26px;
+}
+
+.col-myRevLabels{
+    width:20%;
+    margin:0%;
+    padding:0px;
+    font-size:16px;
+    font-family: Lato "Helvetica Neue", Helvetica, sans-serif;
+   
+    vertical-align:top;
+    color:#181818
+
+}
+
+h3#myRevBookTitle{
+    margin:1.79px;
+}
+
+.col-myRevCont{
+    width:50%;
+    margin:0%;
+    padding:0px;
+    font-size:16px;
+    font-family: Lato "Helvetica Neue", Helvetica, sans-serif;
+    vertical-align:top;
+    color:#181818;
+    // margin-bottom:10px;
+}
+
+.col-myRevCont > h3{
+    margin:1.79px;
+    font-size:16px;
+
+}
+
+.reviewMerry{
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+.smallHeight{
+    height:2px;
+}
+
+#myRevBookTitle{
+    font-size:16px;
+    font-family: Lato "Helvetica Neue", Helvetica, sans-serif;
+    vertical-align:top;
+    color:#00635D
+}
+
+
+.col-myRevRight{
+    width:30%;
+    margin:0%;
+    padding:0px;
+}
+
+#myActEditOrWrite{
+    font: 12px Lato, "Helvetica Neue", Helvetica, sans-serif;
+    float:right;
+    color:#767676;
+    font-weight:normal;
+    width:120px;
+    width:100px;
+    margin:0px;
+
+}
+
+#myActEditOrWrite a{
+    background-color:white;
+    font: 13px Lato, "Helvetica Neue", Helvetica, sans-serif;
+    color:#767676;
+    text-decoration:none;
+
+}
+
+#myActEditOrWrite a:hover{
+    text-decoration: underline;
+}
+
+
+//WRITE REVIEW BUTTON
+
+.writeReviewButton{
+    border-radius:4px;
+    font-size:14px;
+    border: 1px solid #D6D0C4;
+    line-height:1;
+    padding: 8px 12px;
+    background-color:#F4F1EA;
+    
+    margin:1.79px;
+    font-family: Lato "Helvetica Neue", Helvetica, sans-serif;
+    margin-top:8px;
+    color:#333333;
+    text-decoration:none;
+}
+
+a.writeReviewButton:active{
+    background-color: #D6D0C4;
+    color:#333333;
+
+}
+a.writeReviewButton:focus{
+    outline:none;
+    background-color: #D6D0C4;
+}
+
+a.writeReviewButton:hover{
+    color:#333333;
+    background-color:#ede6d6;
+    text-decoration:none;
+}

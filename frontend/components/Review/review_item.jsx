@@ -39,36 +39,36 @@ class ReviewItem extends React.Component{
         switch(review.rating){
             case 1:
                 reviewRatingPic = (
-                    <div>
-                        <span className="yellow">★</span><span className="grey">★ ★ ★ ★</span>
+                    <div className="staticStarsPic">
+                        <span className="yellow">★</span><span className="grey">★★★★</span>
                     </div>
                 )
                 break;
             case 2: 
                 reviewRatingPic = (
-                    <div>
-                        <span className="yellow">★ ★</span><span className="grey">★ ★ ★</span>
+                    <div className="staticStarsPic">
+                        <span className="yellow">★★</span><span className="grey">★★★</span>
                     </div>
                 )
                 break;
             case 3: 
                 reviewRatingPic = (
-                    <div>
-                        <span className="yellow">★ ★ ★</span><span className="grey">★ ★ </span>
+                    <div className="staticStarsPic">
+                        <span className="yellow">★★★</span><span className="grey">★★</span>
                     </div>
                 )
                 break;
             case 4:
                 reviewRatingPic = (
-                    <div>
-                        <span className="yellow">★ ★ ★ ★</span><span className="grey">★ </span>
+                    <div className="staticStarsPic">
+                        <span className="yellow">★★★★</span><span className="grey">★</span>
                     </div>
                 )
                 break;
             case 5:
                 reviewRatingPic = (
-                    <div>
-                        <span className="yellow">★ ★ ★ ★ ★ </span>
+                    <div className="staticStarsPic">
+                        <span className="yellow">★★★★★</span>
                     </div>
                 )
             break;
@@ -88,7 +88,7 @@ class ReviewItem extends React.Component{
                     </div>
                 )   
             }else{
-                debugger;
+                // debugger;
                 return(
                     <div>
                         <p>This review was hidden because it contains spoilers. To close it, <button onClick={this.closeReview}>click here</button></p>
@@ -105,7 +105,7 @@ class ReviewItem extends React.Component{
                 )
             }    
         }else{
-            debugger;
+            // debugger;
             return(
                 <div>
                    
