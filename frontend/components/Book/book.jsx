@@ -10,6 +10,9 @@ import ReviewStatsContainer from '../ReviewIndex/review_stats_container';
 class Book extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            user_id: props.sessionId
+        }
         // this.state= this.props.book;
         this.state={
             userReviews: props.userReviews,
@@ -93,11 +96,11 @@ class Book extends React.Component{
                 <Link to={'/'}>Log in or Sign up</Link>
             )
         }else if(myReview && (myReview.title===null || myReview.title==="") && (myReview.body ===null || myReview.body==="")){
-            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/edit`}>Write a Review</Link>)
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>)
         }else if(!myReview){
             editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>)
         }else{
-            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Edit Review</Link>)
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/edit`}>Edit Review</Link>)
 
         }
        
@@ -183,6 +186,8 @@ class Book extends React.Component{
                        
 
                         <div className="col-leftOfReviews">    
+                        </div>
+                        <div>
                         </div>
                         
                         <div className="col-6 reviews" id="col6Reviews">
