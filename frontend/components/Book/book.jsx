@@ -96,11 +96,11 @@ class Book extends React.Component{
                 <Link to={'/'}>Log in or Sign up</Link>
             )
         }else if(myReview && (myReview.title===null || myReview.title==="") && (myReview.body ===null || myReview.body==="")){
-            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/edit`}>Write a Review</Link>)
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>)
         }else if(!myReview){
             editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>)
         }else{
-            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/new`}>Edit Review</Link>)
+            editOrWrite=(<Link to={`/books/${this.props.bookId}/review/edit`}>Edit Review</Link>)
 
         }
        
@@ -156,7 +156,6 @@ class Book extends React.Component{
                     </div>  
                     </div>
                     <div className="row">
-<<<<<<< HEAD
                         <div>
                             <h2 className="row reviewsHeadline myActHeadline">&emsp;MY ACTIVITY
                                 <span id="myActEditOrWrite">{editOrWrite}</span>
@@ -187,21 +186,6 @@ class Book extends React.Component{
                        
 
                         <div className="col-leftOfReviews">    
-=======
-                        {/* Logged in user's own reviews */}
-                        <div className="row reviewsHeadline"> 
-                            <h2>PLACEHOLDER FOR MY ACTIVITY</h2>
-
-
-                        </div>
-                        <div className="row reviewsHeadline"> 
-                            <h2>COMMUNITY REVIEWS</h2> 
-                        </div>
-                        
-                        
-                        <div className="col-leftOfReviews">
-                            
->>>>>>> master
                         </div>
                         <div>
                         </div>
