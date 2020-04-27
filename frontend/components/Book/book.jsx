@@ -10,6 +10,9 @@ import ReviewStatsContainer from '../ReviewIndex/review_stats_container';
 class Book extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            user_id: props.sessionId
+        }
         // this.state= this.props.book;
         this.state={
             userReviews: props.userReviews,
@@ -153,6 +156,7 @@ class Book extends React.Component{
                     </div>  
                     </div>
                     <div className="row">
+<<<<<<< HEAD
                         <div>
                             <h2 className="row reviewsHeadline myActHeadline">&emsp;MY ACTIVITY
                                 <span id="myActEditOrWrite">{editOrWrite}</span>
@@ -183,6 +187,23 @@ class Book extends React.Component{
                        
 
                         <div className="col-leftOfReviews">    
+=======
+                        {/* Logged in user's own reviews */}
+                        <div className="row reviewsHeadline"> 
+                            <h2>PLACEHOLDER FOR MY ACTIVITY</h2>
+
+
+                        </div>
+                        <div className="row reviewsHeadline"> 
+                            <h2>COMMUNITY REVIEWS</h2> 
+                        </div>
+                        
+                        
+                        <div className="col-leftOfReviews">
+                            
+>>>>>>> master
+                        </div>
+                        <div>
                         </div>
                         
                         <div className="col-6 reviews" id="col6Reviews">
