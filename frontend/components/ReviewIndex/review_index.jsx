@@ -89,58 +89,172 @@ class ReviewIndex extends React.Component{
 
         if(!user){
             return(
-                <div className="col-6">
-                    <h2>Login to start your review of {this.props.book.title}</h2> 
-                        {reviewItems}
+                <div className="col-12 allReviews" id="col12Reviews">
+                    <div className="row">
+                        <div className="col-profilePic" id="defaultProfilePic">
+                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                        </div>
+                        <div className="col-profileMsg" id="RevIndexMsg">
+                            <div className="row">
+                                <h2><Link id="loginLink" to='/'>Log in</Link>to start your review of {this.props.book.title}</h2> 
+                            </div>
+                            <div className="row">
+                                <RatingContainer 
+                                    myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
+                                    bookId={this.props.bookId}
+                                    // loggedIn={this.props.loggedIn} 
+                                    // updateReview={this.props.updateReview}
+                                    handleRatingUpdate ={this.props.handleRatingUpdate}   
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {reviewItems}
                 </div>
             )    
         }else if(myReview && (myReview.title===null || myReview.title==="") && (myReview.body ===null || myReview.body==="")){
             return(
-                <div className="col-12 allReviews">
-                    <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> start your review of {this.props.book.title}</span></h2> 
-                    {/* <h2> Ratings Div Placeholder &emsp;  &emsp;  &emsp; &emsp; &emsp;  <button onClick={()=>this.writeReview()}>Write a Review</button></h2> */}
-                    <RatingContainer 
-                        // myReview={myReview}
-                        
-                        myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
-
-                        bookId={this.props.bookId}
-                        // loggedIn={this.props.loggedIn} 
-                        // updateReview={this.props.updateReview}
-                        handleRatingUpdate ={this.props.handleRatingUpdate}   
-                    />
-                    <Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>
-                    {reviewItems}           
+                <div className="col-12 allReviews" id="col12Reviews">
+                    <div className="row">
+                        <div className="col-profilePic" id="defaultProfilePic">
+                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                        </div>
+                        <div className="col-profileMsg" id="RevIndexMsg">
+                            <div className="row">
+                                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> start your review of {this.props.book.title}</span></h2> 
+                            </div>
+                            <div className="row">
+                                <div className="col-myRatinRevIndex">
+                                    <RatingContainer 
+                                        myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
+                                        bookId={this.props.bookId}
+                                        // loggedIn={this.props.loggedIn} 
+                                        // updateReview={this.props.updateReview}
+                                        handleRatingUpdate ={this.props.handleRatingUpdate}   
+                                    />
+                                </div>
+                                <div className="col-writeRevButRevIndex">
+                                    <div className="smallHeight"></div>
+                                    <Link className="writeReviewButton" to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {reviewItems}
                 </div>
-            )
+            ) 
+            
+            // return(
+            //     <div className="col-12 allReviews" id="col12Reviews">
+            //         <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> start your review of {this.props.book.title}</span></h2> 
+            //         {/* <h2> Ratings Div Placeholder &emsp;  &emsp;  &emsp; &emsp; &emsp;  <button onClick={()=>this.writeReview()}>Write a Review</button></h2> */}
+            //         <RatingContainer 
+            //             myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
+            //             bookId={this.props.bookId}
+            //             // loggedIn={this.props.loggedIn} 
+            //             // updateReview={this.props.updateReview}
+            //             handleRatingUpdate ={this.props.handleRatingUpdate}   
+            //         />
+            //         <Link to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>
+            //         {reviewItems}           
+            //     </div>
+            // )
         }else if(!myReview){
             return(
-                <div className="col-12 allReviews">
-                    <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> start your review of {this.props.book.title}</span></h2> 
-                    {/* <h2> Ratings Div Placeholder &emsp;  &emsp;  &emsp; &emsp; &emsp;  <button onClick={()=>this.writeReview()}>Write a Review</button></h2> */}
-                    <RatingContainer 
-                        // myReview={myReview}
-                        
-                        myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
-
-                        bookId={this.props.bookId}
-                        // loggedIn={this.props.loggedIn} 
-                        // updateReview={this.props.updateReview}
-                        handleRatingUpdate ={this.props.handleRatingUpdate}   
-                    />
-                    <Link to={`/books/${this.props.bookId}/review/new`}>Write Review</Link>
-                    {reviewItems}           
+                <div className="col-12 allReviews" id="col12Reviews">
+                    <div className="row">
+                        <div className="col-profilePic" id="defaultProfilePic">
+                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                        </div>
+                        <div className="col-profileMsg" id="RevIndexMsg">
+                            <div className="row">
+                                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> start your review of {this.props.book.title}</span></h2> 
+                            </div>
+                            <div className="row">
+                                <div className="col-myRatinRevIndex">
+                                    <RatingContainer 
+                                        myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
+                                        bookId={this.props.bookId}
+                                        // loggedIn={this.props.loggedIn} 
+                                        // updateReview={this.props.updateReview}
+                                        handleRatingUpdate ={this.props.handleRatingUpdate}   
+                                    />
+                                </div>
+                                <div className="col-writeRevButRevIndex">
+                                    <div className="smallHeight"></div>
+                                    <Link className="writeReviewButton" to={`/books/${this.props.bookId}/review/new`}>Write a Review</Link>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {reviewItems}
                 </div>
-            )                
+            ) 
+            // return(
+            //     <div className="col-12 allReviews" id="col12Reviews">
+            //         <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> start your review of {this.props.book.title}</span></h2> 
+            //         {/* <h2> Ratings Div Placeholder &emsp;  &emsp;  &emsp; &emsp; &emsp;  <button onClick={()=>this.writeReview()}>Write a Review</button></h2> */}
+            //         <RatingContainer 
+            //             // myReview={myReview}
+                        
+            //             myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
+
+            //             bookId={this.props.bookId}
+            //             // loggedIn={this.props.loggedIn} 
+            //             // updateReview={this.props.updateReview}
+            //             handleRatingUpdate ={this.props.handleRatingUpdate}   
+            //         />
+            //         <Link to={`/books/${this.props.bookId}/review/new`}>Write Review</Link>
+            //         {reviewItems}           
+            //     </div>
+            //)                
         }else{
             return(
-                <div className="col-12 allReviews">
-                    <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> thank you for your review on {this.props.book.title}!</span></h2> 
-                    {/* <h2> Ratings Div Placeholder &emsp;  &emsp;  &emsp; &emsp; &emsp;  <button onClick={()=>this.writeReview()}>Write a Review</button></h2> */}
-
-                    {reviewItems}           
+                <div className="col-12 allReviews" id="col12Reviews">
+                    <div className="row" id="addTopPadding">
+                        <div className="col-profilePic" id="defaultProfilePic">
+                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                        </div>
+                        <div className="col-profileMsg" id="RevIndexMsg">
+                            <div className="row">
+                                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> thank you for your review on {this.props.book.title}!</span></h2> 
+                            </div>
+                            <div className="row">
+                                <div className="col-myRatinRevIndex">
+                                    <RatingContainer 
+                                        myReview={this.props.myReview===undefined ? {rating:0} : this.props.myReview}
+                                        bookId={this.props.bookId}
+                                        // loggedIn={this.props.loggedIn} 
+                                        // updateReview={this.props.updateReview}
+                                        handleRatingUpdate ={this.props.handleRatingUpdate}   
+                                    />
+                                </div>
+                                <div className="col-writeRevButRevIndex">
+                                    <div className="smallHeight"></div>
+                                    <Link className="writeReviewButton" to={`/books/${this.props.bookId}/review/edit`}>Edit Review</Link>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {reviewItems}
                 </div>
             )
+            
+            // return(
+            //     <div className="col-12 allReviews" id="col12Reviews">
+            //         <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{user.username},</span><span id="tellUserReview"> thank you for your review on {this.props.book.title}!</span></h2> 
+            //         {/* <h2> Ratings Div Placeholder &emsp;  &emsp;  &emsp; &emsp; &emsp;  <button onClick={()=>this.writeReview()}>Write a Review</button></h2> */}
+
+            //         {reviewItems}           
+            //     </div>
+            // )
         }
     }
 }

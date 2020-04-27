@@ -249,7 +249,7 @@ class Greeting extends React.Component{
                             
                             <input type="text" id="nameSignUpForm" size="35" placeholder="Name" value={this.state.username2} onChange={this.updateForm("username2")}/>
 
-                            <input type="text"  size="35" placeholder="Email Address" value={this.state.email2} onChange={this.updateForm("email2")}/>
+                            <input type="text" id="signUpEmailInput" size="35" placeholder="Email Address" value={this.state.email2} onChange={this.updateForm("email2")}/>
 
                             <input type="password" size="35" placeholder="********" value={this.state.password2} onChange={this.updateForm("password2")}/>
                             <br/>
@@ -275,8 +275,8 @@ class Greeting extends React.Component{
             return(
                 <div className="welcomeNlogout">
                     {/* <NavBarLoggedIn/> */}
-                    <h2>Welcome {currentUser.username}</h2>
-                    <button className="gr-button-dark gr-button logoutButton" onClick={logout}>Logout</button>
+                    <h2>Welcome, {currentUser.username}</h2>
+                    {/* <button className="gr-button-dark gr-button logoutButton" onClick={logout}>Logout</button> */}
                     
                 </div>
             )

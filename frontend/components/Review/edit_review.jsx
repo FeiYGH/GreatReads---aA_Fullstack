@@ -126,13 +126,16 @@ class EditReview extends React.Component{
     render(){    
         let title;
         let author;
+        let bookId;
 
         if(this.props.book){
             title = this.props.book.title;
             author = this.props.book.author;    
+            bookId = this.props.book.id;
         }else{
             title = "";
             author = "";
+            bookId = "";
         }
     
         
@@ -161,29 +164,75 @@ class EditReview extends React.Component{
 
         if(userReview){
             return(
-                <div>
-                    <div className="row">
-                        {this.ratingForm(ratingInput)};
-                        <h2>{title}</h2>
-                        <h2>{author}</h2>
-    
+                <div className="newReviewOuterDiv">
+                    <div className="row newRevRow1">
+                        <h1>
+                            <span id="bookTitleNewRev"><Link to={`/books/${bookId}`}>{title}</Link></span><span id="bookRevNewRev"> > Review</span>
+                        </h1>
+                    </div>
+                    <div className="row newRevRow2">
+                        <div className="col-1" id="photoNewReview">
+                            <img src={this.props.book.photoUrl} alt="Memoirs of a Geisha"></img>
+                        </div> 
+                        <div className="col-11 row2TitleAuth">
+                            <h1><Link className="row2Title" to={`/books/${bookId}`}>{title}</Link></h1>
+                            {/* <h1>{title}</h1> */}
+                            <h2>by {author}</h2>
+                        </div>           
+                    </div>
+                    <div className="row newRevRow3">
+                        <span id="newRevMyRateText">My rating:</span><span>{this.ratingForm(ratingInput)}</span>
+                    </div >
+
+                    <div className="row newRevRow4">
+                        <span>What did you think?</span> 
                     </div>
                     <div className="row">
                         <div className="col-2 bookCovThumb">
-                            <form onSubmit={()=>this.handleUpdate(ratingInput,userReview)}>
+                            <form className="newRevForm" onSubmit={()=>this.handleUpdate(ratingInput,userReview)}>
                                 <input type="text" placeholder={userReview.title} value={this.state.title} onChange={this.updateForm("title")}></input>
-                                <textarea rows="20" cols ="100" placeholder={userReview.body} value={this.state.body} onChange={this.updateForm("body")}>
+                                <div className="mediumHeight"></div>
+                                <textarea className="newRevTextArea" rows="20" cols ="100" placeholder={userReview.body} value={this.state.body} onChange={this.updateForm("body")}>
                                 </textarea>
+                                <div className="mediumHeight"></div>
                                 <input type="checkbox"  value={this.state.spoiler} onClick={()=>this.updateSpoiler()}></input>
-                                <label for="">Spoiler</label>
+                                <label for="">&nbsp;&nbsp;Hide entire review because of spoilers</label>
                                 <br/>
-                                <input type="submit" value="Post Review"/>
-                                {this.renderErrors()}
+                                <div className="mediumHeight"></div>
+                                <input className="postReviewButton" type="submit" value="Post Review"/>
+                                <ul className="newReviewErrors">
+                                    {this.renderErrors()}
+                                </ul>
+                                
                             </form>
                         </div>
                     </div>
                 </div>
             ) 
+            // return(
+            //     <div>
+            //         <div className="row">
+            //             {this.ratingForm(ratingInput)};
+            //             <h2>{title}</h2>
+            //             <h2>{author}</h2>
+    
+            //         </div>
+            //         <div className="row">
+            //             <div className="col-2 bookCovThumb">
+            //                 <form onSubmit={()=>this.handleUpdate(ratingInput,userReview)}>
+            //                     <input type="text" placeholder={userReview.title} value={this.state.title} onChange={this.updateForm("title")}></input>
+            //                     <textarea rows="20" cols ="100" placeholder={userReview.body} value={this.state.body} onChange={this.updateForm("body")}>
+            //                     </textarea>
+            //                     <input type="checkbox"  value={this.state.spoiler} onClick={()=>this.updateSpoiler()}></input>
+            //                     <label for="">Spoiler</label>
+            //                     <br/>
+            //                     <input type="submit" value="Post Review"/>
+            //                     {this.renderErrors()}
+            //                 </form>
+            //             </div>
+            //         </div>
+            //     </div>
+            // ) 
         }else{
             return(
                 <div>

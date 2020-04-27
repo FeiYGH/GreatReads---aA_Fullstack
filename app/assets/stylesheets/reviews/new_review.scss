@@ -1,0 +1,198 @@
+//this css also applies to the edit review page
+
+.newReviewOuterDiv *{
+    // border: 1px solid black;
+    // margin:10px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+.newReviewOuterDiv{
+    margin:30px;
+    margin-left:40px;
+    margin-top:20px;
+}
+
+.newRevRow1{
+    padding-top:10px;
+}
+
+
+
+span#bookTitleNewRev{
+    margin-right:0px;
+}
+
+#bookTitleNewRev > a {
+    color: #00635D;
+    font-size:22px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    text-decoration:none;
+    font-weight:bold;
+    line-height:24px;
+    letter-spacing: -.5px;
+}
+
+
+#bookTitleNewRev > a:hover {
+    text-decoration:underline;
+}
+
+
+#bookTitleNewRev > a:active {
+    color: #00635D;
+    background-color:white;
+}
+
+span#bookRevNewRev{
+    margin-left:0px;
+}
+
+#bookRevNewRev{
+    color: #382110;
+    font-size:22px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-weight:bold;
+    line-height:24px;
+    letter-spacing: -.5px;
+}
+
+.newRevRow2{
+    margin-top:15px;
+    border-bottom: 1px solid #D6D0C4;
+    border-bottom: 1px solid #eee;
+
+
+}
+
+#photoNewReview > img{
+    width:100%;
+}
+
+.row2TitleAuth{
+    padding-left:10px;
+    color: #382110;
+    font-size:18px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+}
+
+.row2TitleAuth > h1{
+    font-size:18px;
+    font-weight:bold;
+    line-height:24px;
+    letter-spacing: -.5px;
+}
+
+.row2TitleAuth > h2{
+    font-size:16px;
+    line-height:24px;
+    letter-spacing: -.5px;
+
+}
+
+.row2Title {
+    color: #382110;
+    font-size:18px;
+    font-weight:bold;
+    line-height:24px;
+    letter-spacing: -.5px;
+    text-decoration:none;
+}
+
+.row2Title:hover{
+    text-decoration:underline;
+}
+
+.row2Title:active{
+    background-color:white;
+}
+
+
+
+.newRevRow3{
+    padding-top:10px;
+    display:flex;
+}
+
+
+#newRevMyRateText{
+    padding-top:2px;
+    padding-right:5px;
+    color: #181818;
+    font-size: 14px;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+
+.newRevRow4{
+    margin-top: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    color: #181818;
+    font-size: 14px;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    border-top: 1px solid #eee;
+
+
+}
+
+.mediumHeight{
+    height:10px;
+}
+
+.bookCovThumb{
+    font-size:14px;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+
+
+}
+
+textArea.newRevTextArea{
+    padding: 3px 7px;
+}
+
+.newRevForm{
+    width:750px;
+}
+
+.postReviewButton{
+    border-radius:4px;
+    font-size:14px;
+    border: 1px solid #D6D0C4;
+    line-height:1;
+    padding: 8px 12px;
+    background-color:#F4F1EA;
+    
+    margin:1.79px;
+    font-family: Lato "Helvetica Neue", Helvetica, sans-serif;
+    margin-top:8px;
+    color:#333333;
+    text-decoration:none;
+    margin-bottom:5px;
+}
+
+input.postReviewButton:active{
+    background-color: #D6D0C4;
+    color:#333333;
+
+}
+// input.postReviewButton:focus{
+//     outline:none;
+//     background-color: #D6D0C4;
+// }
+
+input.postReviewButton:hover{
+    color:#333333;
+    background-color:#ede6d6;
+    text-decoration:none;
+}
+
+ul.newReviewErrors > li > span{
+    margin-left:5px;
+    line-height:15px;
+    color: #382110;
+
+}
+

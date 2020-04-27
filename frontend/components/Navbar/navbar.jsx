@@ -27,12 +27,11 @@ class NavBar extends React.Component{
                     <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
                     <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1>                
                     <input className="col-4 searchBookInput" type="text" placeholder="Search books"/>  
+                    <h1 className="col-3 navLinks"><Link onClick={this.props.logout}>Log out</Link></h1>     
                 </div>
             )
         }
-        
     }
-
 };
 
 export default NavBar;

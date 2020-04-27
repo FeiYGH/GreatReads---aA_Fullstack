@@ -74,9 +74,12 @@ class MyReviewForBook extends React.Component{
                     </div>
                     <div className="row myActRow">
                         <div className="col-myRevLabels">
+                            <div className="smallHeight"></div>
+
                             <h3>Review</h3>
                         </div>  
                         <div className="col-myRevCont">
+                            <div className="smallHeight"></div>
                             <div className="smallHeight"></div>
 
                             <Link to={'/'} className="writeReviewButton">Log in or Sign up</Link>
@@ -125,7 +128,7 @@ class MyReviewForBook extends React.Component{
                             <h3>Review</h3>
                         </div>  
                         <div className="col-myRevCont">
-                            <h3></h3>
+                            <div className="smallHeight"></div>
                             <Link to={`/books/${this.props.bookId}/review/new`} className="writeReviewButton">Write a Review</Link>
                         </div>
                         <div className="col-myRevRight"></div>

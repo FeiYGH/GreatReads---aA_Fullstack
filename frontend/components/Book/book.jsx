@@ -169,13 +169,23 @@ class Book extends React.Component{
 
                         </div>
                         <div className="row reviewsHeadline myCommunity "> 
-                            <h2>COMMUNITY REVIEWS</h2> 
+                            <h2>COMMUNITY REVIEWS</h2>     
                         </div>
-                        <div className="col-leftOfReviews">
-                            
+
+                        <div className="col-leftOfReviews"></div>
+                        <div className="col-9 reviews" id="commStats">   
+                             <ReviewStatsContainer
+                                    bookId={this.props.bookId}
+                                />
+                        </div>
+                        {/* <div className="col-leftOfReviews"></div> */}
+                        
+                       
+
+                        <div className="col-leftOfReviews">    
                         </div>
                         
-                        <div className="col-6 reviews">
+                        <div className="col-6 reviews" id="col6Reviews">
                             <ReviewsIndexContainer
                                 bookId={this.props.bookId}
                                 book={this.props.book}

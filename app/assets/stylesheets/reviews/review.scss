@@ -11,6 +11,16 @@
     // border:1px solid black;
     padding:3%;
     background-color: #f4f1ea;
+    padding-left:0px;
+    padding-top:2%;
+    padding-right:0px;
+
+}
+
+.reviewItemBottom{
+    padding:2%;
+    padding-top:2px;
+
 }
 
 .reviewItemAuthor{
@@ -28,3 +38,124 @@
     font-family: "Merriweather", "Georgia", serif;
 }
 
+
+//in the book show page, review index part
+#commStats{
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+#col6Reviews{
+    margin-top: 0px;
+    padding-top:0px;
+    padding-left:7px;
+
+}
+
+//outer id for review index
+#col12Reviews{
+    margin-top:0px;
+    padding-top:0px;
+    border-top: 1px solid #D6D0C4
+    
+}
+
+#addTopPadding{
+    padding-top:7px;
+}
+
+#loginLink{
+    color: #382110;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+#loginLink:hover{
+    text-decoration:underline;
+}
+
+#loginLink:active{
+    background-color:white;
+}
+
+
+.col-profilePic{
+    width:11%;
+    height:16%;
+}
+
+.col-profileMsg{
+    width:85%;
+}
+
+#defaultProfilePic{
+    
+    margin-left:0px;
+    margin-right:0px;
+    padding:5px;
+    padding-right:0px;
+    margin-top:0px;
+    
+    
+}
+
+
+#defaultProfileImg{
+    width:100%;
+    border: 1px solid #D6D0C4;
+    
+}
+
+#RevIndexMsg{
+    padding-top:0px;
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom:0px;
+    margin-right:0px;
+    
+}
+
+
+.col-myRatinRevIndex{
+    width:auto;
+    box-sizing:border-box;
+    // border:1px solid blue;
+    padding:0px;
+    margin:0px;
+    // margin-right: 15px;
+}
+
+.col-writeRevButRevIndex{
+    width:auto;
+    box-sizing:border-box;
+    // border:1px solid blue;
+    padding:0px;
+    margin:0px;
+    margin-left:15px;
+}
+
+
+//HIDE SPOILERS
+.hideSpoilers{
+    color:#181818;
+    font-style:italic;
+    font: 14px Lato, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+.closeSpoilerLink{
+    color:#00635D;
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
+    text-decoration:underline;
+
+}
+
+.closeSpoilerLink:hover{
+    cursor:pointer;
+}
+
+.closeSpoilerLink:active{
+    background-color:white;
+}

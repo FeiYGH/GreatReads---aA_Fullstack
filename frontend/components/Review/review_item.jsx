@@ -84,43 +84,101 @@ class ReviewItem extends React.Component{
             if(this.state.reveal===false){
                 return(
                     <div>
-                        <p>This review has been hidden because it contains spoilers. To view it, <button onClick={this.openReview}>click here</button></p>
+                        <div className="reviewItem">
+                            <div className="row">
+                                <div className="col-profilePic" id="defaultProfilePic">
+                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                </div>
+                                <div className="col-profileMsg" id="RevIndexMsg">
+                                    <div className="row">
+                                        <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span></h2> 
+                                        
+                                    </div>
+                                    <div className="row">
+                                        <h2 className="reviewItemTitle">{review.title}</h2>
+                                    </div>
+                                </div>      
+                            </div>
+                    
+                            <div className="reviewItemBottom">
+                                <span className="hideSpoilers">This review has been hidden because it contains spoilers. To view it,<a className="closeSpoilerLink" onClick={this.openReview}>click here.</a>
+                                </span> 
+                            </div>
+                        </div>
                     </div>
-                )   
+                )
+                // return(
+                //     <div>
+                //         <p>This review has been hidden because it contains spoilers. To view it, <button onClick={this.openReview}>click here</button></p>
+                //     </div>
+                // )   
             }else{
                 // debugger;
                 return(
                     <div>
-                        <p>This review was hidden because it contains spoilers. To close it, <button onClick={this.closeReview}>click here</button></p>
-                    
                         <div className="reviewItem">
-                            {reviewRatingPic}
-                            <h2>{review.rating}</h2>
-                            <h2 className="reviewItemAuthor">{review.author.username}</h2>
-                            <h2 className="reviewItemTitle">{review.title}</h2>
-                            <h3 className="reviewItemContent">{review.body}</h3>
-                         </div>
+                            <div className="row">
+                                <div className="col-profilePic" id="defaultProfilePic">
+                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                </div>
+                                <div className="col-profileMsg" id="RevIndexMsg">
+                                    <div className="row">
+                                        <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span></h2> 
+                                        
+                                    </div>
+                                    <div className="row">
+                                        <h2 className="reviewItemTitle">{review.title}</h2>
+                                    </div>
+                                </div>      
+                            </div>
+                    
+                            <div className="reviewItemBottom">
+                                <span className="hideSpoilers">This review contains spoilers. To hide it,<a className="closeSpoilerLink" onClick={this.closeReview}>click here.</a>
+                                </span>
+                                <h3 className="reviewItemContent">{review.body}</h3>    
+                            </div>
+                        </div>
                     </div>
-
                 )
             }    
         }else{
             // debugger;
             return(
-                <div>
-                   
-                    <div className="reviewItem">
-                
-                    {reviewRatingPic}
-                    <h2>{review.rating}</h2>
-                    
-                    <h2 className="reviewItemAuthor">{review.author.username}</h2>
-                    <h2 className="reviewItemTitle">{review.title}</h2>
-                    <h3 className="reviewItemContent">{review.body}</h3>
+                <div className="reviewItem">
+                    <div className="row">
+                        <div className="col-profilePic" id="defaultProfilePic">
+                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                        </div>
+                        <div className="col-profileMsg" id="RevIndexMsg">
+                            <div className="row">
+                                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span></h2> 
+                            </div>
+                            <div className="row">
+                                <h2 className="reviewItemTitle">{review.title}</h2>
+                            </div>
+                        </div>      
+                    </div>
+               
+                    <div className="reviewItemBottom">
+                        <h3 className="reviewItemContent">{review.body}</h3>    
+                    </div>
                 </div>
-                </div>
-                
             )
+            // return(
+            //     <div>
+                   
+            //         <div className="reviewItem">
+                
+            //         {reviewRatingPic}
+            //         <h2>{review.rating}</h2>
+                    
+            //         <h2 className="reviewItemAuthor">{review.author.username}</h2>
+            //         <h2 className="reviewItemTitle">{review.title}</h2>
+            //         <h3 className="reviewItemContent">{review.body}</h3>
+            //     </div>
+            //     </div>
+                
+            // )
         }
         
     }
