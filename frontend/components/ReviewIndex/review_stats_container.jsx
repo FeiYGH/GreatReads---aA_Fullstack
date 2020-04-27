@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ReviewIndex from  './review_index';
+import ReviewStats from  './review_stats';
 import {fetchReviews, fetchReviewsUser} from '../../actions/review_actions';
 const mSTP = (state,ownProps) => {
     // debugger;
@@ -20,4 +20,4 @@ const mDTP = dispatch => {
     });
 };
 
-export default connect(mSTP, mDTP)(ReviewIndex);
+export default connect(mSTP, mDTP)(ReviewStats);

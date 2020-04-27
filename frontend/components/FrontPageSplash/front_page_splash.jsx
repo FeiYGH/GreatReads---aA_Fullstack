@@ -33,7 +33,7 @@ class FrontPageSplash extends React.Component{
                         <br/>
                         <br/>
                         <h2 className="mainSplash">
-                            Deciding what to read next?
+                            Deciding what to read <span className="splashBookLink"><Link to='/books'>next</Link></span>?
                         </h2>
                         <p className="mainSplash">
                             You're in the right place. Tell us what titles or genres you've enjoyed in the past, and we'll give you surprisingly insightful recommendations.
@@ -42,7 +42,7 @@ class FrontPageSplash extends React.Component{
                     <div className="col-6 mainSplashPromptings">
                         <br/>
                         <br/>
-                        <h2 className="mainSplash">What are your friends reading?</h2>
+                        <h2 className="mainSplash">What are your friends <span className="splashBookLink"><Link to='/books'>reading</Link></span>?</h2>
                         
                         <p className="mainSplash">
                             Chances are your friends are discussing their favorite (and least favorite) books on greatReads.
@@ -100,7 +100,7 @@ class FrontPageSplash extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div class="row grid1"></div>
+                    <div className="row grid1"></div>
                 </div>
 
                 <div className="row" id="discoveryBox">
@@ -160,7 +160,7 @@ class FrontPageSplash extends React.Component{
                         </div>
             
                     </div>
-                    <div class="row grid1"></div>
+                    <div className="row grid1"></div>
                 </div>
             </div>
         )

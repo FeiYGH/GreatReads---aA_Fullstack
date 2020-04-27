@@ -1,4 +1,8 @@
 
+#headerDiv *{
+  // border: 1px solid black;
+}
+
 *{
   font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -91,9 +95,12 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
   // margin: 5px 1px 3px 0px;
   border: 1px solid rgba(81, 203, 238, 1);
   border: 1px solid #fdd05f;
-
-
 }
+
+#signUpEmailInput{
+  display:block;
+}
+
 //Sign in button
 .gr-button-dark{
   background-color: #382110;
@@ -214,10 +221,13 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
 
   .signedOutHome:hover{
     border:#f5f062;
+
   }
 
   .newAccountBox:hover{
     background-color:#f5f062;
+    background-color: #FFD56D;
+    background-color: rgb(255, 228, 109);
   }
   
   .newAccountBox {
@@ -338,6 +348,12 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus, input
 
   #termsOfService{
     margin-right:40%;
+  }
+}
+
+@media only screen and (min-width:1400px){
+  img.headerSignUp{
+    margin-top:6.5%;
   }
 }
 

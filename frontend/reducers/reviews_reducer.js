@@ -1,4 +1,4 @@
-import {RECEIVE_BOOK_REVIEWS,  RECEIVE_REVIEW, DELETE_BOOK_REVIEW, RECEIVE_REVIEW_ERRORS} from '../actions/review_actions';
+import {RECEIVE_BOOK_REVIEWS,  RECEIVE_REVIEW, DELETE_BOOK_REVIEW, RECEIVE_NEW_REVIEW} from '../actions/review_actions';
 
 const reviewsReducer = (state = {}, action)=> {
     Object.freeze({},state);
@@ -8,8 +8,10 @@ const reviewsReducer = (state = {}, action)=> {
             console.log(action.reviews);
             // debugger;
             return action.reviews;
-        case RECEIVE_REVIEW:    
-            
+        case RECEIVE_REVIEW:          
+            // debugger;
+            return Object.assign({},state,{[action.review.id]:action.review});
+        case RECEIVE_NEW_REVIEW:
             return Object.assign({},state,{[action.review.id]:action.review});
         case DELETE_BOOK_REVIEW:
             delete nextState[action.reviewId];

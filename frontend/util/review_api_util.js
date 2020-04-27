@@ -17,13 +17,29 @@ export const fetchReviews = (bookId) => {
     );
 };
 
-export const createReview = (bookId, review) => (
-    $.ajax({
+export const fetchReviewsUser = (authorId) => {
+    return(
+        $.ajax({
+            method: 'GET',
+            url:`/api/users/${authorId}/reviews`
+        })
+    );
+}
+
+
+
+export const createReview = (bookId, review) => {
+    // debugger;
+    return(
+        $.ajax({
         method: 'POST',
         url: `/api/books/${bookId}/reviews`,
         data: {review}
-    })
-);
+        })
+    );
+};
+
+
 
 //putting {review} like so means that I'm creating object
 //with key review:{:title,:body, etc.}

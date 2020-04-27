@@ -1,13 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-
-//this component is for two scenarios: the review model contains ratings but on GoodReads
-//you can update rating without giving a title and body; perhaps they use separate tables.
-//1) this first situation is where there is rating but no title and body. 
-//        On greatreads, user can give just rating if they want to. Still considered "no review"
-//2) User has not rated or given a title/body
-class NewReview extends React.Component{
+class EditReview extends React.Component{
     
     constructor(props){
         super(props);
@@ -30,36 +24,10 @@ class NewReview extends React.Component{
         this.ratingForm = this.ratingForm.bind(this);
         this.updateRating = this.updateRating.bind(this);
         this.pullUserReview = this.pullUserReview.bind(this);
-        this.handleCreate = this.handleCreate.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
 
     }
-
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     this.props.createReview(this.state.book_id, this.state)
-    //         .then(this.props.history.push(`/books/${this.props.bookId}`));
-    // }
-
-
-    handleCreate(e){
-        // debugger;
-        e.preventDefault();
-        if (this.state.rating===0){
-            let newReview = Object.assign({},this.state, {"rating":null});
-            // debugger;
-            this.props.createReview(this.state.book_id, newReview)
-                .then(this.setState({errorsPresent:true}));
-                // .then(this.props.history.push(`/books/${this.props.bookId}`));
-        }else{
-            this.props.createReview(this.state.book_id, this.state)
-            .then(this.props.history.push(`/books/${this.props.bookId}`));
-        }
-        // debugger;
-    }
-
-    
 
     handleUpdate(ratingInput,userReview){
         // debugger;
@@ -95,7 +63,7 @@ class NewReview extends React.Component{
             const errorsLi = this.props.errors.map(error=>
                 (
                     <li class="errorsLi">
-                        <span>{error}</span>       
+                        {error}
                     </li>
                 )
             )
@@ -124,21 +92,6 @@ class NewReview extends React.Component{
                             <input type="radio" checked={stateOfStar===1 ? true : false} className="star1" name="rateStar" value="1" onClick={()=>this.updateRating(1)}/>                 
                                 <label for="star1" onClick={()=>this.updateRating(1)} title="text">1</label>
                         </div>
-                        {/* <div className="rateStar" id="rateStarz">
-                            <input type="radio" id="star5" name="rateStar" value="5" onClick={()=>this.updateRating(5)}/>
-                                <label for="star5" title="text">5</label>
-                            <input type="radio" id="star4" name="rateStar" value="4" onClick={()=>this.updateRating(4)}/>
-                                <label for="star4" title="text">4</label>
-
-                            <input type="radio" id="star3" name="rateStar" value="3" onClick={()=>this.updateRating(3)}/>
-                                <label for="star3" title="text">3</label>
-
-                            <input type="radio" id="star2" name="rateStar" value="2" onClick={()=>this.updateRating(2)}/>
-                                <label for="star2" title="text">2</label>
-
-                            <input type="radio" id="star1" name="rateStar" value="1" onClick={()=>this.updateRating(1)}/>                 
-                                <label for="star1" title="text">1</label>
-                        </div> */}
                     </form>
                 </div>
             )
@@ -174,6 +127,7 @@ class NewReview extends React.Component{
         let title;
         let author;
         let bookId;
+
         if(this.props.book){
             title = this.props.book.title;
             author = this.props.book.author;    
@@ -206,10 +160,9 @@ class NewReview extends React.Component{
         }
         // debugger;
 
-
         //if userReview exists, return div with createReview. if not, then return div with updateReview
+
         if(userReview){
-            //rating exists but no title and body
             return(
                 <div className="newReviewOuterDiv">
                     <div className="row newRevRow1">
@@ -237,59 +190,11 @@ class NewReview extends React.Component{
                     <div className="row">
                         <div className="col-2 bookCovThumb">
                             <form className="newRevForm" onSubmit={()=>this.handleUpdate(ratingInput,userReview)}>
-                                <input type="text" placeholder="Review title" value={this.state.title} onChange={this.updateForm("title")}></input>
+                                <input type="text" placeholder={userReview.title} value={this.state.title} onChange={this.updateForm("title")}></input>
                                 <div className="mediumHeight"></div>
-                                <textarea className="newRevTextArea" rows="20" cols ="100" placeholder="Enter your review here..." value={this.state.body} onChange={this.updateForm("body")}>
+                                <textarea className="newRevTextArea" rows="20" cols ="100" placeholder={userReview.body} value={this.state.body} onChange={this.updateForm("body")}>
                                 </textarea>
                                 <div className="mediumHeight"></div>
-
-                                <input type="checkbox"  value={this.state.spoiler} onClick={()=>this.updateSpoiler()}></input>
-                                <label for="">&nbsp;&nbsp;Hide entire review because of spoilers</label>
-                                <br/>
-                                <div className="mediumHeight"></div>
-                                <input className="postReviewButton" type="submit" value="Post Review"/>
-                                <ul className="newReviewErrors">
-                                    {this.renderErrors()}
-                                </ul>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            ) 
-        }else{
-            return(
-                <div className="newReviewOuterDiv">
-                    <div className="row newRevRow1">
-                        <h1>
-                            <span id="bookTitleNewRev"><Link to={`/books/${bookId}`}>{title}</Link></span><span id="bookRevNewRev"> > Review</span>
-                        </h1>
-                    </div>
-                    <div className="row newRevRow2">
-                        <div className="col-1" id="photoNewReview">
-                            <img src={this.props.book.photoUrl} alt="Memoirs of a Geisha"></img>
-                        </div> 
-                        <div className="col-11 row2TitleAuth">
-                            <h1><Link className="row2Title" to={`/books/${bookId}`}>{title}</Link></h1>
-                            {/* <h1>{title}</h1> */}
-                            <h2>by {author}</h2>
-                        </div>           
-                    </div>
-                    <div className="row newRevRow3">
-                        <span id="newRevMyRateText">My rating:</span><span>{this.ratingForm(this.state.rating)}</span>
-                    </div >
-
-                    <div className="row newRevRow4">
-                        <span>What did you think?</span> 
-                    </div>
-                    <div className="row">
-                        <div className="col-2 bookCovThumb">
-                            <form className="newRevForm" onSubmit={this.handleCreate}>
-                                <input type="text" placeholder="Review title" value={this.state.title} onChange={this.updateForm("title")}></input>
-                                <div className="mediumHeight"></div>
-                                <textarea className="newRevTextArea" rows="20" cols ="100" placeholder="Enter your review here..." value={this.state.body} onChange={this.updateForm("body")}>
-                                </textarea>
-                                <div className="mediumHeight"></div>
-
                                 <input type="checkbox"  value={this.state.spoiler} onClick={()=>this.updateSpoiler()}></input>
                                 <label for="">&nbsp;&nbsp;Hide entire review because of spoilers</label>
                                 <br/>
@@ -304,10 +209,38 @@ class NewReview extends React.Component{
                     </div>
                 </div>
             ) 
+            // return(
+            //     <div>
+            //         <div className="row">
+            //             {this.ratingForm(ratingInput)};
+            //             <h2>{title}</h2>
+            //             <h2>{author}</h2>
+    
+            //         </div>
+            //         <div className="row">
+            //             <div className="col-2 bookCovThumb">
+            //                 <form onSubmit={()=>this.handleUpdate(ratingInput,userReview)}>
+            //                     <input type="text" placeholder={userReview.title} value={this.state.title} onChange={this.updateForm("title")}></input>
+            //                     <textarea rows="20" cols ="100" placeholder={userReview.body} value={this.state.body} onChange={this.updateForm("body")}>
+            //                     </textarea>
+            //                     <input type="checkbox"  value={this.state.spoiler} onClick={()=>this.updateSpoiler()}></input>
+            //                     <label for="">Spoiler</label>
+            //                     <br/>
+            //                     <input type="submit" value="Post Review"/>
+            //                     {this.renderErrors()}
+            //                 </form>
+            //             </div>
+            //         </div>
+            //     </div>
+            // ) 
+        }else{
+            return(
+                <div>
+
+                </div>
+            )
         }
-        
-       
     }
 }
 
-export default NewReview;
+export default EditReview;

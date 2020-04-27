@@ -11,7 +11,10 @@ class Api::ReviewsController < ApplicationController
         if params[:book_id]
             @book = Book.find_by(id: params[:book_id])
             @reviews = @book.reviews
-        else
+        elsif params[:user_id]
+            @user = User.find_by(id:params[:user_id])
+            @reviews = @user.reviews
+        else 
             @reviews = Review.all
         end
         # debugger 
@@ -19,11 +22,16 @@ class Api::ReviewsController < ApplicationController
        
     end 
 
+    
+
+
     def create
         # @review = current_user.reviews.new(review_params)
         @review = Review.new(review_params)
+        # debugger;
         if @review.save
-            render :show
+            render 'api/reviews/show'
+            # render :show
         else
             render json: @review.errors.full_messages, status: :unprocessable_entity
         end 

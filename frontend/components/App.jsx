@@ -12,10 +12,13 @@ import BooksContainer from '../components/BookIndex/book_index_container';
 import NavBar from '../components/Navbar/navbar';
 import NavBarContainer from '../components/Navbar/navbar_container';
 import NavBarHomeContainer from '../components/Navbar/navbar_home_container';
+import newReviewContainer from '../components/Review/new_review_container';
+import EditReviewContainer from '../components/Review/edit_review_container';
 
 const App = () => (
     // < GreetingContainer />
     <div>
+        
 
         <Switch>
             <Route exact path='/' component={GreetingContainer}/>          
@@ -34,7 +37,12 @@ const App = () => (
             {/* <Route path = "*" component={componentNotFound}/> */}
             <Route exact path='/books' component={BooksContainer}/>
             <Route exact path='/books/:bookId' component={BookContainer}/>
+            <Route exact path='/books/:bookId/review/new' component={newReviewContainer}/>
+            <Route exact path='/books/:bookId/review/edit' component={EditReviewContainer}/>
+            
+            
             <Route exact path="/" component={FrontPageSplashContainer}/>
+            
             <AuthRoute path ="*" component={FrontPageSplashContainer} />
         </Switch>  
 

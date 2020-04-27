@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    # caches_page :index, :show  
+    # skip_before_action :verify_authenticity_token :verify_authenticity_token, :only, [:index, :show]
 
     helper_method :current_user, :logged_in?
     #crlll

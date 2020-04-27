@@ -4,10 +4,21 @@ export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_BOOK_REVIEWS = 'RECEIVE_BOOK_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const DELETE_BOOK_REVIEW = 'DELETE_BOOK_REVIEW';
+export const RECEIVE_NEW_REVIEW = 'RECEIVE_NEW_REVIEW';
+export const RECEIVE_BOOK_REVIEWS_USER = 'RECEIVE_BOOK_REVIEWS_USER';
 
 const receiveReview = review => {
+    // debugger;
     return({
         type: RECEIVE_REVIEW,
+        review
+    });
+};
+
+const receiveNewReview = review => {
+    // debugger;
+    return({
+        type: RECEIVE_NEW_REVIEW,
         review
     });
 };
@@ -19,6 +30,15 @@ const receiveBookReviews = reviews => {
         reviews
     });
 };
+
+const receiveBookReviewsUser = reviews => {
+    
+    return({
+        type: RECEIVE_BOOK_REVIEWS_USER,
+        reviews
+    });
+};
+
 
 //other way of doing it is just passing in reviewId
 const deleteBookReview = reviewId => {
@@ -47,14 +67,37 @@ export const fetchReviews = (bookId) => dispatch => (
             (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
     );   
 
-export const createReview = (bookId, review) => dispatch => (
-    ReviewAPIUtil.createReview(bookId,review)
+export const fetchReviewsUser = (userId) => dispatch => (
+    ReviewAPIUtil.fetchReviewsUser(userId)
+    .then(reviews => dispatch(receiveBookReviewsUser(reviews)),
+        (errors) => dispatch(receiveReviewErrors(errors.responseJSON))
+    )
+);
+
+//THIS ONE THE NORMAL ONE
+// export const createReview = (bookId, review) => dispatch => (
+//     ReviewAPIUtil.createReview(bookId,review)
+//     .then(review => dispatch(receiveReview(review)),
+//     (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
+// );
+
+export const createReview = (bookId, review) => dispatch => {
+    // debugger;
+    return(ReviewAPIUtil.createReview(bookId,review)
     .then(review => dispatch(receiveReview(review)),
     (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
 );
+};
+    
+
+// export const createReview = (bookId, review) => dispatch => (
+//     ReviewAPIUtil.createReview(bookId,review)
+//     .then(review => dispatch(receiveNewReview(review)),
+//     (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
+// );
 
 
-export const updateReview = (bookId, review) => dispatch => (
+export const updateReview = (reviewId, review) => dispatch => (
     ReviewAPIUtil.updateReview(reviewId, review)
         .then(review => dispatch(receiveReview(review)),
             (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
