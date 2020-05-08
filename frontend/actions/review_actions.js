@@ -6,6 +6,7 @@ export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const DELETE_BOOK_REVIEW = 'DELETE_BOOK_REVIEW';
 export const RECEIVE_NEW_REVIEW = 'RECEIVE_NEW_REVIEW';
 export const RECEIVE_BOOK_REVIEWS_USER = 'RECEIVE_BOOK_REVIEWS_USER';
+export const RECEIVE_REVIEW_FOR_COMMENTS = 'RECEIVE_REVIEW_FOR_COMMENTS';
 
 const receiveReview = review => {
     // debugger;
@@ -55,6 +56,14 @@ const receiveReviewErrors = (errors) => {
     });
 };
 
+
+const receiveReviewForComments = (review) => {
+    return({
+        type:RECEIVE_REVIEW_FOR_COMMENTS,
+        review
+    });
+};
+
 export const fetchReview = (reviewId) => dispatch => (
     ReviewAPIUtil.fetchReview(reviewId)
         .then(review => dispatch(receiveReview(review)),
@@ -75,7 +84,7 @@ export const fetchReviewsUser = (userId) => dispatch => (
 );
 
 //THIS ONE THE NORMAL ONE
-// export const createReview = (bookId, review) => dispatch => (
+// export const createRevieBw = (bookId, review) => dispatch => (
 //     ReviewAPIUtil.createReview(bookId,review)
 //     .then(review => dispatch(receiveReview(review)),
 //     (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
@@ -107,4 +116,10 @@ export const deleteReview = (reviewId) => dispatch => (
     ReviewAPIUtil.deleteReview(reviewId)
         .then(review => dispatch(deleteBookReview(review.id)),
             (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
+);
+
+export const fetchReviewForComments = (reviewId) => dispatch => (
+    ReviewAPIUtil.fetchReview(reviewId)
+        .then(review => dispatch(receiveReviewForComments(review)),
+        (errors)=> dispatch(receiveReviewErrors(errors.responseJSON)))
 );

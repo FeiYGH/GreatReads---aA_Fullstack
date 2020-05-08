@@ -12,10 +12,12 @@ class ReviewIndex extends React.Component{
             bookId: props.bookId,
             session_user_reviewed: false,
             loggedIn: !!props.user,
+            
         }
 
         this.writeReview = this.writeReview.bind(this);
         this.pullUserReview = this.pullUserReview.bind(this);
+        this.handleCommentUpdate = this.handleCommentUpdate.bind(this);
     }
 
     writeReview(){
@@ -24,27 +26,29 @@ class ReviewIndex extends React.Component{
         // this.props.history.push('/books')
     }
 
-    // componentDidUpdate(prevProps){
-    //     // debugger;
-    //     if(prevProps.reviews!==this.props.reviews){
-    //         const reviewItems1 = Object.values(this.props.reviews);
-    //         for(let i = 0; i < reviewItems1.length; i++){
-    //             // debugger;
-    //             if(this.props.user.id === reviewItems1[i].user_id){
-    //                 // debugger;
-    //                 this.setState({session_user_reviewed:true})
-    //                 break;
-    //             }
+
+
+    // componentDidUpdate(prevProps, prevState){
+        
+    //     if(prevProps.book && this.props.book){
+    //         if(prevProps.book.title !== this.props.book.title){
+    //             this.props.fetchReviews(this.props.bookId);
+    //             // this.setState({
+    //             //     updated:true
+    //             // });
     //         }
-    //     }
-    //     debugger;
+    //     }  
     // }
 
   
+    handleCommentUpdate(){
+        this.props.fetchReviews(this.props.bookId);
+    }
 
     componentDidMount(){
         // debugger;
         this.props.fetchReviews(this.props.bookId);
+        
         if(this.props.user){
             this.props.fetchReviewsUser(this.props.user.id); 
         }
@@ -70,18 +74,23 @@ class ReviewIndex extends React.Component{
 
     render(){
         // debugger;
-        const {reviews,user,fetchReviews} = this.props;
+        const {reviews,user,fetchReviews, book} = this.props;
+        console.log("BOOOOOK TITLE!!!!!!!!!!!!!")
+        console.log(book.title);
         let myReview = this.pullUserReview();
 
         const reviewItems = Object.values(reviews).map((review)=>{
             // let prop = review[idx+1] ? review[idx+1].id : ""
             // debugger;
+            let reviewId=review.id;
             return(
                 <ReviewItemContainer
                     review={review}
-                    reviewId={review.id}
+                    reviewId={reviewId}
+                    book={book}
                     // reviewId={prop}
                     user={user}
+                    handleCommentUpdate={this.handleCommentUpdate}
                 />
             );
         });

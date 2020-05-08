@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import CommentIndexContainer from '../CommentIndex/comment_index_container';
 
 class ReviewItem extends React.Component{
     
@@ -26,8 +26,12 @@ class ReviewItem extends React.Component{
 
 
     componentDidMount(){
-        let review = this.props.review ? this.props.review.id : "";
-        this.props.fetchReview(review);
+        let reviewId = this.props.review ? this.props.review.id : "";
+        this.props.fetchReview(reviewId);
+        
+        // if(reviewId !== ""){
+        //     this.props.fetchReviewComments(reviewId);
+        // }
         // this.props.fetchReview(this.props.review.id);
     }
 
@@ -35,7 +39,7 @@ class ReviewItem extends React.Component{
 
     render(){
         const {review, user} = this.props;
-        let reviewRatingPic
+        let reviewRatingPic;
         switch(review.rating){
             case 1:
                 reviewRatingPic = (
@@ -73,6 +77,20 @@ class ReviewItem extends React.Component{
                 )
             break;
         }
+
+       
+        let month;
+        let day;
+        let year;
+        if(review){
+            let dateObj = new Date(review.created_at);
+            month = dateObj.getMonth();
+            day = dateObj.getDate();
+            year = dateObj.getFullYear();
+             
+        }
+
+
         // debugger;
         if(!review){
             return null;
@@ -160,25 +178,25 @@ class ReviewItem extends React.Component{
                     </div>
                
                     <div className="reviewItemBottom">
-                        <h3 className="reviewItemContent">{review.body}</h3>    
+                        <h3 className="reviewItemContent">{review.body} </h3>  
+                        <h2>{review.created_at}</h2>
+                        <h2>{month+1} - {day} - {year}</h2>
+                        
+
+                        {/* <h2>{new Intl.DateTimeFormat("en-GB",{month:"long", day: "2-digit", year: "numeric", hour: 'numeric', minute: 'numeric', second: 'numeric'}).format(review.created_at.toString())}</h2> */}
+                        
+                    </div>
+                    <div className="row">
+                        <CommentIndexContainer 
+                            review={review}
+                            reviewId={review.id}
+                            reviewAuthor={review.author}
+                            book={this.props.book}
+                            handleCommentUpdate={this.props.handleCommentUpdate}
+                        />
                     </div>
                 </div>
             )
-            // return(
-            //     <div>
-                   
-            //         <div className="reviewItem">
-                
-            //         {reviewRatingPic}
-            //         <h2>{review.rating}</h2>
-                    
-            //         <h2 className="reviewItemAuthor">{review.author.username}</h2>
-            //         <h2 className="reviewItemTitle">{review.title}</h2>
-            //         <h3 className="reviewItemContent">{review.body}</h3>
-            //     </div>
-            //     </div>
-                
-            // )
         }
         
     }

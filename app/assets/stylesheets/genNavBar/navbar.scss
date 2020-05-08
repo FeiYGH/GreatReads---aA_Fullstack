@@ -29,6 +29,10 @@
 
 .searchBookInput{
     margin: 4px 0px 5px 0px;
+    width:250px;
+    margin-top:8px;
+    height:25px;
+
 }
 
 
@@ -55,6 +59,58 @@ h1.navLogo{
     color: #382110;
     font-weight:345;
     font-size:30px;
+  }
+
+
+  //Search Bar
+  .searchBar * {
+    // border: 1px solid green;
+  }
+
+  .searchBar{
+    position:relative;
+    top:2px;
+  }
+
+  .searchBookLI{
+    border:1px solid #DCD6CC;
+    width:263px;
+  }
+
+  .searchBarUL{
+    position:absolute;
+    box-sizing:border-box;
+    top:36px;
+    left:0px;
+    width:300px;
+  }
+
+  .searchBookRow{
+    background-color:white;
+  }
+
+  .searchBookRow:hover{
+    background-color:#F4F1EA;
+    cursor: pointer;
+  }
+
+  .searchBookPhoto{
+    width:25px;
+    padding:3px;
+    padding-left:5px;
+    padding-right:0px;
+  }
+
+  .searchBookTitleLi{
+    padding:0px;
+    padding-left:5px;
+    padding-top:7px;
+    width:218px;
+    color:#382110;
+  }
+
+  .searchBookPhoto > img{
+    width:100%;
   }
 
 // div.navLinks:hover{

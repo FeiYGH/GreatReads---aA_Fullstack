@@ -1,4 +1,7 @@
 import {RECEIVE_BOOK_REVIEWS,  RECEIVE_REVIEW, DELETE_BOOK_REVIEW, RECEIVE_NEW_REVIEW} from '../actions/review_actions';
+import {RECEIVE_REVIEW_FOR_COMMENTS} from '../actions/review_actions';
+
+
 
 const reviewsReducer = (state = {}, action)=> {
     Object.freeze({},state);
@@ -16,6 +19,9 @@ const reviewsReducer = (state = {}, action)=> {
         case DELETE_BOOK_REVIEW:
             delete nextState[action.reviewId];
             return nextState;
+        case RECEIVE_REVIEW_FOR_COMMENTS:
+            debugger;
+            return Object.assign({},state,{fetchedReviewForComments:action.review});
         default:
             return state;
     }

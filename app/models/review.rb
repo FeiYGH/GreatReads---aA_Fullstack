@@ -9,6 +9,8 @@
 #  book_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  title      :string
+#  body       :string
 #
 class Review < ApplicationRecord
     validates :rating, inclusion: {in:(0..5)}
@@ -22,6 +24,8 @@ class Review < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
+
+    has_many :comments
 
     
 end

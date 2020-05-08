@@ -1,4 +1,4 @@
-import React from 'react';
+                                                                        import React from 'react';
 import {Link} from 'react-router-dom'; 
 import {Route, Redirect} from 'react-router-dom';
 import NavBarContainer from '../Navbar/navbar_container';

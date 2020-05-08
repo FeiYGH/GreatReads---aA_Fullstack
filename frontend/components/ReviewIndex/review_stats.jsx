@@ -33,13 +33,17 @@ class ReviewStats extends React.Component{
         // debugger;
         this.setState({ratingChart:true});
     }
+
     // componentDidUpdate(prevProps, prevState){
-    //     if(prevProps.reviews !== this.props.reviews){
-    //         this.props.fetchReviews(this.props.bookId);
-    //         this.setState({
-    //             updated:true
-    //         })
-    //     }
+        
+    //     if(prevProps.book && this.props.book){
+    //         if(prevProps.book.title !== this.props.book.title){
+    //             this.props.fetchReviews(this.props.bookId);
+    //             this.setState({
+    //                 updated:true
+    //             });
+    //         }
+    //     }  
     // }
 
     
@@ -74,6 +78,7 @@ class ReviewStats extends React.Component{
                 case 1:
                     ratings1+=1;
             }
+
             if(!(review.title===null || review.title==="") && !(review.body ===null || review.body==="")){
                 totalReviews+=1;
             }
