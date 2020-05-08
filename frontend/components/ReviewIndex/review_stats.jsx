@@ -34,17 +34,17 @@ class ReviewStats extends React.Component{
         this.setState({ratingChart:true});
     }
 
-    // componentDidUpdate(prevProps, prevState){
+    componentDidUpdate(prevProps, prevState){
         
-    //     if(prevProps.book && this.props.book){
-    //         if(prevProps.book.title !== this.props.book.title){
-    //             this.props.fetchReviews(this.props.bookId);
-    //             this.setState({
-    //                 updated:true
-    //             });
-    //         }
-    //     }  
-    // }
+        if(prevProps.book && this.props.book){
+            if(prevProps.book.title !== this.props.book.title){
+                this.props.fetchReviews(this.props.bookId);
+                this.setState({
+                    updated:true
+                });
+            }
+        }  
+    }
 
     
 

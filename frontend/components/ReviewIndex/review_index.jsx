@@ -28,17 +28,17 @@ class ReviewIndex extends React.Component{
 
 
 
-    // componentDidUpdate(prevProps, prevState){
+    componentDidUpdate(prevProps, prevState){
         
-    //     if(prevProps.book && this.props.book){
-    //         if(prevProps.book.title !== this.props.book.title){
-    //             this.props.fetchReviews(this.props.bookId);
-    //             // this.setState({
-    //             //     updated:true
-    //             // });
-    //         }
-    //     }  
-    // }
+        if(prevProps.book && this.props.book){
+            if(prevProps.book.title !== this.props.book.title){
+                this.props.fetchReviews(this.props.bookId);
+                // this.setState({
+                //     updated:true
+                // });
+            }
+        }  
+    }
 
   
     handleCommentUpdate(){
