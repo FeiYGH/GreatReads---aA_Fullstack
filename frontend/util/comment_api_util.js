@@ -8,6 +8,8 @@ export const fetchComment = (reviewId, id) => {
 
 }
 
+
+//not using right now
 export const fetchReviewComments = (reviewId) => {
     // debugger;
     return(
@@ -18,6 +20,7 @@ export const fetchReviewComments = (reviewId) => {
     )
 }
 
+//currently not using, may use in future, with user show page
 export const fetchUserComments = (userId) => {
     return(
         $.ajax({
@@ -49,11 +52,11 @@ export const updateComment = (reviewId, commentId,comment) => {
     );
 };
 
-export const deleteComment = (reviewId, commentId) => {
+export const deleteComment = (commentId) => {
     return(
         $.ajax({
             method:'DELETE',
-            url: `/api/reviews/${reviewId}/comments/${commentId}`,
+            url: `/api/comments/${commentId}`
         })
     )
 }

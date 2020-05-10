@@ -91,10 +91,10 @@ export const updateComment = (reviewId,commentId, comment) => dispatch =>  {
 };
 
 
-export const deleteComment = (reviewId, commentId) =>  dispatch => {
+export const deleteComment = (commentId) =>  dispatch => {
     return(
-        CommentAPIUtil.deleteComment(reviewId, commentId)
-            .then(comment => dispatch(deleteReviewComment(comment.id)),
+        CommentAPIUtil.deleteComment(commentId)
+            .then(() => dispatch(deleteReviewComment(commentId)),
             (errors) => dispatch(receiveCommentErrors(errors.responseJSON)))
     )
 }

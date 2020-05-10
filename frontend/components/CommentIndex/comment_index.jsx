@@ -13,14 +13,15 @@ class CommentIndex extends React.Component{
             fullForm:false,
             updatingComments:false,
             comment:"",
-            user_id: this.props.reviewAuthor.id,
+            user_id: this.props.sessionId,
             review_id: this.props.reviewId
         };
         this.updateForm=this.updateForm.bind(this);
         this.toggleCommentContainer= this.toggleCommentContainer.bind(this);
         this.openFormContaniner = this.openFormContainer.bind(this);
-        this.viewAllComments = this.viewAllComments.bind(this);
+        this.toggleViewAllComments = this.toggleViewAllComments.bind(this);
         this.createComment = this.createComment.bind(this);
+        this.writeCommentContainer = this.writeCommentContainer.bind(this);
 
     }
 
@@ -33,7 +34,10 @@ class CommentIndex extends React.Component{
         this.setState({fullForm:true});
     }
 
-    viewAllComments(){
+    writeCommentContainer(){
+        this.setState({fullForm:true});
+    }
+    toggleViewAllComments(){
         if(this.state.viewComments===false){
             this.setState({viewComments:true});
         }else{
@@ -89,130 +93,166 @@ class CommentIndex extends React.Component{
         debugger;
 
 
+        let longComment=false
         if(this.props.review){
             allComments = Object.values(this.props.review.comments).map(comment =>{
                 debugger;
                 if(comment.review_id===reviewId){
                     commentCount+=1;
+                    if(comment.comment.length > 150){
+                        longComment=true;
+                    }
                     return(
                         <CommentItemContainer
                             comment={comment}
                             sessionId={sessionId}
                             reviewId={reviewId}
                             reviewAuthor={reviewAuthor}
+                            handleCommentUpdate={this.props.handleCommentUpdate}
+                            longComment={longComment}
                         />
-                    ) 
+                    )   
                 }
                  
             });
-        }
-
-        // if(this.props.fetchedReviewForComments){
-        //     allComments.push(
-        //         <CommentItemContainer
-        //             comment={this.props.fetchedReviewForComments}
-        //             sessionId={sessionId}
-        //             reviewId={reviewId}
-        //             reviewAuthor={reviewAuthor}
-        //         />
-        //     )
-        // }
-
-
-        // let comments;
-        // if(this.props.fetchedReviewForComments){
-        //     comments = this.state.fetchedReviewForComments.comments;
-        // }else if(this.props.review){
-        //     comments=this.props.review.comments;
-        // }
-
-
-        // if(this.props.review || this.props.fetchedReviewForComments){
-        //     // allComments = this.props.review.comments.map(comment =>{
-            
-        //     allComments = comments.map(comment =>{
-        //         debugger;
-        //         if(comment.review_id===reviewId){
-        //             commentCount+=1;
-        //             debugger;
-        //             return(
-        //                 <CommentItemContainer
-        //                     comment={comment}
-        //                     sessionId={sessionId}
-        //                     reviewId={reviewId}
-        //                     reviewAuthor={reviewAuthor}
-        //                 />
-        //             ) 
-        //         }
-                 
-        //     });
-        // }
-
-       
+        }  
 
         if(this.props.review){
-            if(this.state.comments===false ){
-                return(
-                    <div>
-                        <h1> <span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span>&nbsp;·&nbsp; <span>write a comment</span></h1>
+                if(commentCount===0 && this.state.comments===false){
+                    return(
+                        
+                    <div className="commentIndexContainer">
+                        <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>no comments </span><span className="blackDot">&nbsp;·&nbsp;</span> <span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
                     </div>
-                )
-            }else if(this.state.comments===true && this.state.viewComments===false && this.state.fullForm===false){
-                return(
-                    <div>
-                        <h1><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span>&nbsp;·&nbsp; </h1>
-                        <h1><span onClick={()=>this.viewAllComments()}>View all {commentCount} comments</span></h1>
-                        <form>
-                            <input onClick={()=>this.openFormContainer()} placeholder="Write a comment..." type="text"></input>
-                        </form>
-    
-                    </div>
-                )
+                         
+                    )
+                }else if(commentCount===0 && this.state.comments===true){
+                    return(
+                    <div className="commentIndexContainer">
+                        <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>no comments </span><span className="blackDot">&nbsp;·&nbsp;</span><span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
+                        <div className="row wholeCommentForm">
+                            <div className="col-comments">
+                                <div className="col-profilePicComment"      id="defaultProfilePic">
+                                        <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                </div>
+                                <div className="col-commentFormFull commentItemTextAreaDiv">
+                                    <form className="commentItemTextAreaDivForm">
+                                    <textarea className="commentItemTextArea" placeholder="Write a comment..." rows="5" cols="30" value={this.state.comment} onChange={this.updateForm("comment")}/>
+                                    <button className="commentButton"onClick={()=>this.createComment(this.state)}>Comment</button>
+                                    </form>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </div>)
+                }
+                
+                if(this.state.comments===false){
+                    return(
+                        <div>
+                            <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span><span className="blackDot">&nbsp;·&nbsp;</span> <span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
+                        </div>
+                    )
+                }else if(this.state.comments===true && this.state.viewComments===false && this.state.fullForm===false){
+                    return(
+                        <div className="commentIndexContainer">
+                            <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span></h1>
+
+                            <div className="row wholeCommentForm">  
+                                <div className="col-comments">
+                                    <div className="row commentItemRow">
+                                        <h1 className="viewAllComments"><span onClick={()=>this.toggleViewAllComments()}>View all {commentCount} comments</span></h1>
+                                    </div>
+                                    <div className="row commentItemRow">
+                                        <form className="inputWriteCommentPHForm">
+                                            <input className="inputWriteCommentPH" onClick={()=>this.openFormContainer()} placeholder="Write a comment..." type="text"></input>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            
+                        </div>
+                    )
             }else if(this.state.comments===true && this.state.viewComments===false && this.state.fullForm===true){
                 return(
-                    <div>
-                        <h1><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span>&nbsp;·&nbsp; </h1>
-                        <h1><span onClick={()=>this.viewAllComments()}>View all {commentCount} comments</span></h1>
-                        <div className="row">
-                            <div className="col-2">PIC</div>
-                            <div className="col-10">
-                                <form>
-                                <textarea placeholder="Write a comment..." rows="10" cols="50" value={this.state.comment} onChange={this.updateForm("comment")}/>
-                                <button onClick={()=>this.createComment(this.state)}>Comment</button>
-                                </form>
+                    
+                    <div className="commentIndexContainer">
+                    
+                        <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span></h1>
+
+                        
+                        {/* <h1><span onClick={()=>this.toggleViewAllComments()}>View all {commentCount} comments</span></h1> */}
+                        <div className="row wholeCommentForm">
+                            <div className="col-comments">
+                                        <div className="row commentItemRow">
+                                            <h1 className="viewAllComments"><span onClick={()=>this.toggleViewAllComments()}>View all {commentCount} comments</span></h1>
+                                        </div>
+                                        <div className="row commentItemRow">
+                                            <div className="col-profilePicComment"      id="defaultProfilePic">
+                                                <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                            </div>
+                                            <div className="col-commentFormFull commentItemTextAreaDiv">
+                                                <form className="commentItemTextAreaDivForm">
+                                                <textarea className="commentItemTextArea" placeholder="Write a comment..." rows="5" cols="30" value={this.state.comment} onChange={this.updateForm("comment")}/>
+                                                <button className="commentButton"onClick={()=>this.createComment(this.state)}>Comment</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                
                             </div>
-    
+                                
                         </div>
-                       
-    
                     </div>
                 )
     
             }else if(this.state.comments===true && this.state.viewComments===true && this.state.fullForm===false){
                 return(
-                    <div>
-                        <h1><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span>&nbsp;·&nbsp; </h1>                   
-                        {allComments}
-                        <form onClick={()=>this.openFormContainer()}> 
+                    <div className="commentIndexContainer">
+
+                        <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span><span className="blackDot">&nbsp;·&nbsp;</span> <span onClick={()=>this.toggleViewAllComments()}>Hide comments</span></h1>
+                        
+                        <div className="row wholeCommentForm"> 
+                            <div className="col-comments">  
+                                <div className="row commentItemRow">
+                                    {allComments}
+                                </div>
+                                <div className="row commentItemRow">
+                                    <form onClick={()=>this.openFormContainer()} className="inputWriteCommentPHForm">
+                                        <input className="inputWriteCommentPH" onClick={()=>this.openFormContainer()} placeholder="Write a comment..." type="text"></input>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* <form onClick={()=>this.openFormContainer()}> 
                             <input placeholder="Write a comment..." type="text"></input>
-                        </form>
+                        </form> */}
     
                     </div>
                 )
             }else if(this.state.comments===true && this.state.viewComments===true && this.state.fullForm===true){
                 return(
-                    <div>
-                        <h1><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span>&nbsp;·&nbsp; <span>write a comment</span></h1>
-                        <div className="row">
-                            <div className="col-2">PIC</div>
-                            {allComments}
-                            <div className="col-10">
-                                <form>
-                                <textarea placeholder="Write a comment..." rows="10" cols="50" value={this.state.comment} onChange={this.updateForm("comment")}/>
-                                <button onClick={()=>this.createComment(this.state)}>Comment</button>
-                                </form>
+                    <div className="commentIndexContainer">
+                        <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span><span className="blackDot">&nbsp;·&nbsp;</span><span onClick={()=>this.toggleViewAllComments()}>Hide comments</span></h1>
+                        <div className="row wholeCommentForm"> 
+                            <div className="col-comments">  
+                                <div className="row commentItemRow">
+                                    {allComments}
+                                </div>
+                                <div className="row commentItemRow">
+                                            <div className="col-profilePicComment"      id="defaultProfilePic">
+                                                <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                            </div>
+                                            <div className="col-commentFormFull commentItemTextAreaDiv">
+                                                <form className="commentItemTextAreaDivForm">
+                                                <textarea className="commentItemTextArea" placeholder="Write a comment..." rows="5" cols="30" value={this.state.comment} onChange={this.updateForm("comment")}/>
+                                                <button className="commentButton"onClick={()=>this.createComment(this.state)}>Comment</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
                             </div>
-    
                         </div>
                        
     

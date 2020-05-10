@@ -13,9 +13,10 @@ Rails.application.routes.draw do
         # resources :comments, only: [:index, :create]
     end 
     resources :reviews, only: [:show, :destroy, :update] do
-        resources :comments, only: [:create, :index, :destroy, :show, :update]
+        resources :comments, only: [:create, :index, :show, :update]
     end 
 
+    resources :comments, only: [:destroy]
     
   end
  

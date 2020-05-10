@@ -7,12 +7,13 @@ import { updateReview } from '../../util/review_api_util';
 const mSTP = (state, ownProps) => {
     return({
         sessionId:state.sessions.id
+        // user: state.entities.users[state.sessions.id]
     });
 };
 
 const mDTP = dispatch => {
     return({
-        deleteComment: (reviewId,commentId) => dispatch(deleteComment(reviewId,commentId)),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId)),
         updateComment: (reviewId,commentId) => dispatch(updateReview(reviewId,commentId))
     });
 };

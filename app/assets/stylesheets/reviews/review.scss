@@ -6,7 +6,7 @@
     font-size:16px;
     color:#181818;
     margin:0px;
-    margin-bottom:10px;
+    margin-bottom:9px;
     box-sizing:border-box;
     // border:1px solid black;
     padding:3%;
@@ -14,7 +14,15 @@
     padding-left:0px;
     padding-top:2%;
     padding-right:0px;
+    margin-top:7px;
 
+}
+
+span.reviewItemDate{
+    float:right;
+    font-size:14px;
+    margin-right:0px;
+    color:#999999;
 }
 
 .reviewItemBottom{
@@ -85,6 +93,8 @@
     width:11%;
     height:16%;
 }
+
+
 
 .col-profileMsg{
     width:85%;

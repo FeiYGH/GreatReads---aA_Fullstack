@@ -30,6 +30,15 @@ class Api::CommentsController < ApplicationController
         end 
     end 
 
+    def destroy
+        @comment = Comment.find_by(id: params[:id])
+        if @comment
+            Comment.find_by(id: params[:id]).destroy
+        else
+            render json: @comment.errors.full_messages, status: :unprocessable_entity
+        end
+    end 
+
 
     private
 

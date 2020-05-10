@@ -1,0 +1,128 @@
+.commentIndexContainer *{
+    box-sizing:border-box;
+    // border:1px solid green;
+}
+
+.commentIndexContainer{
+    font-size:14px;
+    font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #00635D;
+}
+
+h1.viewAllComments{
+    padding-left:5px;
+}
+
+h1.viewAllComments:hover{
+    cursor: pointer;
+    text-decoration:underline;
+}
+
+
+div.col-comments{
+    padding:0px;
+    background-color: rgba(216,216,216,0.3);
+    padding-top:4px;
+    padding-left:0px;
+    
+
+    
+}
+
+.col-comments{
+    width:92%;
+    background-color: rgba(216,216,216,0.3);
+    padding:0px;
+    padding-top:4px;
+    padding-left: 3px;
+    width:92%;
+    
+}
+
+
+
+div#defaultProfilePic.col-profilePicComment{
+    padding:0px;
+    margin-top:4px;
+    margin-left:8px;
+    
+
+}
+
+.commentIndexContainer > span:hover{
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+.col-profilePicComment{
+    width:7.5%;
+    height:14%;
+}
+
+.commentItemTextArea{
+    margin:0px;
+    width:100%;
+    padding-right:3px;
+}
+
+.wholeCommentForm{
+    margin-left:0px;
+}
+
+div.col-commentFormFull.commentItemTextAreaDiv{
+    padding:3px;
+    padding-top:0px;
+    margin-top:0px;
+    margin-right:0px;
+    width:89%;
+    margin-left:3px;
+
+}
+
+.commentItemTextAreaDiv{
+    padding:3px;
+    padding-top:0px;
+
+}
+
+.commentItemTextAreaDivForm{
+    margin-left:0px;
+}
+
+.commentButton{
+    float:right;
+    padding:4px 12px;
+    background-color: #F4F1EA;
+    font-size:11px;
+    border: radius 3px;
+    border:1px solid #D6D0C4;
+    color: #333333;
+    margin-top:6px;
+    margin-bottom: 0px;
+    margin-right:1px;
+   
+}
+
+.commentButton:hover{
+    color: #00635D;
+
+}
+
+
+//for the write a comment placeholder
+.inputWriteCommentPH{
+    width:96%;
+}
+
+.inputWriteCommentPHForm{
+    padding-left:3px;
+}
+
+
+.commentItemRow{
+    border-bottom:1px solid #e5e5d6;
+    margin-right:0px;
+    margin-left:0px;
+    padding-bottom:2px;
+    margin-bottom:0px;
+}
