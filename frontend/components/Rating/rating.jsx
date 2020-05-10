@@ -100,16 +100,22 @@ class Rating extends React.Component{
         if(prevProps.myReview.rating!== this.props.myReview.rating){
             this.setState({star:this.props.myReview.rating});
         }
+        // if(prevProps.book && this.props.book){
+        //     if(prevProps.book.title !== this.props.book.title){
+        //         this.setState({star:this.props.myReview.rating});
+        //     }
+        // } 
+
     }
 
     
     componentDidMount(){
-        // debugger;
-        // this.props.fetchBook(this.props.bookId);
-        // let loggedIn = !!this.state.sessionId;
-        // if(loggedIn){
-        //     this.props.fetchReviewsUser(this.state.sessionId)
-        // }
+        debugger;
+        this.props.fetchBook(this.props.bookId);
+        let loggedIn = !!this.state.sessionId;
+        if(loggedIn){
+            this.props.fetchReviewsUser(this.state.sessionId)
+        }
     }
 
     render(){

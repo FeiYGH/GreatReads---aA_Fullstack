@@ -11,7 +11,8 @@ class Book extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            user_id: props.sessionId
+            user_id: props.sessionId,
+            changedBook:false
         }
         // this.state= this.props.book;
         this.state={
@@ -76,9 +77,10 @@ class Book extends React.Component{
 
     // componentDidUpdate(prevProps){
     //     debugger;
-    //     if(prevProps.userReviews!==prevProps.userReviews){
-    //         if(this.state.sessionId){
+    //     if(prevProps.book && this.props.book){
+    //         if(prevProps.book.title!==this.props.book.title){
     //             this.props.fetchReviewsUser(this.state.sessionId)
+    //             .then(this.setState({changedBook:true}));
     //         }
     //     }
     // }
@@ -146,7 +148,9 @@ class Book extends React.Component{
                             <h2>by {book.author}</h2>
                             <div className="ratingsInfo">
                                 <ReviewStatsContainer
+                                    book={book}
                                     bookId={this.props.bookId}
+                                    book={this.props.book}
                                 />
                             </div>
                             

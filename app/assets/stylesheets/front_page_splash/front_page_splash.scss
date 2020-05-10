@@ -189,4 +189,37 @@ p.mainSplash{
     }
 }
 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1500px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:10%;
+    }
+}
 
+
+/* Extra large devices (large laptops and desktops, 1500px and up) */
+@media only screen and (min-width: 1600px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:9.5%;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1600px and up) */
+@media only screen and (min-width: 1700px) {
+    .grid1{
+        z-index:-100;
+        background-color: tan;
+        background-image: linear-gradient(rgb(110,85,42),rgb(224,242,233));
+        border-bottom:2px solid rgb(110,85,42);
+        margin-top:8.5%;
+    }
+}

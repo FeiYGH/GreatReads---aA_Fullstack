@@ -20,6 +20,16 @@ class MyReviewForBook extends React.Component{
         }
     }
 
+    // componentDidUpdate(prevProps, prevState){
+        
+    //     if(prevProps.book && this.props.book){
+    //         if(prevProps.book.title !== this.props.book.title){
+    //             this.props.fetchReviewsUser(this.state.sessionId);
+
+    //         }
+    //     }  
+    // }
+
     pullUserReview(){
         let myReview;
         if(this.state.sessionId){

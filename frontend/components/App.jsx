@@ -19,7 +19,6 @@ const App = () => (
     // < GreetingContainer />
     <div>
         
-
         <Switch>
             <Route exact path='/' component={GreetingContainer}/>          
             {/* <AuthRoute exact path='*' component={NavBarContainer}/>  */}

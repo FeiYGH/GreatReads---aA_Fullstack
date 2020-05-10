@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import CommentIndexContainer from '../CommentIndex/comment_index_container';
 
 class ReviewItem extends React.Component{
     
@@ -13,6 +13,40 @@ class ReviewItem extends React.Component{
         };
         this.closeReview = this.closeReview.bind(this);
         this.openReview = this.openReview.bind(this);
+        this.getMonthCommentItem = this.getMonthCommentItem.bind(this);
+    }
+
+    getMonthCommentItem(dateObj){
+        let month = dateObj.getMonth() + 1;
+        switch(month){
+            case 1:
+                return "Jan";
+            case 2:
+                return "Feb";
+            case 3: 
+                return "March";
+            case 4: 
+                return "April";
+            case 5: 
+                return "May";
+            case 6: 
+                return "June";
+            case 7: 
+                return "July";
+            case 8: 
+                return "Aug";
+            case 9:
+                return "Sept";
+            case 10: 
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
+            default:
+                return "didn't work";
+
+        }    
     }
 
     closeReview(){
@@ -26,8 +60,12 @@ class ReviewItem extends React.Component{
 
 
     componentDidMount(){
-        let review = this.props.review ? this.props.review.id : "";
-        this.props.fetchReview(review);
+        let reviewId = this.props.review ? this.props.review.id : "";
+        this.props.fetchReview(reviewId);
+        
+        // if(reviewId !== ""){
+        //     this.props.fetchReviewComments(reviewId);
+        // }
         // this.props.fetchReview(this.props.review.id);
     }
 
@@ -35,7 +73,7 @@ class ReviewItem extends React.Component{
 
     render(){
         const {review, user} = this.props;
-        let reviewRatingPic
+        let reviewRatingPic;
         switch(review.rating){
             case 1:
                 reviewRatingPic = (
@@ -73,6 +111,20 @@ class ReviewItem extends React.Component{
                 )
             break;
         }
+
+       
+        let month;
+        let day;
+        let year;
+        if(review){
+            let dateObj = new Date(review.created_at);
+            month = this.getMonthCommentItem(dateObj);
+            day = dateObj.getDate();
+            year = dateObj.getFullYear();
+             
+        }
+
+
         // debugger;
         if(!review){
             return null;
@@ -91,7 +143,7 @@ class ReviewItem extends React.Component{
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
-                                        <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span></h2> 
+                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span><span className='reviewItemDate'>{month}&nbsp;{day},&nbsp;{year}</span></h2> 
                                         
                                     </div>
                                     <div className="row">
@@ -104,6 +156,15 @@ class ReviewItem extends React.Component{
                                 <span className="hideSpoilers">This review has been hidden because it contains spoilers. To view it,<a className="closeSpoilerLink" onClick={this.openReview}>click here.</a>
                                 </span> 
                             </div>
+                        </div>
+                        <div className="row">
+                        <CommentIndexContainer 
+                            review={review}
+                            reviewId={review.id}
+                            reviewAuthor={review.author}
+                            book={this.props.book}
+                            handleCommentUpdate={this.props.handleCommentUpdate}
+                        />
                         </div>
                     </div>
                 )
@@ -123,7 +184,7 @@ class ReviewItem extends React.Component{
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
-                                        <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span></h2> 
+                                        <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span><span className='reviewItemDate'>{month}&nbsp;{day},&nbsp;{year}</span></h2> 
                                         
                                     </div>
                                     <div className="row">
@@ -138,47 +199,58 @@ class ReviewItem extends React.Component{
                                 <h3 className="reviewItemContent">{review.body}</h3>    
                             </div>
                         </div>
+                        <div className="row">
+                        <CommentIndexContainer 
+                            review={review}
+                            reviewId={review.id}
+                            reviewAuthor={review.author}
+                            book={this.props.book}
+                            handleCommentUpdate={this.props.handleCommentUpdate}
+                        />
+                        </div>
                     </div>
                 )
             }    
         }else{
             // debugger;
             return(
-                <div className="reviewItem">
-                    <div className="row">
-                        <div className="col-profilePic" id="defaultProfilePic">
-                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                <div>
+                    <div className="reviewItem">
+                        <div className="row">
+                            <div className="col-profilePic" id="defaultProfilePic">
+                                <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                            </div>
+                            <div className="col-profileMsg" id="RevIndexMsg">
+                                <div className="row">
+                                    <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span><span className='reviewItemDate'>{month}&nbsp;{day},&nbsp;{year}</span></h2> 
+                                </div>
+                                <div className="row">
+                                    <h2 className="reviewItemTitle">{review.title}</h2>
+                                </div>
+                            </div>      
                         </div>
-                        <div className="col-profileMsg" id="RevIndexMsg">
-                            <div className="row">
-                                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span></h2> 
-                            </div>
-                            <div className="row">
-                                <h2 className="reviewItemTitle">{review.title}</h2>
-                            </div>
-                        </div>      
+                
+                        <div className="reviewItemBottom">
+                            <h3 className="reviewItemContent">{review.body} </h3>  
+                            
+                            
+
+                            {/* <h2>{new Intl.DateTimeFormat("en-GB",{month:"long", day: "2-digit", year: "numeric", hour: 'numeric', minute: 'numeric', second: 'numeric'}).format(review.created_at.toString())}</h2> */}
+                            
+                        </div>
+                        
                     </div>
-               
-                    <div className="reviewItemBottom">
-                        <h3 className="reviewItemContent">{review.body}</h3>    
-                    </div>
+                    <div className="row">
+                            <CommentIndexContainer 
+                                review={review}
+                                reviewId={review.id}
+                                reviewAuthor={review.author}
+                                book={this.props.book}
+                                handleCommentUpdate={this.props.handleCommentUpdate}
+                            />
+                        </div>
                 </div>
             )
-            // return(
-            //     <div>
-                   
-            //         <div className="reviewItem">
-                
-            //         {reviewRatingPic}
-            //         <h2>{review.rating}</h2>
-                    
-            //         <h2 className="reviewItemAuthor">{review.author.username}</h2>
-            //         <h2 className="reviewItemTitle">{review.title}</h2>
-            //         <h3 className="reviewItemContent">{review.body}</h3>
-            //     </div>
-            //     </div>
-                
-            // )
         }
         
     }

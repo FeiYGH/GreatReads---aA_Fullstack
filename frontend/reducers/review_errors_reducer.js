@@ -12,7 +12,7 @@ const ReviewErrorsReducer = (state=[], action) => {
         case DELETE_BOOK_REVIEW:
             return [];
         case RECEIVE_REVIEW_ERRORS: 
-            // debugger;
+            debugger;
             return action.errors;           
         // case CLEAR_SESSION_ERRORS:
         //     return [];
