@@ -8,7 +8,7 @@ const reviewsReducer = (state = {}, action)=> {
     let nextState= Object.assign({},state);
     switch(action.type){
         case RECEIVE_BOOK_REVIEWS:
-            console.log(action.reviews);
+            // console.log(action.reviews);
             // debugger;
             return action.reviews;
         case RECEIVE_REVIEW:          
@@ -20,7 +20,7 @@ const reviewsReducer = (state = {}, action)=> {
             delete nextState[action.reviewId];
             return nextState;
         case RECEIVE_REVIEW_FOR_COMMENTS:
-            debugger;
+            // debugger;
             return Object.assign({},state,{fetchedReviewForComments:action.review});
         default:
             return state;

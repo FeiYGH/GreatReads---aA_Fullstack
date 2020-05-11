@@ -16,7 +16,7 @@ class NavBar extends React.Component{
     }
 
     goToBook(bookId){
-        debugger;
+        // debugger;
         
         (this.props.fetchBook(bookId))
             .then(this.props.history.push(`/books/${bookId}`))
@@ -41,8 +41,7 @@ class NavBar extends React.Component{
         // debugger;
         if(this.props.books && partialWd !== ""){
            searchBarBooks=Object.values(this.props.books).map(book => {
-            //    debugger;
-               
+            //    debugger;             
                if(book.title.toLowerCase().startsWith(partialWd.toLowerCase())){
                 //    debugger;
                    return(
@@ -62,7 +61,7 @@ class NavBar extends React.Component{
                    )
                }else{
                    return(<div></div>)
-               }
+                }
            })
         };
         // debugger;

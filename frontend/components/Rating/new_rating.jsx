@@ -25,8 +25,10 @@ class Rating extends React.Component{
         const {myReview, loggedIn} = this.props;
         if(myReview===undefined || myReview.rating===0 || !loggedIn || document.getElementById('rateStarz')===null){return null};
         // debugger;
-        console.log("MY REVIEW");
-        console.log(myReview);
+
+        // console.log("MY REVIEW");
+        // console.log(myReview);
+
         document.getElementById(`star${myReview.rating}`).checked =true;
         // let myRatings = document.getElementsByClassName(`star${myReview.rating}`);
         // for(let i= 0; i < myRatings.length; i++){

@@ -61,8 +61,8 @@ class Book extends React.Component{
             myReview = Object.values(this.props.userReviews).find(review =>
                 (review.book_id === parseInt(this.props.bookId,10) && review.user_id === this.state.sessionId))
         };
-        console.log("MY REVIEW");
-        console.log(myReview);
+        // console.log("MY REVIEW");
+        // console.log(myReview);
         return myReview;
     }
 
@@ -71,7 +71,7 @@ class Book extends React.Component{
         this.props.fetchReviewsUser(this.state.sessionId)
             .then(this.setState({ratingUpdated:this.state.ratingUpdated+1}))
         // this.setState({ratingUpdated:this.state.ratingUpdated+1});
-        console.log("STATE OF RATINGUPATED");
+        // console.log("STATE OF RATINGUPATED");
       
     }
 
@@ -115,7 +115,7 @@ class Book extends React.Component{
         // }
         // debugger;
 
-        console.log(myReview, "MYREVIEWBOOK");
+        // console.log(myReview, "MYREVIEWBOOK");
         
         if(!book){
             return null;

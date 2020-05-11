@@ -5,7 +5,7 @@ const userReviewsReducer = (state = {}, action)=> {
     let nextState= Object.assign({},state);
     switch(action.type){
         case RECEIVE_BOOK_REVIEWS_USER:
-            console.log(action.reviews);
+            // console.log(action.reviews);
             // debugger;
             return action.reviews;
         case RECEIVE_REVIEW:

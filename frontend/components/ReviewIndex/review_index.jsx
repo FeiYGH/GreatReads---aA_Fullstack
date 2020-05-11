@@ -75,8 +75,10 @@ class ReviewIndex extends React.Component{
     render(){
         // debugger;
         const {reviews,user,fetchReviews, book} = this.props;
-        console.log("BOOOOOK TITLE!!!!!!!!!!!!!")
-        console.log(book.title);
+
+        // console.log("BOOOOOK TITLE!!!!!!!!!!!!!")
+        // console.log(book.title);
+        
         let myReview = this.pullUserReview();
 
         const reviewItems = Object.values(reviews).map((review)=>{

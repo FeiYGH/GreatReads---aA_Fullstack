@@ -75,7 +75,7 @@ class Rating extends React.Component{
                 .then(this.setState({updated:this.state.updated+1}));
         }else{
             // debugger;
-            console.log("NEWRATE");
+            // console.log("NEWRATE");
             let ratingOnly = Object.assign({}, this.state, {rating: newRate});
             this.props.createReview(this.props.bookId, ratingOnly)
                 .then(this.props.handleRatingUpdate())
@@ -110,7 +110,7 @@ class Rating extends React.Component{
 
     
     componentDidMount(){
-        debugger;
+        // debugger;
         this.props.fetchBook(this.props.bookId);
         let loggedIn = !!this.state.sessionId;
         if(loggedIn){

@@ -5,13 +5,13 @@ const commentsReducer = (state = {}, action)=> {
     let nextState= Object.assign({},state);
     switch(action.type){
         case RECEIVE_REVIEW_COMMENTS:
-            console.log(action.comments);
+            // console.log(action.comments);
             // debugger;
             return Object.assign({},state,action.comments);
             // return Object.assign({}, state, {[Object.values(action.comments)[0].review_id]: action.comments});
 
         case RECEIVE_COMMENT:          
-            debugger;
+            // debugger;
             return Object.assign({},state,{[action.comment.id]:action.comment});
         case DELETE_COMMENT:
             delete nextState[action.commentId];

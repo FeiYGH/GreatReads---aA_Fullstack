@@ -113,7 +113,7 @@ class CommentItem extends React.Component{
             
         }
         
-        debugger;
+        // debugger;
 
 
         let tempComment;

@@ -61,7 +61,7 @@ class CommentIndex extends React.Component{
     // }
 
     createComment(comment){
-        debugger;
+        // debugger;
         this.props.createComment(this.props.reviewId, comment)
             // .then(this.props.fetchReviewForComments(this.props.reviewId))
             .then(this.props.handleCommentUpdate());
@@ -81,22 +81,23 @@ class CommentIndex extends React.Component{
         let allComments;
         let commentCount = 0;
         // debugger;
-        console.log("ALL COMMENTS");
-        console.log("REVIEW ID");
-        console.log(reviewId);
-        console.log("BOOK NAME")
-        console.log(this.props.book.title);
-        console.log("HOW MANY COMMENTS");
-        console.log(Object.values(this.props.review.comments).length);
+
+        // console.log("ALL COMMENTS");
+        // console.log("REVIEW ID");
+        // console.log(reviewId);
+        // console.log("BOOK NAME")
+        // console.log(this.props.book.title);
+        // console.log("HOW MANY COMMENTS");
+        // console.log(Object.values(this.props.review.comments).length);
 
         // debugger;
-        debugger;
+        // debugger;
 
 
         let longComment=false
         if(this.props.review){
             allComments = Object.values(this.props.review.comments).map(comment =>{
-                debugger;
+                // debugger;
                 if(comment.review_id===reviewId){
                     commentCount+=1;
                     if(comment.comment.length > 150){

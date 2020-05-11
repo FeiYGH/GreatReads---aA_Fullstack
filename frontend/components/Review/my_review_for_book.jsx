@@ -211,7 +211,7 @@ class MyReviewForBook extends React.Component{
             //     </div>
             // )
         }else if(myReview){
-            console.log("INSIDE MY ACCOUNT INFO")
+            // console.log("INSIDE MY ACCOUNT INFO")
             return(
                 <div className="myRevForBookOuterDiv"> 
                     <div className="row myActRow">
