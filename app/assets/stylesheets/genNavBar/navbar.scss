@@ -6,7 +6,7 @@
     display: flex;
     background-color: #F4F1EA;
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
-    padding-right:3%;
+    padding-right:2%;
  
   }
   
@@ -113,6 +113,82 @@ h1.navLogo{
   .searchBookPhoto > img{
     width:100%;
   }
+
+  .profileIconLink{
+    border-radius:19px;
+    width:30px;
+    height:30px;
+    margin-top:7px;
+    border:1px solid #D8D8D8;
+    border: 1px solid #c9c9c9;
+   
+  }
+
+  
+
+
+  .profileIconLinkSpan{
+    padding-left:8px;
+    padding-right:8px;
+    position: relative;
+  }
+
+  .profileIconLinkSpan:hover{
+    background-color:#382110;  
+  }
+
+  //for when the user dropdown is open
+  .profileIconLinkSpanDark{
+    background-color:#382110;  
+    padding-left:8px;
+    padding-right:8px;
+    position:relative;
+
+  }
+
+  .profileIconLinkSpan:hover > img{
+      border: 1px solid #F4F1EA;
+    
+  }
+
+  .profileDropDownUL{
+    position:absolute;
+    top:46px;
+    width:200px;
+    right:0px;
+    padding:8px 0;
+    // border:1px solid green;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.15);
+    z-index:7;
+  }
+
+  .profileDropDownUL > li{
+    color:#333333;
+    font-size:15px;
+    line-height:32px;
+    padding: 0 16px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  }
+
+  #navbarProfileUsername{
+    font-weight:bolder;
+    text-transform: uppercase;
+  }
+
+  #navbarProfileLink{
+    color:#333333;
+    font-size: 15px;
+    line-height:32px;
+    padding:0px;
+    // border:1px solid purple;
+  }
+
+  #navbarProfileLink:hover{
+    text-decoration: underline;
+    background-color:white;
+  }
+
+
 
 // div.navLinks:hover{
 //     background-color: #382110;

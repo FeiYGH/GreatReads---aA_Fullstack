@@ -1,0 +1,175 @@
+.statusDropDown *{
+    box-sizing:border-box;
+    // border: 1px solid turquoise;
+    padding: 0px;
+    margin:0px;
+
+}
+
+//this is defined inside book.scss
+.statusDropDown{
+}
+
+div.row.bookshelfOuterDiv{
+    background-color:#409D69;
+ 
+}
+
+div.col-10.bookshelfStatus{
+    padding:0px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-left:10px;
+
+}
+.bookshelfStatus{
+    padding:0px;
+    background-color:#f2f2f2;
+}
+
+div.bookshelfStatus > h3{
+    padding: 6px 0 7px 8px;
+    padding-top:7px;
+    padding-left:5px;
+    padding-bottom:6px;
+    color:#181818;
+    white-space:nowrap;
+    font-size:13px;
+    font-weight:bold;
+    
+
+
+    
+}
+
+div.col-2.arrowDownBookshelf{
+    padding:0px;
+    padding-top:4px;
+    padding-bottom:4px;
+    background-color:#409D69;
+    color:white;
+}
+
+div.col-2.arrowDownBookshelf:hover{
+    cursor: pointer;
+}
+
+
+
+#rotate{
+    transform:rotate(45deg);
+    font-size:9px;
+    padding-top: 29%;
+    padding-bottom:10%;
+    padding-right:37%;
+    float:right;
+    
+
+}
+
+ul.dropDownULStatusList{
+    color:#181818;
+    color:#382110;
+    font-size:13px;
+    background-color:white;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.15);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.15);    
+}
+
+
+
+ul.dropDownULStatusList > li{
+    // border:1px solid purple;
+    padding: 0px 7px;
+    line-height:26px;
+    
+}
+
+ul.dropDownULStatusList > li:hover{
+    background-color:#d8d8d8;
+    background-color:#f2f2f2;
+    // background-color: #F4F1EA;
+    // background-color:#bbbbbb;
+    text-decoration: underline;
+}
+
+//for sessions when logged out
+ul.dropDownULStatusList > a > li{
+    padding: 0px 7px;
+    line-height:26px;
+    color:#382110;
+}
+
+ul.dropDownULStatusList > a > li:hover{
+    background-color:#d8d8d8;
+    background-color:#f2f2f2;
+    // background-color: #F4F1EA;
+    // background-color:#bbbbbb;
+    text-decoration: underline;
+}
+
+.statusListLILink{
+    color:#181818;
+    text-decoration: none;
+    
+}
+
+.statusListLILink:focus{
+    outline:none;
+}
+
+.statusListLILink:active{
+    background-color:white;
+    text-decoration: none;
+    color:#181818;
+}
+
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1120px and up) */
+@media only screen and (min-width: 1120px) {
+    div.col-10.bookshelfStatus{  
+        padding-top:3px;
+        padding-bottom:3px;
+    
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    div.col-10.bookshelfStatus{  
+        padding-top:4px;
+        padding-bottom:4px;
+        
+    }
+
+    div.bookshelfStatus > h3{
+        font-size:14px;
+    }
+}
+
+@media only screen and (min-width: 1460px) {
+    div.col-10.bookshelfStatus{  
+        padding-top:5px;
+        padding-bottom:5px;
+    
+    }
+
+    div.bookshelfStatus > h3{
+        font-size:15px;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    div.col-10.bookshelfStatus{  
+        padding-top:6px;
+        padding-bottom:7px;
+    
+    }
+}
+

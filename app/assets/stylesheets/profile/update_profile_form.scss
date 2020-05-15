@@ -1,0 +1,37 @@
+.updateProfileForm{
+    padding-left:40px;
+
+}
+
+.profileFormTextInput{
+    color:#767676[]
+}
+
+.profileFormLabels{
+    line-height:1.5;
+}
+
+.updateProfileForm > input{
+    margin-bottom:5px;
+}
+
+.updateProfileButton{
+    border-radius: 3px;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    line-height:1;
+    padding: 8px 12px;
+    background-color: #409D69;
+    border: 1px solid #409D69;
+    font-weight:normal;
+    color:white;
+    margin-bottom:7px;
+}
+
+.profileFormInputTypeFile{
+    margin-bottom:5px;
+}
+
+.updateProfileErrors > li{
+    padding-top:2px;
+}

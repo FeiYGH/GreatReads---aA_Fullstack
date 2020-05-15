@@ -20,5 +20,4 @@ class Comment < ApplicationRecord
     class_name: :User
 
     
-    
 end

@@ -1,10 +1,15 @@
 import * as SessionAPIUtil from '../util/session_api_util';
+import * as UserAPIUtil from '../util/user_api_util';
+
+import { RECEIVE_COMMENT } from './comment_actions';
 
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const RECEIVE_UPDATED_USER = 'RECEIVE_UPDATED_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 const receiveCurrentUser = currentUser => {
@@ -13,6 +18,7 @@ const receiveCurrentUser = currentUser => {
         currentUser
     })
 }
+
 
 // //errors will be an array
 // const receiveErrors = errors => {
@@ -44,6 +50,7 @@ export const clearErrors = () => {
 };
 
 
+
 export const login = (user, errorType) => dispatch => {
     // debugger;
     return SessionAPIUtil.login(user) 
@@ -64,3 +71,7 @@ export const signup = (user, errorType) => dispatch => {
     .then((user) => dispatch(receiveCurrentUser(user)),
     (errors)=> dispatch(receiveErrors(errors.responseJSON,errorType)));
 };
+
+
+
+

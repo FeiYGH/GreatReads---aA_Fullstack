@@ -10,8 +10,6 @@ const mSTP = state =>{
         sessionId: state.sessions.id,
         currentUser: state.entities.users[state.sessions.id],
         books:state.entities.books
-
-
     });
 };
 

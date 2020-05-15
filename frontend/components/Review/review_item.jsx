@@ -116,12 +116,21 @@ class ReviewItem extends React.Component{
         let month;
         let day;
         let year;
+        
         if(review){
             let dateObj = new Date(review.created_at);
             month = this.getMonthCommentItem(dateObj);
             day = dateObj.getDate();
             year = dateObj.getFullYear();
-             
+        }
+
+        let profilePic;
+        if(review){
+            if(review.photoUrl){
+                profilePic = review.photoUrl;
+            }else{
+                profilePic = "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
+            }
         }
 
 
@@ -139,11 +148,11 @@ class ReviewItem extends React.Component{
                         <div className="reviewItem">
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
-                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                    <img  id="defaultProfileImg" src={profilePic} alt="profile pic"/>
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
-                <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span><span className='reviewItemDate'>{month}&nbsp;{day},&nbsp;{year}</span></h2> 
+                                        <h2 id="reviewsWelcomeH2"><span id="reviewsUsername">{review.author.username}</span><span id="tellUserReview"> rated it {reviewRatingPic}</span><span className='reviewItemDate'>{month}&nbsp;{day},&nbsp;{year}</span></h2> 
                                         
                                     </div>
                                     <div className="row">
@@ -180,7 +189,7 @@ class ReviewItem extends React.Component{
                         <div className="reviewItem">
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
-                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                    <img  id="defaultProfileImg" src={profilePic} alt="profile pic"/>
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
@@ -218,7 +227,7 @@ class ReviewItem extends React.Component{
                     <div className="reviewItem">
                         <div className="row">
                             <div className="col-profilePic" id="defaultProfilePic">
-                                <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                <img  id="defaultProfileImg" src={profilePic} alt="profile pic"/>
                             </div>
                             <div className="col-profileMsg" id="RevIndexMsg">
                                 <div className="row">

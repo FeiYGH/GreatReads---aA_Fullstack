@@ -78,6 +78,17 @@ class ReviewIndex extends React.Component{
 
         // console.log("BOOOOOK TITLE!!!!!!!!!!!!!")
         // console.log(book.title);
+        let profilePic;
+        
+        if(user){
+            if(user.photoUrl){
+                profilePic = user.photoUrl;
+            }else{
+                profilePic= "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
+            }
+        }
+        
+
         
         let myReview = this.pullUserReview();
 
@@ -129,7 +140,7 @@ class ReviewIndex extends React.Component{
                 <div className="col-12 allReviews" id="col12Reviews">
                     <div className="row">
                         <div className="col-profilePic" id="defaultProfilePic">
-                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                            <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                         </div>
                         <div className="col-profileMsg" id="RevIndexMsg">
                             <div className="row">
@@ -178,7 +189,7 @@ class ReviewIndex extends React.Component{
                 <div className="col-12 allReviews" id="col12Reviews">
                     <div className="row">
                         <div className="col-profilePic" id="defaultProfilePic">
-                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                            <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                         </div>
                         <div className="col-profileMsg" id="RevIndexMsg">
                             <div className="row">
@@ -229,7 +240,7 @@ class ReviewIndex extends React.Component{
                 <div className="col-12 allReviews" id="col12Reviews">
                     <div className="row" id="addTopPadding">
                         <div className="col-profilePic" id="defaultProfilePic">
-                            <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                            <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                         </div>
                         <div className="col-profileMsg" id="RevIndexMsg">
                             <div className="row">

@@ -6,7 +6,8 @@ import {fetchBooks, fetchBook} from '../../actions/book_actions';
 const mSTP = state =>{
     return({
         sessionId: state.sessions.id,
-        books:state.entities.books
+        books:state.entities.books,
+        currentUser: state.entities.users[state.sessions.id]
     });
 };
 

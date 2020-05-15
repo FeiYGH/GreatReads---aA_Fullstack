@@ -6,14 +6,12 @@ import MyReviewForBookContainer from '../Review/my_review_for_book_container';
 import Rating from '../Rating/rating';
 import RatingContainer from '../Rating/rating_container';
 import ReviewStatsContainer from '../ReviewIndex/review_stats_container';
+import BookshelfContainer from '../Bookshelf/bookshelf_container';
 
 class Book extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            user_id: props.sessionId,
-            changedBook:false
-        }
+   
         // this.state= this.props.book;
         this.state={
             userReviews: props.userReviews,
@@ -27,6 +25,7 @@ class Book extends React.Component{
   
     componentDidMount(){
         // debugger;
+        
         this.props.fetchBook(this.props.bookId);
         if(this.state.sessionId){
             this.props.fetchReviewsUser(this.state.sessionId)
@@ -80,7 +79,6 @@ class Book extends React.Component{
     //     if(prevProps.book && this.props.book){
     //         if(prevProps.book.title!==this.props.book.title){
     //             this.props.fetchReviewsUser(this.state.sessionId)
-    //             .then(this.setState({changedBook:true}));
     //         }
     //     }
     // }
@@ -127,7 +125,11 @@ class Book extends React.Component{
                         {/* col-book is width 20% */}
                         <div className="bookCov col-book"> 
                             <img src={this.props.book.photoUrl} alt="Memoirs of a Geisha"></img>
-                            <div className="statusDropDown">Status Dropdown Coming</div>
+                            <div className="statusDropDown">
+                                <BookshelfContainer
+                                    bookId={this.props.bookId}
+                                />
+                            </div>
                          
                             {/* RATING RIGHT UNDERNEATH BOOK     */}
                             <span className="ratingText">{myReview===undefined ? "Rate this book" : "My rating:"}</span>

@@ -28,4 +28,20 @@ class Api::SessionsController < ApplicationController
         end 
     end
 
+   
+    def update
+        @user = User.find_by(id: params[:id])
+        if @user.update(session_params)
+            render :show
+        else
+            render json: @user.errors.full_messages,status:422
+        end
+    end 
+
+    private
+    def session_params
+        params.require(:user).permit(:username, :email, :photo)
+    end
+
+
 end

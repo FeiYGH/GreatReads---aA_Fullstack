@@ -6,8 +6,10 @@ import ReviewErrorsReducer from './review_errors_reducer';
 
 const errorsReducer = combineReducers({
     session_errors: SessionErrorsReducer,
+    
     // book_errors: BookErrorsReducer,
-    review_errors: ReviewErrorsReducer
+    review_errors: ReviewErrorsReducer,
+    bookshelf_errors: BookErrorsReducer
 });
 
 export default errorsReducer;

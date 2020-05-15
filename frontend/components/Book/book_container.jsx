@@ -19,7 +19,9 @@ const mDTP = dispatch => {
     return({
         fetchBook: (bookId) =>dispatch(fetchBook(bookId)),
         fetchReviewsUser: (userId) => dispatch(fetchReviewsUser(userId)),
-        updateReview: (bookId,review) =>dispatch(updateReview(bookId,review))
+        updateReview: (bookId,review) =>dispatch(updateReview(bookId,review)),
+        
+        
         // fetchBooks: () => dispatch(fetchBooks())
     });
 };

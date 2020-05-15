@@ -7,11 +7,14 @@ class NavBarHome extends React.Component{
         super(props);
 
         this.state={
-            searchBookTitle:""
+            searchBookTitle:"",
+            profileDropDown: false
+
         }
 
         this.updateForm = this.updateForm.bind(this);
         this.goToBook = this.goToBook.bind(this);
+        this.toggleProfileDropDown = this.toggleProfileDropDown.bind(this);
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -29,6 +32,16 @@ class NavBarHome extends React.Component{
         return (e) => this.setState({[field]: e.target.value});
     }
 
+    toggleProfileDropDown(){
+        if(this.state.profileDropDown===false){
+            this.setState({profileDropDown:true})
+        }else{
+            this.setState({profileDropDown:false})
+
+        }
+    }
+
+
     componentDidMount(){
         this.props.fetchBooks();
         //this.props.fetchSearchBarBooks(str)
@@ -42,6 +55,7 @@ class NavBarHome extends React.Component{
         //////////////////////////////////////////
         let searchBarBooks;
         let partialWd = this.state.searchBookTitle;
+
 
         if(this.props.books && partialWd !== ""){
             searchBarBooks=Object.values(this.props.books).map(book => {
@@ -69,12 +83,39 @@ class NavBarHome extends React.Component{
             })
          };
         ////////////////////////////////////////////
+        let profileDropDown;
+        if(this.props.currentUser){
+            if(this.state.profileDropDown===true){
+                profileDropDown=(
+                    <ul className="profileDropDownUL">
+                        <li id="navbarProfileUsername">{this.props.currentUser.username.toUpperCase()}</li>
+                        <li><Link id="navbarProfileLink"  to='/profile'>Profile</Link></li>
+                    </ul>
+                )
+            }else{
+                profileDropDown=(
+                    <div></div>
+                )
+            }
+        }else{
+            profileDropDown=(
+                <div></div>
+            )
+        }
+
+        let profileIconLinkSpan;
+       
+        if(this.state.profileDropDown===true){
+            profileIconLinkSpan =  
+            (<span onClick={()=>this.toggleProfileDropDown()} className="profileIconLinkSpanDark"><h1><img className="profileIconLink" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" /></h1><span className="profileDropDown">{profileDropDown}</span></span>)  
+        }else{
+            profileIconLinkSpan =  
+            (<span onClick={()=>this.toggleProfileDropDown()} className="profileIconLinkSpan"><h1><img className="profileIconLink" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" /></h1><span className="profileDropDown">{profileDropDown}</span></span>)  
+        }
+        
+        
         
         const {currentUser, sessionId} = this.props;
-
-
-
-
  
         if (!sessionId){
             return(
@@ -96,8 +137,8 @@ class NavBarHome extends React.Component{
                     </div>      
                     {/* <input className="col-4 searchBookInput" type="text" placeholder='Search books'/>   */}
                     
-                    <h1 className="col-3 navLinks"><Link onClick={this.props.logout}>Log out</Link></h1>                
-            {/* <h1 className="col-3 navLinks"><Link >{`Welcome, ${currentUser.username}`}</Link></h1>                 */}
+                    <h1 className="col-3 navLinks"><Link onClick={this.props.logout}>Log out</Link></h1>    
+                    {profileIconLinkSpan}               
                     
                 </div>
             )

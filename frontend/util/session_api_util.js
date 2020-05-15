@@ -10,6 +10,15 @@ export const signup = (user)=>{
     );
 }
 
+export const update = (user) => {
+    return(
+        $.ajax({
+            method: 'PATCH',
+            url: '/api/session/',
+            data: {user}
+        })
+    )
+};
 
 
 export const login = (user) => {

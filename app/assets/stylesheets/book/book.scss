@@ -133,9 +133,12 @@
 .statusDropDown{
     font-family: "Merriweather", "Georgia", serif;
     border:1px solid black;
-    margin:10px;
-    padding:10px;
     margin-bottom:0px;
+    padding:0px;
+    margin:7px;
+    border: 1px solid #dddddd;
+    border-radius:3px;
+    margin-left:15px;
     
 }
 
@@ -157,7 +160,6 @@
 
 .ratingsInfo{
     font-family: "Merriweather", "Georgia", serif;
-
     // border:1px solid black;
     margin:0px;
     padding:0px;

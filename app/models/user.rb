@@ -13,13 +13,17 @@
 class User < ApplicationRecord
     after_initialize :ensure_session_token
 
-    validates :username, :password_digest, :session_token, presence: true
+    validates :username,:email, :password_digest, :session_token, presence: true
     validates :username, :email, uniqueness: true
     validates :password, length: {minimum: 6}, allow_nil: true
 
+    #has_many :statuses;
     has_many :reviews;
     has_many :comments;
-
+    has_many :bookshelves;
+    has_one_attached :photo
+    
+    
 
     #spire 
     attr_reader :password

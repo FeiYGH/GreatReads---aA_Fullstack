@@ -45,9 +45,9 @@ const deleteReviewComment = (commentId) => {
     });
 };
 
-export const fetchComment = (reviewId, id) => dispatch => {
+export const fetchComment = (commentId) => dispatch => {
     return(
-        CommentAPIUtil.fetchComment(reviewId, id)
+        CommentAPIUtil.fetchComment(commentId)
             .then(comment => dispatch(receiveComment(comment)),
             (errors) => dispatch(receiveCommentErrors(errors.responseJSON))
             )

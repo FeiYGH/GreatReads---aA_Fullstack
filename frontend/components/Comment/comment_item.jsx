@@ -64,6 +64,8 @@ class CommentItem extends React.Component{
         }    
     }
 
+
+
     getTimeCommentItem(dateObj){
         let timeOfDay = "AM";
         let hours = dateObj.getHours();
@@ -95,6 +97,10 @@ class CommentItem extends React.Component{
         return timeStr;
     }
 
+    componentDidMount(){
+        this.props.fetchComment(this.props.comment.id);
+    }
+
 
     render(){
         const {comment, reviewAuthor} = this.props;
@@ -115,6 +121,20 @@ class CommentItem extends React.Component{
         
         // debugger;
 
+        //Setting the profile picture of the commenter
+        let profilePic;
+        let commentAuthor;
+        if(this.props.currComment){
+            if(this.props.currComment.photoUrl){
+                profilePic = this.props.currComment.photoUrl;
+            }else{
+                profilePic = "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
+
+            }
+            commentAuthor=this.props.currComment.author.username;
+        }else{
+            commentAuthor="loading";
+        }
 
         let tempComment;
         if(comment){
@@ -141,24 +161,28 @@ class CommentItem extends React.Component{
                 prompt = '(less)';
             }
 
+            
+
+            
+            
             // console.log("TEMPCOMMENT");
             // console.log(tempComment);
             // console.log("PROMPT");
             // console.log(prompt);
         
-
+            // debugger;
             if(loggedInUserId===comment.user_id){
                 if(this.props.longComment===true){
                     return(
                         <div>
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
-                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                    <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
                                         {/* <span>{comment.author.username}</span><span>{comment.comment}</span> */}
-                                        <span className="reviewAuthorUsernameComment">{reviewAuthor.username}</span><span className="tempComment">{tempComment}</span><span className="prompt" onClick={()=>this.toggleViewFullComment()}>{prompt}</span>
+                                        <span className="reviewAuthorUsernameComment">{commentAuthor}</span><span className="tempComment">{tempComment}</span><span className="prompt" onClick={()=>this.toggleViewFullComment()}>{prompt}</span>
     
                                     </div>
                                     <div className="row">
@@ -178,12 +202,12 @@ class CommentItem extends React.Component{
                         <div>
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
-                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                    <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
                                         {/* <span>{comment.author.username}</span><span>{comment.comment}</span> */}
-                                        <span className="reviewAuthorUsernameComment">{reviewAuthor.username}</span><span className="tempComment">{tempComment}</span>
+                                        <span className="reviewAuthorUsernameComment">{commentAuthor}</span><span className="tempComment">{tempComment}</span>
     
                                     </div>
                                     <div className="row">
@@ -207,13 +231,13 @@ class CommentItem extends React.Component{
                         <div>
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
-                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                    <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
         
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
                                         {/* <span>{comment.author.username}</span><span>{comment.comment}</span> */}
-                                        <span className="reviewAuthorUsernameComment">{reviewAuthor.username}</span><span className="tempComment">{tempComment}</span><span className="prompt" onClick={()=>this.toggleViewFullComment()}>{prompt}</span>
+                                        <span className="reviewAuthorUsernameComment">{commentAuthor}</span><span className="tempComment">{tempComment}</span><span className="prompt" onClick={()=>this.toggleViewFullComment()}>{prompt}</span>
     
                                     </div>
                                     <div className="row">
@@ -232,13 +256,13 @@ class CommentItem extends React.Component{
                         <div>
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
-                                    <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                    <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
         
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
                                     <div className="row">
                                         {/* <span>{comment.author.username}</span><span>{comment.comment}</span> */}
-                                        <span className="reviewAuthorUsernameComment">{reviewAuthor.username}</span><span className="tempComment">{tempComment}</span>
+                                        <span className="reviewAuthorUsernameComment">{commentAuthor}</span><span className="tempComment">{tempComment}</span>
     
                                     </div>
                                     <div className="row">

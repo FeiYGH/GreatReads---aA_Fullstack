@@ -3,21 +3,21 @@ Rails.application.routes.draw do
  
   namespace :api, defaults: { format: :json } do
     # resources :users, only: [:create]
-    resources :users, only: [:create] do
+    resources :users, only: [:create, :show, :update] do
       resources :reviews, only: [:index]
       resources :comments, only: [:index]
     end
-    resource :session, only: [:destroy, :create]
+    resource :session, only: [:destroy, :create, :update] #think should remove update
     resources :books, only: [:show, :index] do  
         resources :reviews, only: [:create, :index]
         # resources :comments, only: [:index, :create]
     end 
     resources :reviews, only: [:show, :destroy, :update] do
-        resources :comments, only: [:create, :index, :show, :update]
+        resources :comments, only: [:create, :index, :update]
     end 
-
-    resources :comments, only: [:destroy]
     
+    resources :comments, only: [:destroy, :show] #think update also should be here  
+    resources :bookshelves, only: [:show, :create, :index, :update]
   end
  
 
