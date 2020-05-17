@@ -132,8 +132,11 @@ class Book extends React.Component{
                             </div>
                          
                             {/* RATING RIGHT UNDERNEATH BOOK     */}
-                            <span className="ratingText">{myReview===undefined ? "Rate this book" : "My rating:"}</span>
-                            <div className="col-side"></div>
+                            <div className="myRatingLabel">
+                                <span className="ratingText">{myReview===undefined ? "Rate this book" : "My rating:"}</span>
+                            </div>
+                            {/* <div className="col-side"></div> */}
+                            <div className="ratingStarsBook">
                                 <RatingContainer 
                                     myReview={myReview===undefined ? {rating:0} : myReview}
                                     // myReview={myReview} 
@@ -141,7 +144,8 @@ class Book extends React.Component{
                                     // loggedIn={!!this.state.sessionId} 
                                     handleRatingUpdate ={this.handleRatingUpdate} 
                                 />
-                            <div className="col-side"></div>
+                            </div>
+                            {/* <div className="col-side"></div> */}
 
                         </div>
         

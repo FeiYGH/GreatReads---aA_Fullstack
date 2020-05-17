@@ -77,7 +77,7 @@ class CommentIndex extends React.Component{
     // }
 
     render(){
-        const {sessionId,reviewId,reviewAuthor} = this.props;
+        const {sessionId,reviewId,reviewAuthor, currentUser} = this.props;
         let allComments;
         let commentCount = 0;
         // debugger;
@@ -92,6 +92,14 @@ class CommentIndex extends React.Component{
 
         // debugger;
         // debugger;
+
+        let profilePic;
+        debugger;
+        if(sessionId){
+            profilePic = currentUser.photoUrl;
+        }else{
+            profilePic = "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
+        }
 
 
         let longComment=false
@@ -134,7 +142,7 @@ class CommentIndex extends React.Component{
                         <div className="row wholeCommentForm">
                             <div className="col-comments">
                                 <div className="col-profilePicComment"      id="defaultProfilePic">
-                                        <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                        <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                                 </div>
                                 <div className="col-commentFormFull commentItemTextAreaDiv">
                                     <form className="commentItemTextAreaDivForm">
@@ -191,7 +199,7 @@ class CommentIndex extends React.Component{
                                         </div>
                                         <div className="row commentItemRow">
                                             <div className="col-profilePicComment"      id="defaultProfilePic">
-                                                <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                                <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                                             </div>
                                             <div className="col-commentFormFull commentItemTextAreaDiv">
                                                 <form className="commentItemTextAreaDivForm">
@@ -243,7 +251,7 @@ class CommentIndex extends React.Component{
                                 </div>
                                 <div className="row commentItemRow">
                                             <div className="col-profilePicComment"      id="defaultProfilePic">
-                                                <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/>
+                                                <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                                             </div>
                                             <div className="col-commentFormFull commentItemTextAreaDiv">
                                                 <form className="commentItemTextAreaDivForm">

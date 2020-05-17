@@ -7,7 +7,8 @@ const mSTP = (state,ownProps) => {
     return({
         sessionId: state.sessions.id,
         comments: state.entities.comments,
-        fetchedReviewForComments: state.entities.reviews.fetchedReviewForComments
+        fetchedReviewForComments: state.entities.reviews.fetchedReviewForComments,
+        currentUser: state.entities.users[state.sessions.id]        
     })
     
 };

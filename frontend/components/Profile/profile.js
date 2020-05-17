@@ -157,8 +157,8 @@ class Profile extends React.Component {
                   </div>
                   <div className="row diffstatuses">
                     <div onClick={()=>this.changeStatus("Read")} className="col-2 profileBookStatus">read&nbsp;({read})</div>
-                    <div onClick={()=>this.changeStatus("Want to Read")} className="col-2 profileBookStatus">to-read&nbsp;({currReading})</div>
-                    <div onClick={()=>this.changeStatus("Currently Reading")} className="col-statusCurrRd profileBookStatus">currently-reading&nbsp;({wantToRead})</div>
+                    <div onClick={()=>this.changeStatus("Want to Read")} className="col-2 profileBookStatus">to-read&nbsp;({wantToRead})</div>
+                    <div onClick={()=>this.changeStatus("Currently Reading")} className="col-statusCurrRd profileBookStatus">currently-reading&nbsp;({currReading})</div>
                     <div onClick={()=>this.changeStatus("all")} className="col-2 profileBookStatus">all&nbsp;({all})</div>
                   </div>
                   <div className="row booksShown">

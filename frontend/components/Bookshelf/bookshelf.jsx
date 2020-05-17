@@ -52,16 +52,14 @@ class Bookshelf extends React.Component{
 
     createBookshelf(currStatus){
         const {sessionId, bookId} = this.props;
-
         this.props.createBookshelf({user_id:sessionId, book_id: parseInt(bookId), status:currStatus}).then(this.toggleDropDown());
-
+        this.setState({select:false});
     }
 
     editBookshelf(currStatus){
         const {bookshelf, sessionId, bookId} = this.props;
-
         this.props.editBookshelf(bookshelf.id, {user_id:sessionId, book_id: parseInt(bookId), status:currStatus});
-
+        this.setState({select:false});
     }
 
     getDropDown(){
