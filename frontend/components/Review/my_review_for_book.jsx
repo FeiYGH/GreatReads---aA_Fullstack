@@ -15,6 +15,22 @@ class MyReviewForBook extends React.Component{
     }
 
     componentDidMount(){
+        // debugger;
+        // let bookshelfId = -1;
+        // if(this.props.currentUser){
+        //     for(let i =0 ; i< currentUser.bookshelves.length; i++ ){
+        //         if(currentUser.bookshelves[i].book_id === parseInt(this.props.bookId)){
+        //             // debugger;
+        //             bookshelfId = currentUser.bookshelves[i].id;
+        //             break;
+        //         }
+        //     }
+        //     // debugger;
+        //     if (bookshelfId > -1){
+        //         this.props.fetchBookshelf(bookshelfId);
+        //     }
+        // }
+        
         if(this.state.sessionId){
             this.props.fetchReviewsUser(this.state.sessionId);
         }
@@ -53,8 +69,27 @@ class MyReviewForBook extends React.Component{
 
     render(){
         // debugger;
-        const {loggedIn, book} = this.props;
+        const {loggedIn, book, bookshelf} = this.props;
         let myReview = this.pullUserReview();
+        let statusSect; 
+
+        // if(loggedIn && bookshelf){
+        //     //if a bookshelf exists...
+        //     if(bookshelf){
+        //         statusSect = {
+        //             <div className="row myActRow">
+        //                 <div className="col-myRevLabels">
+        //                     <h3>Status</h3>
+        //                 </div>  
+        //                 <div className="col-myRevCont">
+        //                     <h3 id="myRevBookTitle">{bookshelf.status}</h3>
+        //                 </div>
+        //                 <div className="col-myRevRight"></div>
+        //             </div>
+        //         }
+        //     }
+        // }
+
 
         // debugger;
         if(!loggedIn){
@@ -143,6 +178,7 @@ class MyReviewForBook extends React.Component{
                         </div>
                         <div className="col-myRevRight"></div>
                     </div>
+                    {statusSect}
                 </div>
             )
             // return(
@@ -192,6 +228,8 @@ class MyReviewForBook extends React.Component{
                         </div>
                         <div className="col-myRevRight"></div>
                     </div>
+                    {statusSect}
+
                 </div>
             )
             // return(

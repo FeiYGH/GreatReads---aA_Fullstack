@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update] do
       resources :reviews, only: [:index]
       resources :comments, only: [:index]
+      resources :bookshelves, only: [:index]
     end
     resource :session, only: [:destroy, :create, :update] #think should remove update
     resources :books, only: [:show, :index] do  
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
     end 
     
     resources :comments, only: [:destroy, :show] #think update also should be here  
-    resources :bookshelves, only: [:show, :create, :index, :update]
+    resources :bookshelves, only: [:show, :create, :update]
   end
  
 

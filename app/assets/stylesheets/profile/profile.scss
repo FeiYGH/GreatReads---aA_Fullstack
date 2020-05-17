@@ -28,6 +28,7 @@
 }
 
 #defaultProfileImg{
+    width:100%;
     width:90%;
     border-radius:200px;
     // margin-left:9px;
@@ -51,6 +52,72 @@
     width:100%;
 }
 
+.profileMyBooksLink{
+    text-decoration: none;
+    color:#382110;
+}
+
+.profileMyBooksLink:hover{
+    text-decoration: underline;
+}
+
 .rowtest{
     width:100%;
+}
+
+
+
+//PROFILE USER BOOKSHELVES
+.profileBookshelvesOuterDiv{
+    margin-left:10px;
+}
+
+.booksShown{
+    display:flex;
+}
+
+
+
+.diffstatuses{
+    padding-bottom:10px;
+    // border-bottom:1px solid #d8d8d8;
+    margin-bottom:10px;
+
+}
+
+.profileUserBookshelves{
+    color:#382110;
+    font-size:16px;
+    font-weight:bold;
+    text-transform: uppercase;
+    padding-bottom:10px;
+    border-bottom:1px solid #d8d8d8;
+    margin-bottom: 10px;
+    
+}
+
+.profileBookStatus{
+    color: #00635D;
+}
+
+.profileBookStatus:hover{
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+.col-profileBook{
+    width:14%;
+    margin:10px;
+    margin-top:0px;
+}
+
+.col-statusCurrRd{
+    width:22%;
+}
+
+.col-profileBook > img{
+    max-width:150px;
+    max-height:225px;
+    -webkit-box-shadow: #ccc 5px 5px 5px;
+    padding:00px;
 }

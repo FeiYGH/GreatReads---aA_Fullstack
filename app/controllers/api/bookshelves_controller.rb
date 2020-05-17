@@ -7,6 +7,14 @@ class Api::BookshelvesController < ApplicationController
         render :show
     end 
 
+    def index
+        if params[:user_id]
+            @user = User.find_by(id: params[:user_id])
+            @bookshelves = @user.bookshelves
+        end
+        render :index
+    end 
+
     def create
         # debugger;
         @bookshelf=Bookshelf.new(bookshelf_params)

@@ -12,13 +12,14 @@ class Profile extends React.Component {
           updated_user: props.updatedUser,       
           updatedProf: "false",
           user: this.props.user,        
-          
+          status: "all"
         };
     
         this.handler = this.handler.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this)
-        this.update = this.update.bind(this)  
-        
+        this.update = this.update.bind(this);
+        this.changeStatus = this.changeStatus.bind(this); 
+        this.getBookAccdToStatus = this.getBookAccdToStatus.bind(this);
     }
 
     handler(){
@@ -32,29 +33,10 @@ class Profile extends React.Component {
     componentDidMount(){
         if(this.props.sessionId){
             this.props.getUser(this.props.sessionId);
+            this.props.fetchUserBookshelves(this.props.sessionId)
         }
-
-    //   this.setState({user:this.props.user});
-    //   if(this.props.user ){
-    //       this.props.getUpdatedUser(this.props.user.id)
-        
-        
-    //   }
     }
 
-    componentDidUpdate(prevProps, prevState){
-    //   if(prevProps.user !== this.props.user){
-        //  if(this.props.user.id){
-        //      this.props.getUpdatedUser(this.props.user.id);
-       
-        //  }   
-    //   }
-      
-    }
-  
-    // componentWillReceiveProps(nextProps){
-    //   this.setState({user:nextProps.user});
-    // }
 
     update(field) {
         return e => this.setState({
@@ -62,20 +44,53 @@ class Profile extends React.Component {
         })
     }
 
+    changeStatus(statusChange){
+      this.setState({status:statusChange })
+    }
+
+    getBookAccdToStatus(setStatus){
+      if(setStatus==="all"){
+          return (
+            Object.values(this.props.userBookshelves).map(bookshelf => {
+              return(
+                  <Link to={`/books/${bookshelf.book_id}`}>              
+                    <div className="col-profileBook">
+                      <img src={bookshelf.photoUrl} alt="book photo cover"/>
+                    </div>
+                  </Link>
+              )
+          })
+        );
+      }else{
+          return (
+            Object.values(this.props.userBookshelves).map(bookshelf => {
+              if(bookshelf.status===setStatus)
+              return(
+                <Link to={`/books/${bookshelf.book_id}`}>              
+                  <div className="col-profileBook">
+                    <img src={bookshelf.photoUrl} alt="book photo cover"/>
+                  </div>
+                </Link>
+              )
+          })
+        );
+      }
+    };
+
+
 
     render() {
+      let {userBookshelves} = this.props;
+
       let username;
       let email;
       let photo;
       if (this.props.updatedUser){
         username = this.props.updatedUser.handle;
         email = this.props.updatedUser.email;
-        //photo 
-        
       }else{
         username = "";
         email = "";
-        //photo
       }
 
       let profilePhoto;
@@ -84,6 +99,27 @@ class Profile extends React.Component {
           profilePhoto=this.props.user.photoUrl;
       }else{
           profilePhoto="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png"
+      }
+
+
+      let books; 
+      let read = 0;
+      let currReading = 0;
+      let wantToRead = 0;
+      let all = 0;
+      //bookshelves stats
+      if(this.props.userBookshelves){
+        Object.values(userBookshelves).map(bookshelf => {
+          all++;
+          if(bookshelf.status==="Read"){
+            read++;
+          }else if (bookshelf.status==="Currently Reading"){
+            currReading++;
+          }else{
+            wantToRead++;
+          }
+        });
+        books = this.getBookAccdToStatus(this.state.status);
       }
 
     //   debugger;
@@ -112,6 +148,25 @@ class Profile extends React.Component {
                     />
                     </div>
                 </div>
+                <br/>
+                <br/>
+                <br/>
+                <div className="profileBookshelvesOuterDiv">
+                  <div className="row profileUserBookshelves">
+                      <Link className="profileMyBooksLink" to='myBooks' ><h2>{this.props.user.username}'s Bookshelves</h2></Link>
+                  </div>
+                  <div className="row diffstatuses">
+                    <div onClick={()=>this.changeStatus("Read")} className="col-2 profileBookStatus">read&nbsp;({read})</div>
+                    <div onClick={()=>this.changeStatus("Want to Read")} className="col-2 profileBookStatus">to-read&nbsp;({currReading})</div>
+                    <div onClick={()=>this.changeStatus("Currently Reading")} className="col-statusCurrRd profileBookStatus">currently-reading&nbsp;({wantToRead})</div>
+                    <div onClick={()=>this.changeStatus("all")} className="col-2 profileBookStatus">all&nbsp;({all})</div>
+                  </div>
+                  <div className="row booksShown">
+                    {books}
+                  </div>
+                </div>
+                
+
               </div>)
       }else{
           return(

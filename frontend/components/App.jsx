@@ -3,7 +3,7 @@ import GreetingContainer from './Greeting/greeting_container';
 import LoginFormContainer from './SessionForm/login_form_container';
 import SessionFormContainer from './SessionForm/session_form_container';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {AuthRoute} from './../util/route_util';
+import {AuthRoute, ProtectedRoute} from './../util/route_util';
 
 import FrontPageSplash from './FrontPageSplash/front_page_splash';
 import FrontPageSplashContainer from './FrontPageSplash/front_page_splash_container';
@@ -16,7 +16,7 @@ import NavBarHomeContainer from '../components/Navbar/navbar_home_container';
 import newReviewContainer from '../components/Review/new_review_container';
 import EditReviewContainer from '../components/Review/edit_review_container';
 import ProfileContainer from '../components/Profile/profile_container';
-
+import MyBooksContainer from '../components/MyBooks/mybooks_container'
 
 const App = () => (
     // < GreetingContainer />
@@ -37,7 +37,9 @@ const App = () => (
             {/* <AuthRoute exact path ="/login" component={LoginFormContainer} />
             <AuthRoute exact path ="/signup" component={SessionFormContainer} /> */}
             {/* <Route path = "*" component={componentNotFound}/> */}
-            <Route exact path='/profile' component={ProfileContainer}/>
+            <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
+            <ProtectedRoute exact path='/myBooks' component={MyBooksContainer}/>
+            
             <Route exact path='/books' component={BooksContainer}/>
             <Route exact path='/books/:bookId' component={BookContainer}/>
             <Route exact path='/books/:bookId/review/new' component={newReviewContainer}/>

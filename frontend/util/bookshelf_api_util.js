@@ -1,3 +1,13 @@
+export const fetchBookshelves = (userId) => {
+    return(
+        $.ajax({
+            method: 'GET',
+            url: `/api/users/${userId}/bookshelves`
+        })
+    );
+};
+
+
 export const fetchBookshelf = (bookshelfId) => {
     // debugger;
     return(
@@ -28,3 +38,5 @@ export const editBookshelf = (bookshelfId, bookshelf) => {
         })
     );
 };
+
+

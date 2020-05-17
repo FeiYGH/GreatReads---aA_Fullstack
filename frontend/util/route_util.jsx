@@ -29,3 +29,18 @@ export const AuthRoute = withRouter(
         null
     )(Auth)
 );
+
+//Protected Route
+const Protected = ({ component: Component, path, loggedIn }) => (
+    <Route path={path} render={(props) => (
+      loggedIn ? <Component {...props} /> : <Redirect to="/" />
+      )} />
+  );
+
+  export const ProtectedRoute = withRouter(
+    connect(
+        mapStateToProps,
+        null
+    )(Protected)
+);
+

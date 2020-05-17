@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import Profile from './profile';
+import MyBooks from './mybooks';
 import {updateProfileInfo} from '../../actions/session_actions';
 import {getUser} from '../../actions/user_actions';
 import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(MyBooks);

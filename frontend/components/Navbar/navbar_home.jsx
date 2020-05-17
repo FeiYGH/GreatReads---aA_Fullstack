@@ -127,7 +127,9 @@ class NavBarHome extends React.Component{
                 <div className="genNavBarLoggedIn">
                     <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
                     <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
-                    <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1> 
+                    <h1 className="col-3 navLinks"><Link to="/myBooks">My Books</Link></h1>                
+
+                    <h1 className="col-3 navLinks"><Link to="/books">Browse</Link></h1> 
                     <div className="searchBar">
                         <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
                         

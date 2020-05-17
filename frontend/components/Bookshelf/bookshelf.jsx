@@ -126,7 +126,7 @@ class Bookshelf extends React.Component{
                     return(
                         <div>
                             <div className="row bookshelfOuterDiv">   
-                                <div className="col-10 bookshelfStatus">
+                                <div className="col-10 bookshelfStatus" id="noBookShelfStatus">
                                     <h3>Want to Read</h3>
                                 </div>
                                 <div className="col-2 arrowDownBookshelf">

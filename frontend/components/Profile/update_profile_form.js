@@ -12,7 +12,8 @@ class UpdateProfileForm extends React.Component{
         email: this.props.user.email,
         photoFile: null,
         updatedProfile: "false",
-        errors: "false"
+        errors: "false",
+        photoUrl:null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,18 +76,47 @@ openUpdate(){
 closeUpdate(){
   this.setState({updatedProfile:"false"});
   this.props.clearErrors();
+  this.setState({photoUrl:null});
 
 }
 
 handleFile(e){
-    this.setState({photoFile:e.currentTarget.files[0]})
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+        this.setState({photoFile:file, photoUrl: fileReader.result})
+    }
+    if(file){
+        fileReader.readAsDataURL(file);
+    }
+
+    // this.setState({photoFile:e.currentTarget.files[0]})
 }
 
 
 
 render(){
     // console.log(this.state);
+    const preview = this.state.photoUrl ? <div className="photoPreview"><img src={this.state.photoUrl} /></div> : null
+    let photoPreviewlabel;
+    let break2;
+    if(this.state.photoUrl){
+        photoPreviewlabel = 
+        (<label className="profileFormLabels">
+        Profile picture preview:
+        <br/>
+        </label>)
+        break2 = (<br/>);
+
+    }else{
+        photoPreviewlabel = null;
+        break2=null;
+    }
+
+    
+
     if(this.state.updatedProfile==="true"){
+        
         return(
             <div >
                 <form className="updateProfileForm" onSubmit={this.handleSubmit}>
@@ -110,6 +140,11 @@ render(){
                     <br/>
                     <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile}></input>
                     <br/>
+
+                    {photoPreviewlabel}
+                    {preview}
+                    
+                    
                     
                     <button className="updateProfileButton">Update profile</button>&ensp;
                     <button  className="updateProfileButton" onClick={this.closeUpdate}>Close</button>

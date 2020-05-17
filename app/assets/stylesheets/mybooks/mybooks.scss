@@ -1,0 +1,59 @@
+.myBooksPage *{
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+}
+
+.myBooksPage{
+    margin:20px;
+    min-height:500px;
+    border-bottom:1px solid #d8d8d8;
+
+}
+
+.myBooksHeader{
+    color:#00635D;
+    font-size:26px;
+    font-family: "Merriweather", "Georgia", serif;
+    padding-bottom:10px;
+    border-bottom:1px solid #d8d8d8;
+    font-weight:bold;
+    margin-bottom:15px;
+}   
+
+.bookshelvesH1{
+    font-weight:bold;
+    font-size:16px;
+    line-height:18px;
+}
+
+.allBookshelvesH1{
+    color:#777777;
+    line-height:22px;
+    font-size:15px;
+}
+
+.allBookshelvesH1:hover{
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+.statusBookshelvesH1{
+    color:#00635D;
+    line-height:18px;
+    font-size:15px;
+}
+
+.statusBookshelvesH1:hover{
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+.myBooksBookDisplay{
+    margin-top:30px;
+}
+
+.myBooksPage > img{
+    min-width:100px;
+    min-height:150px;
+}
