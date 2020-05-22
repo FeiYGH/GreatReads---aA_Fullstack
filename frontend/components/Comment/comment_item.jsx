@@ -144,6 +144,7 @@ class CommentItem extends React.Component{
             // console.log(this.state.fullLength);
 
             //changing the length of the comment to not go over 150
+            // debugger;
             if(this.props.longComment===true){
                 if(this.state.fullLength===false){
                     tempComment=comment.comment.slice(0,150);

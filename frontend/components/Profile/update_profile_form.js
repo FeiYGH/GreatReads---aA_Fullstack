@@ -37,6 +37,7 @@ handleSubmit(e) {
     this.props.updateProfileInfo(this.props.user.id, formData)   
     this.props.handler(); 
     this.props.clearErrors();
+    this.setState({updatedProfile:"false"});
     
 }
 
@@ -81,6 +82,7 @@ closeUpdate(){
 }
 
 handleFile(e){
+    // debugger;
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -89,6 +91,7 @@ handleFile(e){
     if(file){
         fileReader.readAsDataURL(file);
     }
+    document.getElementById ('fileName').value = e.currentTarget.files[0].name;
 
     // this.setState({photoFile:e.currentTarget.files[0]})
 }
@@ -138,13 +141,16 @@ render(){
                         Profile picture:
                     </label>
                     <br/>
-                    <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile}></input>
-                    <br/>
+                    <div className="file_input_div ">
+                        <span><input type="button" id="fileCoverButton" value="Choose File"/><input type="text" placeholder="No file chosen" id="fileName" readonly="readonly" ></input></span>       
+                        <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile} ></input>
+                    </div>
+                    {/* <input type="button" id="fileCoverButton" value="Open"/>
+                    <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile}></input> */}
+                    {/* <br/> */}
 
                     {photoPreviewlabel}
                     {preview}
-                    
-                    
                     
                     <button className="updateProfileButton">Update profile</button>&ensp;
                     <button  className="updateProfileButton" onClick={this.closeUpdate}>Close</button>

@@ -94,7 +94,7 @@ class CommentIndex extends React.Component{
         // debugger;
 
         let profilePic;
-        debugger;
+        // debugger;
         if(sessionId){
             profilePic = currentUser.photoUrl;
         }else{
@@ -102,14 +102,18 @@ class CommentIndex extends React.Component{
         }
 
 
-        let longComment=false
+        let longComment=false;
         if(this.props.review){
             allComments = Object.values(this.props.review.comments).map(comment =>{
                 // debugger;
                 if(comment.review_id===reviewId){
                     commentCount+=1;
+                    // debugger;
                     if(comment.comment.length > 150){
+                        // debugger;
                         longComment=true;
+                    }else{
+                        longComment=false;
                     }
                     return(
                         <CommentItemContainer

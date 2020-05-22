@@ -27,11 +27,27 @@
     
 }
 
+//this is for all the profile pics, not just on profile page
 #defaultProfileImg{
     width:100%;
     width:90%;
     border-radius:200px;
+    border-radius:3px;
     // margin-left:9px;
+    width:100%;
+    height:70px;
+    object-fit:cover;
+    object-position:50% 50%;
+}
+
+//this is for profile pic just on profile page
+#profilePicImg{
+    width:100%;
+    border-radius:200px;
+    border-radius:3px;
+    object-fit:cover;
+    object-position:50% 50%;
+    height:400px;
 }
 
 .profileInfoListed{

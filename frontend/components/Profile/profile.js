@@ -128,7 +128,7 @@ class Profile extends React.Component {
             <div className="profile-page">
                 <div className="row">
                     <div className="col-3">
-                            <img  id="defaultProfileImg" src={profilePhoto} alt="default profile pic"/>
+                            <img  id="profilePicImg" src={profilePhoto} alt="default profile pic"/>
                           
                           {/* <img  id="defaultProfileImg" src="https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png" alt="default profile pic"/> */}
                     </div>
