@@ -38,6 +38,7 @@
     height:70px;
     object-fit:cover;
     object-position:50% 50%;
+    
 }
 
 //this is for profile pic just on profile page
@@ -47,7 +48,7 @@
     border-radius:3px;
     object-fit:cover;
     object-position:50% 50%;
-    height:400px;
+    min-height:300px;
 }
 
 .profileInfoListed{
@@ -136,4 +137,80 @@
     max-height:225px;
     -webkit-box-shadow: #ccc 5px 5px 5px;
     padding:00px;
+}
+
+
+@media only screen and (min-width:1100px){
+    #defaultProfileImg{
+        height:70px;
+    }
+
+    #profilePicImg{
+        min-height:360px;
+    }
+}
+
+@media only screen and (min-width:1200px){
+    #defaultProfileImg{
+        height:75px;
+    }
+    #profilePicImg{
+        min-height:375px;
+    }
+}
+
+@media only screen and (min-width:1300px){
+    #defaultProfileImg{
+        height:80px;
+    }
+    #profilePicImg{
+        min-height:400px;
+    }
+}
+
+
+@media only screen and (min-width:1400px){
+    #defaultProfileImg{
+        height:85px;
+    }
+    #profilePicImg{
+        min-height:425px;
+    }
+}
+
+@media only screen and (min-width:1400px){
+    #defaultProfileImg{
+        height:85px;
+    }
+    #profilePicImg{
+        min-height:450px;
+    }
+}
+
+
+@media only screen and (min-width:1500px){
+    #defaultProfileImg{
+        height:90px;
+    }
+    #profilePicImg{
+        min-height:475px;
+    }
+}
+
+@media only screen and (min-width:1600px){
+    #defaultProfileImg{
+        height:100px;
+    }
+    #profilePicImg{
+        min-height:500px;
+    }
+}
+
+@media only screen and (min-width:1700px){
+    #defaultProfileImg{
+        height:100px;
+    }
+    #profilePicImg{
+        min-height:550px;
+    }
 }

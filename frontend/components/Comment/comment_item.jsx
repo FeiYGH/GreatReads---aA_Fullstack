@@ -177,7 +177,7 @@ class CommentItem extends React.Component{
                     return(
                         <div>
                             <div className="row">
-                                <div className="col-profilePic" id="defaultProfilePic">
+                                <div className="col-profilePic" id="defaultProfilePicComment">
                                     <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
                                 </div>
                                 <div className="col-profileMsg" id="RevIndexMsg">
@@ -256,7 +256,7 @@ class CommentItem extends React.Component{
                     return(
                         <div>
                             <div className="row">
-                                <div className="col-profilePic" id="defaultProfilePic">
+                                <div className="col-profilePic" id="defaultProfilePicComment">
                                     <img  id="defaultProfileImg" src={profilePic} alt="default profile pic"/>
         
                                 </div>

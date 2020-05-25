@@ -3,11 +3,25 @@
 /*flex box */
 .genNavBar {
     // position:fixed;
-    display: flex;
+    
     background-color: #F4F1EA;
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
-    padding-right:2%;
- 
+    padding-right:0px;
+
+  }
+
+  #genNavBarLoggedInNotHome{
+    display:list-item;
+    padding:0;
+  }
+
+  
+
+  .genNavBarLoggedIn{
+    background-color: #F4F1EA;
+    font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
+    padding-right:0px;
+    padding-left:1%;
   }
   
   /* for the navigation bar links */
@@ -191,6 +205,122 @@ h1.navLogo{
     background-color:white;
   }
 
+
+
+  .navBarHalves{
+    width:100%;
+    display:flex;
+    // border:1px solid green;
+    border-bottom: 1px solid #D6D0C4;
+    
+  }
+
+  #half1{
+    justify-content: space-between;
+  }
+
+  #half2{
+    justify-content: center;
+  }
+
+
+  #half1LoggedIn{
+    justify-content: space-between;
+    padding-left:2%;
+  }
+
+  #half2LoggedIn{
+    justify-content: center;
+  }
+
+
+  #signInNavBarLink{
+    margin-left:0px;
+  }
+
+
+  
+@media only screen and (min-width:800px){
+
+  #signInNavBarLink{
+    margin-left:30px;
+  }
+
+  #half1LoggedIn{
+    padding-left:2%;
+  }
+  
+}
+
+@media only screen and (min-width:1000px){
+
+  #signInNavBarLink{
+    margin-left:80px;
+  }
+  
+}
+
+@media only screen and (min-width:1250px){
+  #genNavBarLoggedInNotHome{
+    display:flex;
+    padding-right:1%;
+  }
+  .genNavBar{
+    display:flex;
+    padding:2%;
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+
+  .genNavBarLoggedIn a {
+    padding:13px 25px;
+
+  }
+
+  .genNavBarLoggedIn{
+    display:flex;
+    padding:0px;
+    padding-left:1%;
+    justify-content:space-around;
+    
+  }
+
+  #genNavBarLoggedInNotHome{
+    padding-left:1%;
+  }
+
+
+  .navBarHalves{
+    width:50%;
+    display:flex;
+    border-bottom: none;
+
+    // border:1px solid purple;
+  }
+
+
+  #signInNavBarLink{
+    margin-left:0px;
+  }
+
+ 
+//logged in
+  #half1LoggedIn{    
+    width:70%;
+    justify-content:space-between;
+  }
+
+  #half2LoggedIn{
+    width:50%;
+    justify-content:space-between;
+  }
+
+
+
+}
+
+
+  
 
 
 // div.navLinks:hover{

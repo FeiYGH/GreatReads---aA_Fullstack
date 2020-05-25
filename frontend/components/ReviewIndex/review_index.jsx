@@ -91,16 +91,22 @@ class ReviewIndex extends React.Component{
 
         
         let myReview = this.pullUserReview();
-
+        let longReview = false;
         const reviewItems = Object.values(reviews).map((review)=>{
             // let prop = review[idx+1] ? review[idx+1].id : ""
             // debugger;
             let reviewId=review.id;
+            if(review.body.length > 500){
+                longReview=true;
+            }else{
+                longReview=false;
+            }
             return(
                 <ReviewItemContainer
                     review={review}
                     reviewId={reviewId}
                     book={book}
+                    longReview={longReview}
                     // reviewId={prop}
                     user={user}
                     handleCommentUpdate={this.handleCommentUpdate}

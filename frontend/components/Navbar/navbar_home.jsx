@@ -124,24 +124,32 @@ class NavBarHome extends React.Component{
             )
         }else if(currentUser){
             return(
-                <div className="genNavBarLoggedIn">
-                    <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
-                    <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
-                    <h1 className="col-3 navLinks"><Link to="/myBooks">My Books</Link></h1>                
+                <div className="genNavBarLoggedIn"  >
+                    <div className="navBarHalvesHome" id="half1LoggedInHome" >
+                        <h1 className="col-setSpace navLinks"></h1>
 
-                    <h1 className="col-3 navLinks"><Link to="/books">Browse</Link></h1> 
-                    <div className="searchBar">
-                        <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
+                        <h1 id="logoLinkGenNavBarHome" className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
+                        <h1 className="col-setSpace navLinks"></h1>
+                        <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
+                        <h1 className="col-3 navLinks"><Link to="/myBooks">My Books</Link></h1>                
+                        <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1> 
+                    </div>
+                    <div className="navBarHalvesHome2" id="half2LoggedInHome">
+                        <div className="searchBar">
+                            <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
+                            
+                            <ul className="searchBarUL">
+                                {searchBarBooks}
+                            </ul>
+                        </div>      
+                       
                         
-                        <ul className="searchBarUL">
-                            {searchBarBooks}
-                        </ul>
-                    </div>      
-                    {/* <input className="col-4 searchBookInput" type="text" placeholder='Search books'/>   */}
-                    
-                    <h1 className="col-3 navLinks"><Link onClick={this.props.logout}>Log out</Link></h1>    
-                    {profileIconLinkSpan}               
-                    
+                        <h1 className="col-3 navLinks" id="genNavBarHomeLogOutH1"><Link onClick={this.props.logout}>Log out</Link></h1>    
+                        
+                        {profileIconLinkSpan}
+                        
+                         
+                    </div>
                 </div>
             )
         }else{

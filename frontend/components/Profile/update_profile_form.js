@@ -145,9 +145,10 @@ render(){
                         <span><input type="button" id="fileCoverButton" value="Choose File"/><input type="text" placeholder="No file chosen" id="fileName" readonly="readonly" ></input></span>       
                         <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile} ></input>
                     </div>
-                    {/* <input type="button" id="fileCoverButton" value="Open"/>
-                    <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile}></input> */}
-                    {/* <br/> */}
+                    
+                    
+                    {/* <input className="profileFormInputTypeFile" type="file" onChange={this.handleFile}></input> 
+                    <br/> */}
 
                     {photoPreviewlabel}
                     {preview}

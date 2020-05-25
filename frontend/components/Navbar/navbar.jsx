@@ -51,6 +51,8 @@ class NavBar extends React.Component{
         let partialWd = this.state.searchBookTitle;
         // debugger;
 
+        console.log(screen.width);
+
         if(this.props.books && partialWd !== ""){
            searchBarBooks=Object.values(this.props.books).map(book => {
             //    debugger;             
@@ -113,44 +115,51 @@ class NavBar extends React.Component{
         if (!this.props.sessionId){
             return(
                 <div className="genNavBar">
-                    <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
-                    <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
-                    <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1>                
-                    
-                    <div className="searchBar">
-                        <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
-                        
-                        <ul className="searchBarUL">
-                            {searchBarBooks}
-                        </ul>
+                    <div className="navBarHalves" id="half1" >
+                        <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
+                        <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
+                        <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1>                
                     </div>
-                    
-                    <h1 className="col-3 navLinks"><Link to="/">Sign in</Link></h1>             
-                    <h1 className="col-2 navLinks"><Link to="/">Join</Link></h1>  
+
+                    <div className="navBarHalves" id="half2">
+                        <div className="searchBar">
+                            <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
+                            
+                            <ul className="searchBarUL">
+                                {searchBarBooks}
+                            </ul>
+                        </div>
+                        
+                        <h1 id="signInNavBarLink" className="col-3 navLinks"><Link to="/">Sign in</Link></h1>             
+                        <h1 className="col-2 navLinks"><Link to="/">Join</Link></h1>  
+                    </div>
                 </div>
             )
         }else{
             return(
-                <div className="genNavBar">
-                    <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
-                    <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
-                    <h1 className="col-3 navLinks"><Link to="/myBooks">My Books</Link></h1>                
-                    <h1 className="col-3 navLinks"><Link to="/books">Browse</Link></h1>                
-                    <div className="searchBar">
-                        <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
-                        
-                        <ul className="searchBarUL">
-                            {searchBarBooks}
-                        </ul>
+                <div className="genNavBarLoggedIn" id="genNavBarLoggedInNotHome">
+                    <div className="navBarHalves" id="half1LoggedIn" >
+                    
+                        <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
+                        <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
+                        <h1 className="col-3 navLinks"><Link to="/myBooks">My Books</Link></h1>                
+                        <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1>                
                     </div>
-                    {/* <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")}/>  
-                    <ul>
-                        {searchBarBooks}
-                    </ul> */}
-                    <h1 className="col-3 navLinks"><Link onClick={this.props.logout}>Log out</Link></h1>     
-                    {profileIconLinkSpan}
-                    
-                    
+                    <div className="navBarHalves" id="half2LoggedIn">
+                        <div className="searchBar">
+                            <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
+                            
+                            <ul className="searchBarUL">
+                                {searchBarBooks}
+                            </ul>
+                        </div>
+                        {/* <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")}/>  
+                        <ul>
+                            {searchBarBooks}
+                        </ul> */}
+                        <h1 className="col-3 navLinks"><Link onClick={this.props.logout}>Log out</Link></h1>     
+                        {profileIconLinkSpan}
+                    </div>
                 </div>
             )
         }

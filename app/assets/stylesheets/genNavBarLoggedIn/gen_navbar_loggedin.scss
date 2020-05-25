@@ -2,11 +2,14 @@
 /* for the navigation bar */
 /*flex box */
 .genNavBarLoggedIn {
-    display: flex;
+    
     background-color: #F4F1EA;
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif;
-    padding-right:2%;
-    padding-left:30px;
+    padding-right:0%;
+    margin-left:0px;
+    padding-left:0px;
+    // padding-left:30px;
+    // padding:1%;
     align-items:left;
   }
   
@@ -14,7 +17,7 @@
   .genNavBarLoggedIn a {
     color: #382110;
     font-size: 16px;
-    padding: 13px 20px 13px 20px; /*14px padding on top and bottom, 60px in between */
+    padding: 13px 25px 13px 25px; /*14px padding on top and bottom, 60px in between */
     text-decoration: none;
     text-align: center;
     font-family:  Lato, "Helvetica Neue", Helvetica, sans-serif; 
@@ -55,4 +58,64 @@ h1.navLogo{
     color: #382110;
     font-weight:345;
     font-size:30px;
+  }
+
+
+  .navBarHalvesHome{
+    width:100%;
+    display:flex;
+    // border:1px solid green;
+    border-bottom: 1px solid #D6D0C4;
+    justify-content: space-between;
+  }
+
+  .navBarHalvesHome2{
+    width:100%;
+    display:flex;
+    // border:1px solid green;
+    border-bottom: 1px solid #D6D0C4;
+    justify-content: center;
+  }
+
+
+  #genNavBarHomeLogOutH1{
+    margin-left:40px;
+    padding-right:0px;
+  }
+
+  .col-setSpace{
+    width:2%;
+  }
+
+  
+  //media query 1270
+  @media only screen and (min-width:1250px){
+    #genNavBarLoggedIn{
+
+      display:flex;
+      padding-right:1%;
+    }
+
+    .navBarHalves{
+      width:50%;
+      display:flex;
+      border-bottom: none;
+  
+      // border:1px solid purple;
+    }
+
+
+
+    .navBarHalvesHome{
+      width:70%;
+      display:flex;
+      border-bottom: none;
+    }
+  
+    .navBarHalvesHome2{
+      width:50%;
+      display:flex;
+      border-bottom: none;
+      justify-content: space-evenly;
+    }
   }

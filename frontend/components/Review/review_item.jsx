@@ -9,11 +9,22 @@ class ReviewItem extends React.Component{
         // debugger;
         this.state ={
             spoiler:props.review.spoiler,
-            reveal:false
+            reveal:false,
+            longReview:props.longReview,
+            fullReview:false
         };
         this.closeReview = this.closeReview.bind(this);
         this.openReview = this.openReview.bind(this);
         this.getMonthCommentItem = this.getMonthCommentItem.bind(this);
+        this.toggleFullReview = this.toggleFullReview.bind(this);
+    }
+
+    toggleFullReview(){
+        if(this.state.fullReview===false){
+            this.setState({fullReview:true});
+        }else{
+            this.setState({fullReview:false});
+        }
     }
 
     getMonthCommentItem(dateObj){
@@ -132,7 +143,28 @@ class ReviewItem extends React.Component{
                 profilePic = "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
             }
         }
+        
+        //this determines how much of reviewBody to show
+        let reviewBody;
+        // debugger;
+        if(review){
+            if(this.props.longReview){
+                if(this.state.fullReview===false){
+                    reviewBody = review.body.slice(0,500);
+                }else{
+                    reviewBody = review.body;
+                }
+            }else{
+                reviewBody = review.body;
+            }
+        }
 
+        let prompt = "";
+        if(this.state.longReview===true && this.state.fullReview===false){
+            prompt = "...more";
+        }else if(this.state.longReview===true && this.state.fullReview===true){
+            prompt = '(less)';
+        }
 
         // debugger;
         if(!review){
@@ -205,7 +237,7 @@ class ReviewItem extends React.Component{
                             <div className="reviewItemBottom">
                                 <span className="hideSpoilers">This review contains spoilers. To hide it,<a className="closeSpoilerLink" onClick={this.closeReview}>click here.</a>
                                 </span>
-                                <h3 className="reviewItemContent">{review.body}</h3>    
+                                <h3 className="reviewItemContent">{reviewBody}<span className="prompt" onClick={()=>this.toggleFullReview()}>{prompt}</span></h3>    
                             </div>
                         </div>
                         <div className="row">
@@ -240,12 +272,9 @@ class ReviewItem extends React.Component{
                         </div>
                 
                         <div className="reviewItemBottom">
-                            <h3 className="reviewItemContent">{review.body} </h3>  
-                            
-                            
-
+                        <h3 className="reviewItemContent">{reviewBody}<span className="prompt" onClick={()=>this.toggleFullReview()}>{prompt}</span></h3>    
+                             
                             {/* <h2>{new Intl.DateTimeFormat("en-GB",{month:"long", day: "2-digit", year: "numeric", hour: 'numeric', minute: 'numeric', second: 'numeric'}).format(review.created_at.toString())}</h2> */}
-                            
                         </div>
                         
                     </div>
