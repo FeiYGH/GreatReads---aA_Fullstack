@@ -166,8 +166,9 @@
 }
 
 .ratingStarsBook{
-    display:flex;
-    justify-content: center;
+    // display:flex;
+    // justify-content: center;
+
 }
 
 .ratingsInfo{
@@ -193,3 +194,98 @@
 }
 
 
+
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .ratingStarsBook{
+        margin-left:5%;
+    }
+   
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .ratingStarsBook{
+        margin-left:5%;
+    }
+  }
+  
+  
+  @media only screen and (min-width: 700px) {
+    .ratingStarsBook{
+        margin-left:11%;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .ratingStarsBook{
+        margin-left:15%;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 850px) {
+    .ratingStarsBook{
+        margin-left:18%;
+    }
+  }
+
+   /* Medium devices (landscape tablets, 768px and up) */
+   @media only screen and (min-width: 900px) {
+    .ratingStarsBook{
+        margin-left:20%;
+    }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .ratingStarsBook{
+        margin-left:24%;
+    }
+  }
+
+    /* Extra large devices (large laptops and desktops, 1100px and up) */
+    @media only screen and (min-width: 1100px) {
+        .ratingStarsBook{
+            margin-left:26%;
+        }
+      }
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .ratingStarsBook{
+        margin-left:29%;
+    }
+  }
+
+   /* Extra large devices (large laptops and desktops, 1300px and up) */
+   @media only screen and (min-width: 1350px) {
+    .ratingStarsBook{
+        margin-left:30%;
+    }
+  }
+   /* Extra large devices (large laptops and desktops, 1350px and up) */
+   @media only screen and (min-width: 1350px) {
+    .ratingStarsBook{
+        margin-left:31%;
+    }
+  }
+  
+  @media only screen and (min-width:1400px){
+    .ratingStarsBook{
+        margin-left:32.4%;
+    }
+  }
+
+  @media only screen and (min-width:1670px){
+    .ratingStarsBook{
+        margin-left:35%;
+    }
+  }
+
+  @media only screen and (min-width:1770px){
+    .ratingStarsBook{
+        margin-left:37%;
+    }
+  }

@@ -199,7 +199,7 @@ class EditReview extends React.Component{
                                 <label for="">&nbsp;&nbsp;Hide entire review because of spoilers</label>
                                 <br/>
                                 <div className="mediumHeight"></div>
-                                <input className="postReviewButton" type="submit" value="Post Review"/>
+                                <input className="postReviewButton" type="submit" value="Edit Review"/>
                                 <ul className="newReviewErrors">
                                     {this.renderErrors()}
                                 </ul>
