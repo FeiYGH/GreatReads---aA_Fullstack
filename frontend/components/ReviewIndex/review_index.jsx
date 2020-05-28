@@ -101,17 +101,19 @@ class ReviewIndex extends React.Component{
             }else{
                 longReview=false;
             }
-            return(
-                <ReviewItemContainer
-                    review={review}
-                    reviewId={reviewId}
-                    book={book}
-                    longReview={longReview}
-                    // reviewId={prop}
-                    user={user}
-                    handleCommentUpdate={this.handleCommentUpdate}
-                />
-            );
+            if(review.book_id === book.id ){
+                return(
+                    <ReviewItemContainer
+                        review={review}
+                        reviewId={reviewId}
+                        book={book}
+                        longReview={longReview}
+                        // reviewId={prop}
+                        user={user}
+                        handleCommentUpdate={this.handleCommentUpdate}
+                    />
+                );
+            }
         });
 
 

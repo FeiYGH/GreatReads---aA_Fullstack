@@ -45,9 +45,11 @@ span#bookTitleNewRev{
     background-color:white;
 }
 
+
 span#bookRevNewRev{
     margin-left:0px;
 }
+
 
 #bookRevNewRev{
     color: #382110;
@@ -58,6 +60,7 @@ span#bookRevNewRev{
     letter-spacing: -.5px;
 }
 
+
 .newRevRow2{
     margin-top:15px;
     border-bottom: 1px solid #D6D0C4;
@@ -66,9 +69,11 @@ span#bookRevNewRev{
 
 }
 
+
 #photoNewReview > img{
     width:100%;
 }
+
 
 .row2TitleAuth{
     padding-left:10px;
@@ -77,6 +82,7 @@ span#bookRevNewRev{
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
 }
 
+
 .row2TitleAuth > h1{
     font-size:18px;
     font-weight:bold;
@@ -84,12 +90,13 @@ span#bookRevNewRev{
     letter-spacing: -.5px;
 }
 
+
 .row2TitleAuth > h2{
     font-size:16px;
     line-height:24px;
     letter-spacing: -.5px;
-
 }
+
 
 .row2Title {
     color: #382110;
@@ -100,9 +107,11 @@ span#bookRevNewRev{
     text-decoration:none;
 }
 
+
 .row2Title:hover{
     text-decoration:underline;
 }
+
 
 .row2Title:active{
     background-color:white;
@@ -122,7 +131,6 @@ span#bookRevNewRev{
     color: #181818;
     font-size: 14px;
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
-
 }
 
 
@@ -134,8 +142,6 @@ span#bookRevNewRev{
     font-size: 14px;
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
     border-top: 1px solid #eee;
-
-
 }
 
 .mediumHeight{
@@ -145,8 +151,6 @@ span#bookRevNewRev{
 .bookCovThumb{
     font-size:14px;
     font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
-
-
 }
 
 textArea.newRevTextArea{
@@ -193,6 +197,15 @@ ul.newReviewErrors > li > span{
     margin-left:5px;
     line-height:15px;
     color: #382110;
-
 }
 
+
+
+//EDITING REVIEW SCSS
+#editReviewTitleLabel{
+    font-size:16px;
+}
+
+.newRevRow4 > span {
+    font-size:16px;
+}

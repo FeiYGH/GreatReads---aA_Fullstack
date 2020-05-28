@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import Book from './book';
 import {fetchBooks,fetchBook} from '../../actions/book_actions';
 //fetchReviewsUser is to fetch all reviews by a particular user
-import {fetchReviewsUser, updateReview} from '../../actions/review_actions';
+import {fetchReviewsUser, updateReview,clearBookReviews} from '../../actions/review_actions';
 
 const mSTP = (state,ownProps) => {
     // debugger;
@@ -20,7 +20,7 @@ const mDTP = dispatch => {
         fetchBook: (bookId) =>dispatch(fetchBook(bookId)),
         fetchReviewsUser: (userId) => dispatch(fetchReviewsUser(userId)),
         updateReview: (bookId,review) =>dispatch(updateReview(bookId,review)),
-        
+        clearBookReviews: () => dispatch(clearBookReviews())
         
         // fetchBooks: () => dispatch(fetchBooks())
     });

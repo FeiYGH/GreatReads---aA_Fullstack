@@ -1,5 +1,5 @@
 import {RECEIVE_BOOK_REVIEWS,  RECEIVE_REVIEW, DELETE_BOOK_REVIEW, RECEIVE_NEW_REVIEW} from '../actions/review_actions';
-import {RECEIVE_REVIEW_FOR_COMMENTS} from '../actions/review_actions';
+import {RECEIVE_REVIEW_FOR_COMMENTS, CLEAR_BOOK_REVIEWS} from '../actions/review_actions';
 
 
 
@@ -22,6 +22,9 @@ const reviewsReducer = (state = {}, action)=> {
         case RECEIVE_REVIEW_FOR_COMMENTS:
             // debugger;
             return Object.assign({},state,{fetchedReviewForComments:action.review});
+        case CLEAR_BOOK_REVIEWS:
+            // debugger;
+            return {}; 
         default:
             return state;
     }

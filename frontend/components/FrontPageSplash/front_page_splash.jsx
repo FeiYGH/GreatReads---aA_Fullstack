@@ -57,26 +57,26 @@ class FrontPageSplash extends React.Component{
                         <p>Because Deborah liked...</p>
                         <div className="flex-books">
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/57">
                                     <img src={window.images.memoirs} alt="Memoirs of a Geisha"/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/58">
                                     <img src="Guernsey.jpg" alt="Guernsey"/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/65">
                                     {/* <img src="assets/Deborah/WaterForElephants.jpg" alt="Water For Elephants"/> */}
                                     <img src="WaterForElephants.jpg" alt="Water For Elephants"/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/66">
                                     {/* <img src="assets/Deborah/TheHelp.jpg" alt="The Help"/> */}
                                     <img src="TheHelp.jpg" alt="The Help"/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-arrow">
                                 {/* <img src="assets/discovery_arrow.png" alt="Discovery Arrow"/> */}
@@ -90,9 +90,9 @@ class FrontPageSplash extends React.Component{
                         <p>She discovered:</p>
                         <div className="flex-book2">
                             <div className="col-book2">
-                                <a href="">
+                                <Link to="/books/67">
                                     <img src="Moloka.jpg" alt="Moloka"/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="bookCategories">
                                 <br/>
@@ -109,33 +109,33 @@ class FrontPageSplash extends React.Component{
                         <p>Because Brian liked...</p>
                         <div className="flex-books">
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/68">
                                     
                                     {/* <img src="Brian/Nudge.jpg" alt="Nudge"/> --would write if pulling from assets folder*/}
                                     <img src="Nudge.jpg" alt="Nudge"/>
 
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/69">
                                     {/* <img src="Brian/Traffic.jpg" alt="Traffic"/> */}
                                     <img src="Traffic.jpg" alt="Traffic"/>
 
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/70">
                                     {/* <img src="Brian/Predictable.jpg" alt="Predictably Irrational"/> */}
                                     <img src="Predictable.jpg" alt="Predictably Irrational"/>
 
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-book">
-                                <a href="">
+                                <Link to="/books/71">
                                     {/* <img src="Brian/Curious.jpg" alt="Curious"/> */}
                                     <img src="Curious.jpg" alt="Curious"/>
 
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-arrow">
                                 <img src="discovery_arrow.png" alt="Discovery Arrow"/>
@@ -147,11 +147,11 @@ class FrontPageSplash extends React.Component{
                         <p>He discovered:</p>
                         <div className="flex-book2">
                             <div className="col-book2">
-                                <a href="">
+                                <Link to="/books/72">
                                     {/* <img src="Brian/ThinkingFast.jpg" alt="Thinking Fast and Slow"/> */}
                                     <img src="ThinkingFast.jpg" alt="Thinking Fast and Slow"/>
 
-                                </a>
+                                </Link>
                             </div>
                             <div className="bookCategories">
                                 <br/>

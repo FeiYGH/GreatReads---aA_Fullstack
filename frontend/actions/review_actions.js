@@ -7,6 +7,7 @@ export const DELETE_BOOK_REVIEW = 'DELETE_BOOK_REVIEW';
 export const RECEIVE_NEW_REVIEW = 'RECEIVE_NEW_REVIEW';
 export const RECEIVE_BOOK_REVIEWS_USER = 'RECEIVE_BOOK_REVIEWS_USER';
 export const RECEIVE_REVIEW_FOR_COMMENTS = 'RECEIVE_REVIEW_FOR_COMMENTS';
+export const CLEAR_BOOK_REVIEWS = 'CLEAR_BOOK_REVIEWS';
 
 const receiveReview = review => {
     // debugger;
@@ -25,7 +26,6 @@ const receiveNewReview = review => {
 };
 
 const receiveBookReviews = reviews => {
-    
     return({
         type: RECEIVE_BOOK_REVIEWS,
         reviews
@@ -61,6 +61,12 @@ const receiveReviewForComments = (review) => {
     return({
         type:RECEIVE_REVIEW_FOR_COMMENTS,
         review
+    });
+};
+
+export const clearBookReviews = () => {
+    return({
+        type: CLEAR_BOOK_REVIEWS
     });
 };
 

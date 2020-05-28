@@ -84,13 +84,25 @@ class ReviewStats extends React.Component{
             }
         });
 
-        const aveRating = (sumRating/totalRatings).toFixed(2);
-        const avePercent = (aveRating/5.0 * 100).toFixed(0);
-        const percent5star = (ratings5/totalRatings * 100).toFixed(0);
-        const percent4star = (ratings4/totalRatings * 100).toFixed(0);
-        const percent3star = (ratings3/totalRatings * 100).toFixed(0);
-        const percent2star = (ratings2/totalRatings * 100).toFixed(0);
-        const percent1star = (ratings1/totalRatings * 100).toFixed(0); 
+        let aveRating = 0;
+        let percent5star = 0;
+        let percent4star = 0;
+        let percent3star = 0;
+        let percent2star = 0;
+        let percent1star = 0;
+        if(totalRatings!==0){
+            aveRating = (sumRating/totalRatings).toFixed(2);
+            percent5star = (ratings5/totalRatings * 100).toFixed(0);
+            percent4star = (ratings4/totalRatings * 100).toFixed(0);
+            percent3star = (ratings3/totalRatings * 100).toFixed(0);
+            percent2star = (ratings2/totalRatings * 100).toFixed(0);
+            percent1star = (ratings1/totalRatings * 100).toFixed(0); 
+        }
+
+        let avePercent=0;
+        if(aveRating!==0){
+            avePercent = (aveRating/5.0 * 100).toFixed(0);
+        }
 
         // debugger;
         if(this.state.ratingChart===true){

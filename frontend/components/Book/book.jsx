@@ -25,10 +25,10 @@ class Book extends React.Component{
   
     componentDidMount(){
         // debugger;
-        
+        // this.props.clearBookReviews();
         this.props.fetchBook(this.props.bookId);
         if(this.state.sessionId){
-            this.props.fetchReviewsUser(this.state.sessionId)
+            this.props.fetchReviewsUser(this.state.sessionId);
                 // .then(alert(this.pullUserReview()));
         }
         // debugger;
@@ -112,7 +112,6 @@ class Book extends React.Component{
         //     myReview=lastReview;
         // }
         // debugger;
-
         // console.log(myReview, "MYREVIEWBOOK");
         
         if(!book){
@@ -159,10 +158,12 @@ class Book extends React.Component{
                                     book={this.props.book}
                                 />
                             </div>
-                            
                             <h3>{book.description}</h3>
+                            
                             <h3>Number of Pages: {book.num_pages}</h3>
+                            <h3>ISBN: {book.isbn}</h3>
                             <h3>Published {book.pub_date} by {book.publisher}</h3>
+                            
                     </div>  
                     </div>
                     <div className="row">

@@ -51,8 +51,6 @@ class NavBar extends React.Component{
         let partialWd = this.state.searchBookTitle;
         // debugger;
 
-        console.log(screen.width);
-
         if(this.props.books && partialWd !== ""){
            searchBarBooks=Object.values(this.props.books).map(book => {
             //    debugger;             

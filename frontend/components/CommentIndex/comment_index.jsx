@@ -135,14 +135,16 @@ class CommentIndex extends React.Component{
                     return(
                         
                     <div className="commentIndexContainer">
-                        <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>no comments </span><span className="blackDot">&nbsp;·&nbsp;</span> <span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
+                        {/* <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>no comments </span><span className="blackDot">&nbsp;·&nbsp;</span> <span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1> */}
+                        <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
                     </div>
                          
                     )
                 }else if(commentCount===0 && this.state.comments===true){
                     return(
                     <div className="commentIndexContainer">
-                        <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>no comments </span><span className="blackDot">&nbsp;·&nbsp;</span><span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
+                        <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1>
+                        {/* <h1 className="commentIndexContainer"> <span onClick={()=>this.toggleCommentContainer()}>no comments </span><span className="blackDot">&nbsp;·&nbsp;</span><span onClick={()=>this.toggleCommentContainer()}>write a comment</span></h1> */}
                         <div className="row wholeCommentForm">
                             <div className="col-comments">
                                 <div className="col-profilePicComment"      id="defaultProfilePic">

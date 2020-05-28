@@ -100,7 +100,8 @@ class EditReview extends React.Component{
     componentDidMount(){
         // debugger;
         this.props.fetchBook(this.props.bookId);
-        this.props.fetchReviewsUser(this.state.user_id)
+        this.props.fetchReviewsUser(this.state.user_id);
+
     }
 
     updateSpoiler(){
@@ -145,7 +146,9 @@ class EditReview extends React.Component{
         let userReview = this.pullUserReview();
         // console.log("NEWNEWNEWNEW")
         // console.log(userReview);
-     
+        if(userReview && this.state.body===""){
+            this.setState({title: userReview.title, body:userReview.body});
+        }
         // debugger;
 
         let ratingInput;
@@ -190,7 +193,9 @@ class EditReview extends React.Component{
                     <div className="row">
                         <div className="col-2 bookCovThumb">
                             <form className="newRevForm" onSubmit={()=>this.handleUpdate(ratingInput,userReview)}>
+                                <label id="editReviewTitleLabel" for="">Review title:&nbsp;&nbsp;</label>
                                 <input type="text" placeholder={userReview.title} value={this.state.title} onChange={this.updateForm("title")}></input>
+                                {/* <input type="text" placeholder={userReview.title} value={this.state.title} onChange={this.updateForm("title")}></input> */}
                                 <div className="mediumHeight"></div>
                                 <textarea className="newRevTextArea" rows="20" cols ="100" placeholder={userReview.body} value={this.state.body} onChange={this.updateForm("body")}>
                                 </textarea>
@@ -203,7 +208,6 @@ class EditReview extends React.Component{
                                 <ul className="newReviewErrors">
                                     {this.renderErrors()}
                                 </ul>
-                                
                             </form>
                         </div>
                     </div>
