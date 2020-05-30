@@ -109,26 +109,34 @@ When signed up and logged in, users can also review the books and comment on the
 * User can type in the searchbar and books will populate based upon the first letter in title of the book
 * Books are filtered through based upon letters that match in the title
 
-## Book ratings
+![Book Search](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/SearchBook.gif)
+
+```javascript
+<div className="searchBar">
+    <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange=           {this.updateForm("searchBookTitle")} />    
+    <ul className="searchBarUL">
+        {searchBarBooks}
+    </ul>
+</div>
+```
+
+### Book ratings
 * Ratings are shown in three places on the book show page, on the create and edit review page
 * Ratings component is a child component of the book class as well as the my_review class. In order to update, I pass a handler function from parent to different child classes, so that when rating was changed, it would trigger a re-render in the parent component
 
-## Book reviews
+### Book reviews
 * User can write a review or edit review. 
 * I separated rating from review bc I felt user should be able to rate without reviewing
 * However, when rating is created, a review is created at the same time 
 * The reviews with no body are not displayed in the reviews section
 * The resources for reviews are nested under books so that we could the book ID when creating the review
 
-## Book comments
+### Book comments
 * User can write comments on reviews
 * CreateComment route is nested under resources
 
-## User profile page
+### User profile page
 * User can update their profile
 * Changes from the form are stored in local state based upon eventlistener
 * User can preview their profile picture as well as upload their profile picture using AWS
 
-
-
-## 
