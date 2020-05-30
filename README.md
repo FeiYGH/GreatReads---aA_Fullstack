@@ -2,7 +2,9 @@
 ## Full Stack Project at App Academy -- GreatReads, clone of GoodReads
 ## Dec 2019 App Academy Cohort
 
-GreatReads is a clone of GoodReads, where users can view different books and read reviews on the books. 
+[Live Site](https://greatreads2020.herokuapp.com/#/)
+
+GreatReads is a clone of GoodReads, where users can view different books, read reviews, write and edit their own reviews, and make comments on the reviews. 
 When signed up and logged in, users can also review the books and comment on the reviews. It is not finished yet. 
 
 ![GreatReads Home Page](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/Screen%20Shot%202020-03-16%20at%2010.49.00%20PM.png)
@@ -20,7 +22,7 @@ When signed up and logged in, users can also review the books and comment on the
     * "npm start" to start webpack
     * "npm server" to start running server on localhost:3000
     *  if no errors, can see the test version on http://localhost:3000
-* Live site: link inside the Wiki
+
 
 
 * Services (job queues, cache servers, search engines, etc.)
