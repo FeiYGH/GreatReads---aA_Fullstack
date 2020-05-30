@@ -183,6 +183,10 @@ https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadM
 * Changes from the form are stored in local state based upon eventlistener
 * User can preview their profile picture as well as upload their profile picture using AWS
 
+![Profile Pic Preview](
+https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/profile_pic_preview.gif
+)
+
 ```javascript
   handleSubmit(e) {
     e.preventDefault();
