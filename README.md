@@ -124,6 +124,34 @@ When signed up and logged in, users can also review the books and comment on the
 * Ratings are shown in three places on the book show page, on the create and edit review page
 * Ratings component is a child component of the book class as well as the my_review class. In order to update, I pass a handler function from parent to different child classes, so that when rating was changed, it would trigger a re-render in the parent component
 
+```javascript
+ updateRating(newRate){ 
+        this.setState({star: newRate});
+        this.setState({rating: newRate})
+
+        //if no user logged in and they hit the star button, take them to login page
+        if(!this.props.sessionId){
+            this.props.history.push('/');
+        }
+        //there was already a rating (and review existing for book). Just updating the rating
+        if(this.props.myReview.rating!==0){
+            this.props.myReview.rating=newRate;
+            this.props.updateReview(this.props.myReview.id, this.props.myReview)
+                .then(this.props.handleRatingUpdate())
+                .then(this.setState({updated:this.state.updated+1}));
+        }else{
+            let ratingOnly = Object.assign({}, this.state, {rating: newRate});
+            this.props.createReview(this.props.bookId, ratingOnly)
+                .then(this.props.handleRatingUpdate())
+                .then(this.setState({updated:this.state.updated+1}));
+        }
+    }
+```
+
+![User rating of book](
+   https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/userRating.gif
+)
+
 ### Book reviews
 * User can write a review or edit review. 
 * I separated rating from review bc I felt user should be able to rate without reviewing
@@ -131,12 +159,43 @@ When signed up and logged in, users can also review the books and comment on the
 * The reviews with no body are not displayed in the reviews section
 * The resources for reviews are nested under books so that we could the book ID when creating the review
 
+
+
 ### Book comments
 * User can write comments on reviews
 * CreateComment route is nested under resources
 
+![Review Comments](
+https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/review_comments.gif
+)
+
+```javascript
+  componentDidMount(){
+        this.props.fetchReviews(this.props.bookId);
+        if(this.props.user){
+            this.props.fetchReviewsUser(this.props.user.id); 
+        }
+    }
+
+```
 ### User profile page
 * User can update their profile
 * Changes from the form are stored in local state based upon eventlistener
 * User can preview their profile picture as well as upload their profile picture using AWS
 
+```javascript
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('user[username]', this.state.username);
+    formData.append('user[email]', this.state.email);
+    if(this.state.photoFile!==null){
+        formData.append('user[photo]', this.state.photoFile);
+    }
+    this.props.updateProfileInfo(this.props.user.id, formData)   
+    this.props.handler(); 
+    this.props.clearErrors();
+    this.setState({updatedProfile:"false"}); 
+}
+```
