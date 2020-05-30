@@ -53,7 +53,59 @@ When signed up and logged in, users can also review the books and comment on the
    
 ![Login Signup Gif](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/LoginSignup640px.gif)
 
+
+```javascript
+   handleLogIn(e){
+        e.preventDefault();
+        e.stopPropagation();
+        this.props.login(this.state);
+    }
+
+    handleSignUp(e){
+        e.preventDefault();
+        e.stopPropagation(); //it prevents the bubbling up. 
+
+        this.props.signup({
+            username: this.state.username2,
+            email: this.state.email2,
+            password:this.state.password2
+        });
+    }
+```
+
 ### Book show page
 * Shows the book cover and information
 * Shows the ratings statistics for the book, including average ratings, total ratings, and total reviews
-* 
+* When logged in, shows user's activity for that book, including user's rating and review for that book
+* Shows the reviews for the book
+* Shows the comments for each book
+
+
+
+### Book search function
+* User can type in the searchbar and books will populate based upon the first letter in title of the book
+* Books are filtered through based upon letters that match in the title
+
+## Book ratings
+* Ratings are shown in three places on the book show page, on the create and edit review page
+* Ratings component is a child component of the book class as well as the my_review class. In order to update, I pass a handler function from parent to different child classes, so that when rating was changed, it would trigger a re-render in the parent component
+
+## Book reviews
+* User can write a review or edit review. 
+* I separated rating from review bc I felt user should be able to rate without reviewing
+* However, when rating is created, a review is created at the same time 
+* The reviews with no body are not displayed in the reviews section
+* The resources for reviews are nested under books so that we could the book ID when creating the review
+
+## Book comments
+* User can write comments on reviews
+* CreateComment route is nested under resources
+
+## User profile page
+* User can update their profile
+* Changes from the form are stored in local state based upon eventlistener
+* User can preview their profile picture as well as upload their profile picture using AWS
+
+
+
+## 
