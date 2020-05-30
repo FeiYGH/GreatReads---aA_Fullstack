@@ -50,4 +50,5 @@ When signed up and logged in, users can also review the books and comment on the
    3. choose status for books.
    4. update their profile information, including uploading profile picture
    5. view their mybooks page, which shows all books that user has selected a status for
-
+   
+![Login Signup Gif](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/Login_Screen_Recording.mov)
