@@ -51,9 +51,9 @@ When signed up and logged in, users can also review the books and comment on the
    3. choose status for books.
    4. update their profile information, including uploading profile picture
    5. view their mybooks page, which shows all books that user has selected a status for
+* Since both login and signup are both on the same page, to keep errors from rendering twice, I passed in a key. Errors were passed in through a key of either login or signup. 
    
 ![Login Signup Gif](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/loginSignupBiggestSize.gif)
-
 
 ```javascript
    handleLogIn(e){
@@ -80,6 +80,28 @@ When signed up and logged in, users can also review the books and comment on the
 * When logged in, shows user's activity for that book, including user's rating and review for that book
 * Shows the reviews for the book
 * Shows the comments for each book
+
+![Book Show Page](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/BookShowPage.gif)
+
+```javascript
+<div className="bookDesc col-7">
+                            <h1>{book.title}</h1>
+                            <h2>by {book.author}</h2>
+                            <div className="ratingsInfo">
+                                <ReviewStatsContainer
+                                    book={book}
+                                    bookId={this.props.bookId}
+                                    book={this.props.book}
+                                />
+                            </div>
+                            <h3>{book.description}</h3>
+                            
+                            <h3>Number of Pages: {book.num_pages}</h3>
+                            <h3>ISBN: {book.isbn}</h3>
+                            <h3>Published {book.pub_date} by {book.publisher}</h3>
+                            
+                        </div>  
+```
 
 
 
