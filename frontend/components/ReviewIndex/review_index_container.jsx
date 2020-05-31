@@ -9,7 +9,8 @@ const mSTP = (state,ownProps) => {
         reviews: state.entities.reviews,
         user: state.entities.users[state.sessions.id],
         user_reviewed:false,
-        userReviews:state.entities.userReviews
+        userReviews:state.entities.userReviews,
+        updatedReviewsCount:state.entities.updatedReviewsCount
         //this will populate when user's just written review
         // new_user_review: state.session.newReview 
     });

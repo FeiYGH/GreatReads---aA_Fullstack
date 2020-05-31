@@ -12,7 +12,7 @@ class ReviewIndex extends React.Component{
             bookId: props.bookId,
             session_user_reviewed: false,
             loggedIn: !!props.user,
-            
+            reviewsUpdated: false           
         }
 
         this.writeReview = this.writeReview.bind(this);
@@ -38,6 +38,12 @@ class ReviewIndex extends React.Component{
                 // });
             }
         }  
+       
+        // if(prevProps.updatedReviewsCount!== this.props.updatedReviewsCount){
+        //     // debugger;
+        //     this.props.fetchReviews(this.props.bookId);
+        //     // this.setState({reviewsUpdated:true});
+        // }  
     }
 
   
@@ -46,15 +52,10 @@ class ReviewIndex extends React.Component{
     }
 
     componentDidMount(){
-        // debugger;
         this.props.fetchReviews(this.props.bookId);
-        
         if(this.props.user){
             this.props.fetchReviewsUser(this.props.user.id); 
         }
-        // if(this.state.loggedIn){
-        //     this.findUserReview();
-        // }
     }
 
     pullUserReview(){
@@ -94,6 +95,7 @@ class ReviewIndex extends React.Component{
         let longReview = false;
         const reviewItems = Object.values(reviews).map((review)=>{
             // let prop = review[idx+1] ? review[idx+1].id : ""
+            // debugger; inside iterating reviewItems
             // debugger;
             let reviewId=review.id;
             if(review.body.length > 500){
@@ -111,6 +113,7 @@ class ReviewIndex extends React.Component{
                         // reviewId={prop}
                         user={user}
                         handleCommentUpdate={this.handleCommentUpdate}
+                        updatedReviewsCount={this.props.updatedReviewsCount}
                     />
                 );
             }

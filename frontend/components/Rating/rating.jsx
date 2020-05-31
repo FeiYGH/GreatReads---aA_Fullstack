@@ -56,7 +56,6 @@ class Rating extends React.Component{
     }
 
     updateRating(newRate){ 
-        // debugger;
         this.setState({star: newRate});
         this.setState({rating: newRate})
 
@@ -64,30 +63,18 @@ class Rating extends React.Component{
         if(!this.props.sessionId){
             this.props.history.push('/');
         }
-        // debugger;
         //there was already a rating (and review existing for book). Just updating the rating
         if(this.props.myReview.rating!==0){
-            // debugger;
             this.props.myReview.rating=newRate;
-            //should have one handler to update MyReview and one handler to update book.jsx
             this.props.updateReview(this.props.myReview.id, this.props.myReview)
                 .then(this.props.handleRatingUpdate())
                 .then(this.setState({updated:this.state.updated+1}));
         }else{
-            // debugger;
-            // console.log("NEWRATE");
             let ratingOnly = Object.assign({}, this.state, {rating: newRate});
             this.props.createReview(this.props.bookId, ratingOnly)
                 .then(this.props.handleRatingUpdate())
                 .then(this.setState({updated:this.state.updated+1}));
         }
-        
-        // if(myReview){
-        //     myReview.rating = newRate;
-        //     this.props.updateReview(myReview.id, myReview);       
-        // }else{
-        //     this.props.history.push(`/books/${this.props.bookId}/review/new`);
-        // }
     }
 
     //To re-render child components on parent state change --> this.state.star

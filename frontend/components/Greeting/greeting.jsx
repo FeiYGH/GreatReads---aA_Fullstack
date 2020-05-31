@@ -48,24 +48,18 @@ class Greeting extends React.Component{
     handleLogIn(e){
         e.preventDefault();
         e.stopPropagation();
-        // this.renderErrorsLogin();
         this.props.login(this.state);
-        // this.renderErrors();
-        
     }
 
     handleSignUp(e){
         e.preventDefault();
         e.stopPropagation(); //it prevents the bubbling up. 
 
-        // this.renderErrorsSignUp();
         this.props.signup({
             username: this.state.username2,
             email: this.state.email2,
             password:this.state.password2
         });
-        // .then(this.setState({username: "hi"}));
-        // this.renderErrors();
     }
 
     updateForm(field){

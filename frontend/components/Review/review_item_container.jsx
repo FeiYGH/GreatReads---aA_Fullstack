@@ -5,7 +5,7 @@ import {fetchReviewComments} from '../../actions/comment_actions';
 
 // const mSTP = (state, ownProps) => {
 //     return({
-
+//         reviewProps: state.entities.reviews[this.props.review.id]
 //     });
 // };
 

@@ -27,7 +27,7 @@ class UpdateProfileForm extends React.Component{
 
 handleSubmit(e) {
     e.preventDefault();
-    // debugger;
+
     const formData = new FormData();
     formData.append('user[username]', this.state.username);
     formData.append('user[email]', this.state.email);
@@ -37,8 +37,7 @@ handleSubmit(e) {
     this.props.updateProfileInfo(this.props.user.id, formData)   
     this.props.handler(); 
     this.props.clearErrors();
-    this.setState({updatedProfile:"false"});
-    
+    this.setState({updatedProfile:"false"}); 
 }
 
 

@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import EditReview from './edit_review';
 import {createReview, fetchReviewsUser,updateReview} from '../../actions/review_actions';
 import {fetchBook} from '../../actions/book_actions';
-
+import {incrementUpdatedReviewsFlag} from '../../actions/review_actions';
 
 const mSTP = (state,ownProps)=> {
     return({
@@ -20,7 +20,8 @@ const mDTP = dispatch => {
     return({
         fetchBook: (bookId) => dispatch(fetchBook(bookId)),
         fetchReviewsUser: (userId) => dispatch(fetchReviewsUser(userId)),
-        updateReview: (reviewId, review) => dispatch(updateReview(reviewId,review))
+        updateReview: (reviewId, review) => dispatch(updateReview(reviewId,review)),
+        incrementUpdatedReviewsCountFlag: () => dispatch(incrementUpdatedReviewsFlag())
     });
 };
 

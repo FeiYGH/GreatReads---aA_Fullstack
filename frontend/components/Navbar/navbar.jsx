@@ -52,12 +52,9 @@ class NavBar extends React.Component{
         // debugger;
 
         if(this.props.books && partialWd !== ""){
-           searchBarBooks=Object.values(this.props.books).map(book => {
-            //    debugger;             
+           searchBarBooks=Object.values(this.props.books).map(book => {       
                if(book.title.toLowerCase().startsWith(partialWd.toLowerCase())){
-                //    debugger;
                    return(
-                    //    <Link to={`/books/${book.id}`}>
                         <li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
                            <div className="row searchBookRow" >
                                 <div className="col-2 searchBookPhoto">
@@ -121,8 +118,7 @@ class NavBar extends React.Component{
 
                     <div className="navBarHalves" id="half2">
                         <div className="searchBar">
-                            <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} /> 
-                            
+                            <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} />    
                             <ul className="searchBarUL">
                                 {searchBarBooks}
                             </ul>

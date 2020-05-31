@@ -5,6 +5,7 @@ import reviewsReducer from './reviews_reducer';
 import userReviewsReducer from './user_reviews_reducer';
 import commentsReducer from './comment_reducer';
 import bookshelvesReducer from './bookshelves_reducer';
+import updatedReviewsCountReducer from './updated_reviews_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     reviews: reviewsReducer,
     userReviews: userReviewsReducer,
     comments: commentsReducer,
-    bookshelves: bookshelvesReducer
+    bookshelves: bookshelvesReducer,
+    updatedReviewsCount: updatedReviewsCountReducer
 });
 
 

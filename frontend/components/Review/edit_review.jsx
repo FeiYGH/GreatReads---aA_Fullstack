@@ -18,6 +18,7 @@ class EditReview extends React.Component{
             errorsPresent:false
             // star:props.myReview.rating //needs to be linked via new_review_container
         };
+
         // this.handleSubmit = this.handleSubmit.bind(this);
         this.updateForm = this.updateForm.bind(this);
         this.updateSpoiler = this.updateSpoiler.bind(this);
@@ -26,15 +27,20 @@ class EditReview extends React.Component{
         this.pullUserReview = this.pullUserReview.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-
+        this.setPreviousValues = this.setPreviousValues.bind(this);
     }
+
+    setPreviousValues(userReview){
+        this.setState({title: userReview.title, body:userReview.body});
+    }
+
 
     handleUpdate(ratingInput,userReview){
         // debugger;
         // e.preventDefault();
         let updatedReview = Object.assign({},this.state, {"rating":ratingInput});
         // debugger;
-   
+        // this.props.incrementUpdatedReviewsCountFlag()
         this.props.updateReview(userReview.id, updatedReview)
             .then(this.props.history.push(`/books/${this.props.bookId}`));        
     }
@@ -146,9 +152,13 @@ class EditReview extends React.Component{
         let userReview = this.pullUserReview();
         // console.log("NEWNEWNEWNEW")
         // console.log(userReview);
+        
+
         if(userReview && this.state.body===""){
-            this.setState({title: userReview.title, body:userReview.body});
+            this.setPreviousValues(userReview);
         }
+
+
         // debugger;
 
         let ratingInput;

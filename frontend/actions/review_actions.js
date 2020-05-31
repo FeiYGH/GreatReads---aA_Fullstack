@@ -8,6 +8,8 @@ export const RECEIVE_NEW_REVIEW = 'RECEIVE_NEW_REVIEW';
 export const RECEIVE_BOOK_REVIEWS_USER = 'RECEIVE_BOOK_REVIEWS_USER';
 export const RECEIVE_REVIEW_FOR_COMMENTS = 'RECEIVE_REVIEW_FOR_COMMENTS';
 export const CLEAR_BOOK_REVIEWS = 'CLEAR_BOOK_REVIEWS';
+export const INCREMENT_UPDATED_REVIEWS = 'INCREMENT_UPDATED_REVIEWS'
+export const UPDATE_REVIEW = 'UPDATE_REVIEW';
 
 const receiveReview = review => {
     // debugger;
@@ -16,6 +18,13 @@ const receiveReview = review => {
         review
     });
 };
+
+const updateReview2 = review => {
+    return({
+        type: UPDATE_REVIEW,
+        review
+    });
+}
 
 const receiveNewReview = review => {
     // debugger;
@@ -70,6 +79,12 @@ export const clearBookReviews = () => {
     });
 };
 
+export const incrementUpdatedReviewsFlag = () => {
+    return({
+        type:INCREMENT_UPDATED_REVIEWS
+    });
+};
+
 export const fetchReview = (reviewId) => dispatch => (
     ReviewAPIUtil.fetchReview(reviewId)
         .then(review => dispatch(receiveReview(review)),
@@ -114,7 +129,7 @@ export const createReview = (bookId, review) => dispatch => {
 
 export const updateReview = (reviewId, review) => dispatch => (
     ReviewAPIUtil.updateReview(reviewId, review)
-        .then(review => dispatch(receiveReview(review)),
+        .then(review => dispatch(updateReview2(review)),
             (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
 );
 

@@ -17,12 +17,18 @@ class Book extends React.Component{
             userReviews: props.userReviews,
             sessionId: props.sessionId,
             //for purposes of triggering a rerender of component when user updates rating
-            ratingUpdated: 0
+            ratingUpdated: 0,
+            reviewsUpdated: false
         };
         this.pullUserReview = this.pullUserReview.bind(this);
         this.handleRatingUpdate = this.handleRatingUpdate.bind(this);
+        this.handleReviewUpdate = this.handleReviewUpdate.bind(this);
     }
   
+    handleReviewUpdate(){
+        this.setState({anyReviewUpdated:true});
+    }
+
     componentDidMount(){
         // debugger;
         // this.props.clearBookReviews();
@@ -59,7 +65,7 @@ class Book extends React.Component{
         if(this.state.sessionId){
             myReview = Object.values(this.props.userReviews).find(review =>
                 (review.book_id === parseInt(this.props.bookId,10) && review.user_id === this.state.sessionId))
-        };
+        }
         // console.log("MY REVIEW");
         // console.log(myReview);
         return myReview;
@@ -74,12 +80,12 @@ class Book extends React.Component{
       
     }
 
-    // componentDidUpdate(prevProps){
-    //     debugger;
-    //     if(prevProps.book && this.props.book){
-    //         if(prevProps.book.title!==this.props.book.title){
-    //             this.props.fetchReviewsUser(this.state.sessionId)
-    //         }
+
+    // componentDidUpdate(prevProps, prevState){
+        
+    //     if(prevProps.updatedReviewsCount !== this.props.updatedReviewsCount){
+    //         // debugger
+    //         this.setState({reviewsUpdated:true});
     //     }
     // }
 
@@ -164,7 +170,7 @@ class Book extends React.Component{
                             <h3>ISBN: {book.isbn}</h3>
                             <h3>Published {book.pub_date} by {book.publisher}</h3>
                             
-                    </div>  
+                        </div>  
                     </div>
                     <div className="row">
                         <div>
@@ -178,7 +184,7 @@ class Book extends React.Component{
                                 bookId={this.props.bookId}
                                 // loggedIn={!!this.state.sessionId}
                                 handleRatingUpdate ={this.handleRatingUpdate} 
-
+                                
                             />
 
                         </div>

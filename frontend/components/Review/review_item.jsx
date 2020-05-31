@@ -11,7 +11,8 @@ class ReviewItem extends React.Component{
             spoiler:props.review.spoiler,
             reveal:false,
             longReview:props.longReview,
-            fullReview:false
+            fullReview:false,
+            reviewsUpdated:false
         };
         this.closeReview = this.closeReview.bind(this);
         this.openReview = this.openReview.bind(this);
@@ -80,6 +81,15 @@ class ReviewItem extends React.Component{
         // this.props.fetchReview(this.props.review.id);
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps.updatedReviewsCount!== this.props.updatedReviewsCount){
+            // debugger;
+            if(this.props.review){
+                this.props.fetchReview(this.props.review.id)
+                .then(this.setState({spoiler:this.props.review.spoiler}));
+            }
+        }
+    }
     
 
     render(){
@@ -129,6 +139,7 @@ class ReviewItem extends React.Component{
         let year;
         
         if(review){
+
             let dateObj = new Date(review.created_at);
             month = this.getMonthCommentItem(dateObj);
             day = dateObj.getDate();
@@ -157,6 +168,7 @@ class ReviewItem extends React.Component{
             }else{
                 reviewBody = review.body;
             }
+            // debugger;
         }
 
         let prompt = "";
@@ -165,6 +177,7 @@ class ReviewItem extends React.Component{
         }else if(this.state.longReview===true && this.state.fullReview===true){
             prompt = '(less)';
         }
+
 
         // debugger;
         if(!review){
