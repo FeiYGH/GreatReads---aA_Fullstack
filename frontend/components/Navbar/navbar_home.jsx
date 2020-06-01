@@ -58,30 +58,62 @@ class NavBarHome extends React.Component{
 
 
         if(this.props.books && partialWd !== ""){
-            searchBarBooks=Object.values(this.props.books).map(book => {
-             //    debugger;             
-                if(book.title.toLowerCase().startsWith(partialWd.toLowerCase())){
-                 //    debugger;
-                    return(
-                     //    <Link to={`/books/${book.id}`}>
-                         <li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
-                            <div className="row searchBookRow" >
-                                 <div className="col-2 searchBookPhoto">
-                                     <img src={book.photoUrl} alt={book.title}></img>                             
-                                 </div>
-                                 <div className="col-8 searchBookTitleLi">
-                                     <span>{book.title}</span>
-                                 </div>
-                            </div>
-                        </li>
-                     //    </Link>
-                        
-                    )
-                }else{
-                    return(<div></div>)
+            searchBarBooks=Object.values(this.props.books).map(book => {   
+                let bookWordsArr = book.title.split(" ");
+                let bookFoundLi;
+             //    debugger;
+                for(let i = 0; i < bookWordsArr.length; i++){
+                     if(bookWordsArr[i].toLowerCase().startsWith(partialWd.toLowerCase())){
+                         // debugger;
+                         bookFoundLi = 
+                             (<li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
+                             <div className="row searchBookRow" >
+                                     <div className="col-2 searchBookPhoto">
+                                         <img src={book.photoUrl} alt={book.title}></img>                             
+                                     </div>
+                                     <div className="col-8 searchBookTitleLi">
+                                         <span>{book.title}</span>
+                                     </div>
+                             </div>
+                         </li>)
+                         //</Link>
+                         break;
+                    }   
                  }
-            })
-         };
+                 if(bookFoundLi){
+                     return bookFoundLi;
+                 }else{
+                     return(<div></div>)
+                 }
+                    
+                })
+             }    
+
+        // if(this.props.books && partialWd !== ""){
+        //     searchBarBooks=Object.values(this.props.books).map(book => {
+        //      //    debugger;             
+        //         if(book.title.toLowerCase().startsWith(partialWd.toLowerCase())){
+        //          //    debugger;
+        //             return(
+        //              //    <Link to={`/books/${book.id}`}>
+        //                  <li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
+        //                     <div className="row searchBookRow" >
+        //                          <div className="col-2 searchBookPhoto">
+        //                              <img src={book.photoUrl} alt={book.title}></img>                             
+        //                          </div>
+        //                          <div className="col-8 searchBookTitleLi">
+        //                              <span>{book.title}</span>
+        //                          </div>
+        //                     </div>
+        //                 </li>
+        //              //    </Link>
+                        
+        //             )
+        //         }else{
+        //             return(<div></div>)
+        //          }
+        //     })
+        //  };
         ////////////////////////////////////////////
         let profileDropDown;
         if(this.props.currentUser){

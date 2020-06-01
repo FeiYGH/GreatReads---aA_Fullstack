@@ -6,10 +6,24 @@ class Api::BooksController < ApplicationController
     end 
 
     def index
-        
         @books = Book.all
-      
         render :index
+
+        # if I wanted to filter out books in the backend
+        # if params[:filter]
+        #     booksToFilter = Book.all
+        #     @books = []
+        #     booksToFilter.each do |book|
+        #         words = book.title.split(" ")
+        #         words.each do |word|
+        #             if word.downcase.start_with?(params[:filter])
+        #                 @books << book
+        #                 break;
+        #             end 
+        #         end     
+        #     end 
+        #     render :index
+        # end
     end 
 
     private
