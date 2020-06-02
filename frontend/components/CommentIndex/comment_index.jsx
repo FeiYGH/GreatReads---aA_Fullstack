@@ -90,17 +90,14 @@ class CommentIndex extends React.Component{
         // console.log("HOW MANY COMMENTS");
         // console.log(Object.values(this.props.review.comments).length);
 
-        // debugger;
-        // debugger;
-
-        let profilePic;
-        // debugger;
+        let profilePic = "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
+        
         if(sessionId){
-            profilePic = currentUser.photoUrl;
-        }else{
-            profilePic = "https://greatreads-aa-dev.s3-us-west-1.amazonaws.com/profile_pic.png";
+            if(currentUser.photoUrl){
+                profilePic = currentUser.photoUrl;
+            }    
         }
-
+        
 
         let longComment=false;
         if(this.props.review){
@@ -129,7 +126,7 @@ class CommentIndex extends React.Component{
                  
             });
         }  
-
+        // debugger;
         if(this.props.review){
                 if(commentCount===0 && this.state.comments===false){
                     return(
@@ -184,14 +181,12 @@ class CommentIndex extends React.Component{
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                          
-                            
+                            </div>                           
                         </div>
                     )
             }else if(this.state.comments===true && this.state.viewComments===false && this.state.fullForm===true){
-                return(
-                    
+                // debugger;
+                return(    
                     <div className="commentIndexContainer">
                     
                         <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span></h1>
@@ -210,7 +205,7 @@ class CommentIndex extends React.Component{
                                             <div className="col-commentFormFull commentItemTextAreaDiv">
                                                 <form className="commentItemTextAreaDivForm">
                                                 <textarea className="commentItemTextArea" placeholder="Write a comment..." rows="5" cols="30" value={this.state.comment} onChange={this.updateForm("comment")}/>
-                                                <button className="commentButton"onClick={()=>this.createComment(this.state)}>Comment</button>
+                                                <button className="commentButton" onClick={()=>this.createComment(this.state)}>Comment</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -247,6 +242,7 @@ class CommentIndex extends React.Component{
                     </div>
                 )
             }else if(this.state.comments===true && this.state.viewComments===true && this.state.fullForm===true){
+                // debugger;
                 return(
                     <div className="commentIndexContainer">
                         <h1 className="commentIndexContainer"><span onClick={()=>this.toggleCommentContainer()}>{commentCount} comments </span><span className="blackDot">&nbsp;·&nbsp;</span><span onClick={()=>this.toggleViewAllComments()}>Hide comments</span></h1>
