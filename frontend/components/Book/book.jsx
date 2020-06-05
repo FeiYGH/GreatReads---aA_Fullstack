@@ -18,11 +18,17 @@ class Book extends React.Component{
             sessionId: props.sessionId,
             //for purposes of triggering a rerender of component when user updates rating
             ratingUpdated: 0,
-            reviewsUpdated: false
+            reviewsUpdated: false,
+            commentsAdded: false
         };
         this.pullUserReview = this.pullUserReview.bind(this);
         this.handleRatingUpdate = this.handleRatingUpdate.bind(this);
         this.handleReviewUpdate = this.handleReviewUpdate.bind(this);
+        this.handleCommentUpdateBookShow = this.handleCommentUpdateBookShow.bind(this);
+    }
+
+    handleCommentUpdateBookShow(){
+        this.setState({commentsAdded:true});
     }
   
     handleReviewUpdate(){
@@ -213,6 +219,7 @@ class Book extends React.Component{
                                 book={this.props.book}
                                 myReview={myReview}
                                 handleRatingUpdate={this.handleRatingUpdate}
+                                handleCommentUpdateBookShow={this.handleCommentUpdateBookShow}
                             />
                         </div>
                     </div>

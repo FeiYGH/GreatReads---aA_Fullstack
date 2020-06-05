@@ -37,6 +37,7 @@ class CommentIndex extends React.Component{
     writeCommentContainer(){
         this.setState({fullForm:true});
     }
+
     toggleViewAllComments(){
         if(this.state.viewComments===false){
             this.setState({viewComments:true});
@@ -64,9 +65,11 @@ class CommentIndex extends React.Component{
         // debugger;
         this.props.createComment(this.props.reviewId, comment)
             // .then(this.props.fetchReviewForComments(this.props.reviewId))
-            .then(this.props.handleCommentUpdate());
-        this.setState({fullForm:false})
-        this.setState({viewComments:true})
+            .then(this.props.handleCommentUpdate())
+            .then(this.props.handleCommentUpdateBookShow());
+        this.setState({fullForm:false});
+        this.setState({viewComments:true});
+       
     }
 
     // componentDidUpdate(prevProps){

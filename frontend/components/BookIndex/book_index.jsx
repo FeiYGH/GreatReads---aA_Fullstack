@@ -7,6 +7,11 @@ class BookIndex extends React.Component{
         //initially setting the state the books
         // this.state = this.props.books;
         // this.state = this.props.fetchBooks(); 
+        this.toTop = this.toTop.bind(this);
+    }
+
+    toTop(){
+        $('html,body').scrollTop(0);
     }
 
     componentDidMount(){
@@ -24,8 +29,9 @@ class BookIndex extends React.Component{
             return(
                 <div className="bookCovDiv">
                     {/* <h2>{book.title}</h2> */}
+                   
                     <Link to={`/books/${book.id}`}>
-                        <img className="bookIndexImg" src={book.photoUrl} alt ="book cover photo"/>
+                        <img onClick={()=>this.toTop()} className="bookIndexImg" src={book.photoUrl} alt ="book cover photo"/>
                     </Link>
                     <p className="spaceBetween"></p>
                     <Link to={`/books/${book.id}`}>

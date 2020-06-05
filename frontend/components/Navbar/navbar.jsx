@@ -53,50 +53,53 @@ class NavBar extends React.Component{
 
         if(this.props.books && partialWd !== ""){
            searchBarBooks=Object.values(this.props.books).map(book => {   
-               let bookWordsArr = book.title.split(" ");
-               let bookFoundLi;
-            //    debugger;
-               for(let i = 0; i < bookWordsArr.length; i++){
-                    if(bookWordsArr[i].toLowerCase().startsWith(partialWd.toLowerCase())){
-                        // debugger;
-                        bookFoundLi = 
-                            (<li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
+                if(book.title.toLowerCase().includes(partialWd.toLowerCase())){
+                    return(
+                        <li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
                             <div className="row searchBookRow" >
-                                    <div className="col-2 searchBookPhoto">
-                                        <img src={book.photoUrl} alt={book.title}></img>                             
-                                    </div>
-                                    <div className="col-8 searchBookTitleLi">
-                                        <span>{book.title}</span>
-                                    </div>
+                                <div className="col-2 searchBookPhoto">
+                                    <img src={book.photoUrl} alt={book.title}></img>                             
+                                </div>
+                                <div className="col-8 searchBookTitleLi">
+                                    <span>{book.title}</span>
+                                </div>
                             </div>
-                        </li>)
-                        //</Link>
-                        break;
-                   }   
-                }
-                if(bookFoundLi){
-                    return bookFoundLi;
+                        </li>
+                    )
                 }else{
                     return(<div></div>)
                 }
+
+            //FUNCTIONAL, THIS BREAKS THE TITLE INTO WORDS ARRAY and checks if any of the words starts
+            //with the search bar word
+            //    let bookWordsArr = book.title.split(" ");
+            //    let bookFoundLi;
+            //    for(let i = 0; i < bookWordsArr.length; i++){
+            //         if(bookWordsArr[i].toLowerCase().startsWith(partialWd.toLowerCase())){
+            //             bookFoundLi = 
+            //                 (<li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
+            //                 <div className="row searchBookRow" >
+            //                         <div className="col-2 searchBookPhoto">
+            //                             <img src={book.photoUrl} alt={book.title}></img>                             
+            //                         </div>
+            //                         <div className="col-8 searchBookTitleLi">
+            //                             <span>{book.title}</span>
+            //                         </div>
+            //                 </div>
+            //             </li>)
+            //             //</Link>
+            //             break;
+            //        }   
+            //     }
+            //     if(bookFoundLi){
+            //         return bookFoundLi;
+            //     }else{
+            //         return(<div></div>)
+            //     }
                    
                })
             }    
-            //    if(book.title.toLowerCase().startsWith(partialWd.toLowerCase())){
-            //        return(
-            //             <li className="searchBookLI" onClick={()=>this.goToBook(book.id)}>
-            //                <div className="row searchBookRow" >
-            //                     <div className="col-2 searchBookPhoto">
-            //                         <img src={book.photoUrl} alt={book.title}></img>                             
-            //                     </div>
-            //                     <div className="col-8 searchBookTitleLi">
-            //                         <span>{book.title}</span>
-            //                     </div>
-            //                </div>
-            //            </li>
-            //         //</Link>
-            //        )
-            //    }
+           
             
         let profileDropDown;
         if(this.props.currentUser){
@@ -139,7 +142,6 @@ class NavBar extends React.Component{
                         <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
                         <h1 className="col-3 navLinks"><Link to="/books">All Books</Link></h1>                
                     </div>
-
                     <div className="navBarHalves" id="half2">
                         <div className="searchBar">
                             <input className="col-4 searchBookInput" type="text" placeholder="Search books" onChange={this.updateForm("searchBookTitle")} />    
@@ -147,7 +149,6 @@ class NavBar extends React.Component{
                                 {searchBarBooks}
                             </ul>
                         </div>
-                        
                         <h1 id="signInNavBarLink" className="col-3 navLinks"><Link to="/">Sign in</Link></h1>             
                         <h1 className="col-2 navLinks"><Link to="/">Join</Link></h1>  
                     </div>
@@ -157,7 +158,6 @@ class NavBar extends React.Component{
             return(
                 <div className="genNavBarLoggedIn" id="genNavBarLoggedInNotHome">
                     <div className="navBarHalves" id="half1LoggedIn" >
-                    
                         <h1 className="navLogo"><Link to="/"><span id="great">great</span><span id="Reads">Reads</span></Link></h1>
                         <h1 className="col-2 navLinks"><Link to="/">Home</Link></h1>
                         <h1 className="col-3 navLinks"><Link to="/myBooks">My Books</Link></h1>                

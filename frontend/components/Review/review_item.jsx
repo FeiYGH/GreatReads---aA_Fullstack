@@ -28,6 +28,8 @@ class ReviewItem extends React.Component{
         }
     }
 
+    
+
     getMonthCommentItem(dateObj){
         let month = dateObj.getMonth() + 1;
         switch(month){
@@ -218,6 +220,7 @@ class ReviewItem extends React.Component{
                             reviewAuthor={review.author}
                             book={this.props.book}
                             handleCommentUpdate={this.props.handleCommentUpdate}
+                            handleCommentUpdateBookShow={this.props.handleCommentUpdateBookShow}
                         />
                         </div>
                     </div>
@@ -260,6 +263,7 @@ class ReviewItem extends React.Component{
                             reviewAuthor={review.author}
                             book={this.props.book}
                             handleCommentUpdate={this.props.handleCommentUpdate}
+                            handleCommentUpdateBookShow={this.props.handleCommentUpdateBookShow}
                         />
                         </div>
                     </div>
@@ -298,6 +302,7 @@ class ReviewItem extends React.Component{
                                 reviewAuthor={review.author}
                                 book={this.props.book}
                                 handleCommentUpdate={this.props.handleCommentUpdate}
+                                handleCommentUpdateBookShow={this.props.handleCommentUpdateBookShow}
                             />
                         </div>
                 </div>

@@ -125,17 +125,15 @@ class Bookshelf extends React.Component{
                         <div>
                             <div className="row bookshelfOuterDiv">   
                                 <div className="col-10 bookshelfStatus" id="noBookShelfStatus">
-                                    <h3>Want to Read</h3>
+                                    <h3>Select Status</h3>
                                 </div>
                                 <div className="col-2 arrowDownBookshelf">
                                     <h3 onClick={()=>this.toggleDropDown()}><div id="rotate">&#9698;</div></h3>
                                     {/* {dropDown} */}
                                 </div>
-                                
                             </div>
                             {dropDown}
                         </div>
-                        
                     )
                 }else if(this.props.bookshelf){
                     return(

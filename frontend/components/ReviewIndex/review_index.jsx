@@ -114,6 +114,7 @@ class ReviewIndex extends React.Component{
                         user={user}
                         handleCommentUpdate={this.handleCommentUpdate}
                         updatedReviewsCount={this.props.updatedReviewsCount}
+                        handleCommentUpdateBookShow={this.props.handleCommentUpdateBookShow}
                     />
                 );
             }
