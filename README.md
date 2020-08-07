@@ -5,7 +5,7 @@
 [Live Site](https://greatreads2020.herokuapp.com/#/)
 
 GreatReads is a clone of GoodReads, where users can view different books, read reviews, write and edit their own reviews, and make comments on the reviews. 
-When signed up and logged in, users can also review the books and comment on the reviews. It is not finished yet. 
+When signed up and logged in, users can also review the books and comment on the reviews. 
 
 ![GreatReads Home Page](https://github.com/FeiYGH/GreatReads---aA_Fullstack/blob/master/GreatReads_ReadMe_Images/Screen%20Shot%202020-03-16%20at%2010.49.00%20PM.png)
 
