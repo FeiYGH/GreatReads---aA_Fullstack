@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     
     resources :comments, only: [:destroy, :show] #think update also should be here  
     resources :bookshelves, only: [:show, :create, :update]
+  
+    resources :likes, only: [:create, :destroy]
   end
  
 

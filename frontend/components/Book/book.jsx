@@ -19,8 +19,10 @@ class Book extends React.Component{
             //for purposes of triggering a rerender of component when user updates rating
             ratingUpdated: 0,
             reviewsUpdated: false,
-            commentsAdded: false
+            commentsAdded: false,
+            
         };
+        
         this.pullUserReview = this.pullUserReview.bind(this);
         this.handleRatingUpdate = this.handleRatingUpdate.bind(this);
         this.handleReviewUpdate = this.handleReviewUpdate.bind(this);

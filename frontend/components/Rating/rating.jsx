@@ -101,7 +101,7 @@ class Rating extends React.Component{
         this.props.fetchBook(this.props.bookId);
         let loggedIn = !!this.state.sessionId;
         if(loggedIn){
-            this.props.fetchReviewsUser(this.state.sessionId)
+            this.props.fetchReviewsUser(this.state.sessionId);
         }
     }
 
