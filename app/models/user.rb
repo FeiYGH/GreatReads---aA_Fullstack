@@ -21,7 +21,9 @@ class User < ApplicationRecord
     has_many :reviews;
     has_many :comments;
     has_many :bookshelves;
-    has_one_attached :photo
+    has_one_attached :photo;
+    has_many :likes;
+
     
     
 

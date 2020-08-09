@@ -23,8 +23,6 @@ class Api::ReviewsController < ApplicationController
     end 
 
     
-
-
     def create
         # debugger;
         # @review = current_user.reviews.new(review_params)
