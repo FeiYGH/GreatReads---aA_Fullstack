@@ -11,16 +11,18 @@ Rails.application.routes.draw do
     resource :session, only: [:destroy, :create, :update] #think should remove update
     resources :books, only: [:show, :index] do  
         resources :reviews, only: [:create, :index]
+          
         # resources :comments, only: [:index, :create]
     end 
     resources :reviews, only: [:show, :destroy, :update] do
         resources :comments, only: [:create, :index, :update]
+        resources :likes, only: [:index, :create]
     end 
     
     resources :comments, only: [:destroy, :show] #think update also should be here  
     resources :bookshelves, only: [:show, :create, :update]
   
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:destroy]
   end
  
 
