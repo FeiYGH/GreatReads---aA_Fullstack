@@ -13,7 +13,7 @@ class ReviewIndex extends React.Component{
             session_user_reviewed: false,
             loggedIn: !!props.user,
             reviewsUpdated: false           
-        }
+        };
 
         this.writeReview = this.writeReview.bind(this);
         this.pullUserReview = this.pullUserReview.bind(this);

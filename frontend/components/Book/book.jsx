@@ -79,25 +79,13 @@ class Book extends React.Component{
         return myReview;
     }
 
+    
     handleRatingUpdate(){
         // debugger;
         this.props.fetchReviewsUser(this.state.sessionId)
             .then(this.setState({ratingUpdated:this.state.ratingUpdated+1}))
-        // this.setState({ratingUpdated:this.state.ratingUpdated+1});
-        // console.log("STATE OF RATINGUPATED");
-      
+
     }
-
-
-    // componentDidUpdate(prevProps, prevState){
-        
-    //     if(prevProps.updatedReviewsCount !== this.props.updatedReviewsCount){
-    //         // debugger
-    //         this.setState({reviewsUpdated:true});
-    //     }
-    // }
-
-   
 
     render(){
         

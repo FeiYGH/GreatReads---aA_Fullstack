@@ -6,6 +6,7 @@ import userReviewsReducer from './user_reviews_reducer';
 import commentsReducer from './comment_reducer';
 import bookshelvesReducer from './bookshelves_reducer';
 import updatedReviewsCountReducer from './updated_reviews_reducer';
+import likesReducer from './likes_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -14,7 +15,8 @@ const entitiesReducer = combineReducers({
     userReviews: userReviewsReducer,
     comments: commentsReducer,
     bookshelves: bookshelvesReducer,
-    updatedReviewsCount: updatedReviewsCountReducer
+    updatedReviewsCount: updatedReviewsCountReducer,
+    likes: likesReducer
 });
 
 

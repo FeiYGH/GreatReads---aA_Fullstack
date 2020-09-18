@@ -1,10 +1,12 @@
 class Api::LikesController < ApplicationController
     before_action :require_login, only: [:destroy, :create]
+
     def create
         @like = Like.new(like_params)
         if @like.save
             render 'api/likes/show'
         else
+            #debugger
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end
     end
@@ -13,11 +15,27 @@ class Api::LikesController < ApplicationController
         @like = Like.find_by(id: params[:id])
         if @like && @like.user_id == current_user.id
             @like.destroy
+            render :show
         else
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end 
 
     end
+    
+    '''
+    def destroy
+        @like = Like.find_by(id: params[:id])
+        if @like && @like.user_id == current_user.id
+            if @like.destroy
+                render :show
+            else
+                render json: @like.errors.full_messages, status: :unprocessable_entity
+            end
+        end 
+
+    end
+    '''
+
     
     def index        
         @review = Review.find_by(id: params[:review_id])
@@ -27,7 +45,7 @@ class Api::LikesController < ApplicationController
     
     private
     def like_params
-        params.require(:like).permit(:user_id, :review_id, :book_id, :like)
+        params.require(:like).permit(:user_id, :review_id)
     end 
 end
  

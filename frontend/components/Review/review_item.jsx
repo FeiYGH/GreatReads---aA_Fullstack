@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import CommentIndexContainer from '../CommentIndex/comment_index_container';
+import Likes from '../../components/Like/like'; 
 
 class ReviewItem extends React.Component{
     
@@ -192,6 +193,10 @@ class ReviewItem extends React.Component{
             if(this.state.reveal===false){
                 return(
                     <div>
+                         <Likes
+                                reviewId={review.id}
+                                user={user}
+                        />
                         <div className="reviewItem">
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
@@ -234,7 +239,12 @@ class ReviewItem extends React.Component{
                 // debugger;
                 return(
                     <div>
+                        <Likes
+                                reviewId={review.id}
+                                user={user}
+                        />
                         <div className="reviewItem">
+                            
                             <div className="row">
                                 <div className="col-profilePic" id="defaultProfilePic">
                                     <img  id="defaultProfileImg" src={profilePic} alt="profile pic"/>
@@ -273,6 +283,10 @@ class ReviewItem extends React.Component{
             // debugger;
             return(
                 <div>
+                     <Likes
+                                reviewId={review.id}
+                                user={user}
+                        />
                     <div className="reviewItem">
                         <div className="row">
                             <div className="col-profilePic" id="defaultProfilePic">

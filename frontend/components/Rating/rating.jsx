@@ -55,6 +55,10 @@ class Rating extends React.Component{
         // }
     }
 
+
+
+    
+
     updateRating(newRate){ 
         this.setState({star: newRate});
         this.setState({rating: newRate})

@@ -1,6 +1,6 @@
 
 
-export const fetchLikes = () => {
+export const fetchLikes = (reviewId) => {
     return(
         $.ajax({
             method: 'GET',
@@ -9,7 +9,8 @@ export const fetchLikes = () => {
     )
 }
 
-export const createLike = (likeId, like) => {
+export const createLike = (reviewId, like) => {
+    //debugger;
     return(
         $.ajax({
             method: 'POST',

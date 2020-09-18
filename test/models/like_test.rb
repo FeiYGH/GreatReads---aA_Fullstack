@@ -5,8 +5,6 @@
 #  id         :bigint           not null, primary key
 #  user_id    :integer          not null
 #  review_id  :integer          not null
-#  book_id    :integer          not null
-#  like       :boolean          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
